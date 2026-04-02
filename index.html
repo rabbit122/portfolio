@@ -191,9 +191,31 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .btn-view-all{font-family:var(--mono);font-size:14px;font-weight:600;color:#ffffff;background:#171717;border:1px solid #171717;padding:0 20px;height:40px;display:inline-flex;align-items:center;white-space:nowrap;transition:opacity .15s;}
 .btn-view-all:hover{opacity:.85;}
 
-/* ── SINCE MARQUEE — h:182px, font: Geist 800 98px, slash: Geist 400 38px ── */
-.big-mq{height:182px;overflow:hidden;display:flex;align-items:center;border-bottom:none;flex-shrink:0;}
-.bm-track{display:flex;align-items:center;white-space:nowrap;animation:scrollL 18s linear infinite;}
+/* ── ABOUT ME REVEAL ── */
+.about-reveal{overflow:hidden;display:flex;flex-direction:column;flex-shrink:0;margin-top:20px;}
+.about-reveal-row{display:flex;align-items:center;height:91px;overflow:hidden;}
+.ar-word{font-family:var(--sans);font-size:98px;font-weight:800;letter-spacing:-.02em;color:var(--sep);line-height:1;text-transform:uppercase;white-space:nowrap;will-change:transform;}
+.ar-slash{font-family:var(--sans);font-size:38px;font-weight:400;color:var(--sep);white-space:nowrap;will-change:transform;}
+/* start off-screen */
+.ar-from-left{transform:translateX(-110%);}
+.ar-from-right{transform:translateX(110%);}
+/* slide in when .triggered */
+.about-reveal.triggered .ar-from-left{transform:translateX(0);}
+.about-reveal.triggered .ar-from-right{transform:translateX(0);}
+/* shared transition */
+.about-reveal .ar-word,.about-reveal .ar-slash{
+  transition:transform 1.2s cubic-bezier(0.16,1,0.3,1);
+}
+/* row 1: word left, slash right */
+/* row 1: word left (shrinks to content), slash fills right */
+.about-reveal-row:first-child .ar-word{padding:0 16px 0 30px;flex-shrink:0;}
+.about-reveal-row:first-child .ar-slash{flex:1;overflow:hidden;}
+/* row 2: slash fills left, word right (shrinks to content) */
+.about-reveal-row:last-child .ar-slash{flex:1;overflow:hidden;}
+.about-reveal-row:last-child .ar-word{padding:0 30px 0 16px;flex-shrink:0;}
+/* stagger: slash lags slightly behind the word */
+.about-reveal .ar-slash{transition-delay:.08s;}
+/* reuse bm-word/bm-slash for the words marquee below */
 .bm-word{font-family:var(--sans);font-size:98px;font-weight:800;letter-spacing:-.02em;color:var(--sep);padding:0 24px;line-height:1;text-transform:uppercase;}
 .bm-slash{font-family:var(--sans);font-size:38px;font-weight:400;color:var(--sep);}
 
@@ -251,11 +273,8 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .award-n{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--white);}
 .award-y{font-family:var(--mono);font-size:11px;color:var(--dim);}
 
-/* ── WORDS/MATTER MARQUEE — h:142px confirmed, font 74px ── */
-.words-mq{height:142px;overflow:hidden;display:flex;align-items:center;border-bottom:none;flex-shrink:0;}
-.wm-track{display:flex;align-items:center;white-space:nowrap;animation:scrollR 15s linear infinite;}
-@keyframes scrollR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
-.wm-word{font-family:var(--sans);font-size:74px;font-weight:800;letter-spacing:-.02em;color:var(--sep);padding:0 24px;line-height:1;text-transform:uppercase;}
+/* ── GET IN / TOUCH REVEAL ── reuses .about-reveal structure ── */
+.contact-reveal{overflow:hidden;display:flex;flex-direction:column;flex-shrink:0;margin-bottom:0;}
 
 /* ── TESTIMONIALS ── */
 .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:0 30px 44px;}
@@ -374,11 +393,11 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   /* Work grid */
   .wgrid{grid-template-columns:1fr;padding:20px;gap:16px;}
 
-  /* Marquees */
-  .big-mq{height:90px;}
+  /* Marquees / reveal */
+  .about-reveal-row{height:56px;}
+  .ar-word{font-size:52px;}
+  .ar-slash{font-size:24px;}
   .bm-word{font-size:52px;}
-  .words-mq{height:80px;}
-  .wm-word{font-size:40px;}
 
   /* About */
   .about-grid{grid-template-columns:1fr;}
@@ -517,17 +536,15 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
     </div>
   </div>
 
-  <!-- SINCE MARQUEE — 182px high, 98px font -->
-  <div class="big-mq">
-    <div class="bm-track">
-      <span class="bm-word">Since</span><span class="bm-slash">&nbsp;////////////////////&nbsp;</span>
-      <span class="bm-word">Since</span><span class="bm-slash">&nbsp;////////////////////&nbsp;</span>
-      <span class="bm-word">2013</span><span class="bm-slash">&nbsp;////////////////////&nbsp;</span>
-      <span class="bm-word">2013</span><span class="bm-slash">&nbsp;////////////////////&nbsp;</span>
-      <span class="bm-word">Since</span><span class="bm-slash">&nbsp;////////////////////&nbsp;</span>
-      <span class="bm-word">Since</span><span class="bm-slash">&nbsp;////////////////////&nbsp;</span>
-      <span class="bm-word">2013</span><span class="bm-slash">&nbsp;////////////////////&nbsp;</span>
-      <span class="bm-word">2013</span><span class="bm-slash">&nbsp;////////////////////&nbsp;</span>
+  <!-- ABOUT ME REVEAL -->
+  <div class="about-reveal" id="about-reveal">
+    <div class="about-reveal-row">
+      <span class="ar-word ar-from-left">ABOUT</span>
+      <span class="ar-slash ar-from-right" style="text-align:right;">///////////</span>
+    </div>
+    <div class="about-reveal-row">
+      <span class="ar-slash ar-from-left">///////////////////////</span>
+      <span class="ar-word ar-from-right">ME</span>
     </div>
   </div>
 
@@ -559,23 +576,23 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
       <div class="prev-grid">
         <div class="prev-item">
           <span class="prev-date">2024 – present</span>
-          <span class="prev-role">Senior Product Designer</span>
-          <span class="prev-co">Martin Brower (Contract)</span>
+          <span class="prev-role">UX/UI Designer</span>
+          <span class="prev-co">Martin Brower</span>
         </div>
         <div class="prev-item">
           <span class="prev-date">2023 – 2024</span>
-          <span class="prev-role">Product Designer</span>
+          <span class="prev-role">Founding Product Designer</span>
           <span class="prev-co">RemarkAI</span>
         </div>
         <div class="prev-item">
           <span class="prev-date">2022 – 2023</span>
-          <span class="prev-role">Product Designer</span>
-          <span class="prev-co">UAL (Contract)</span>
+          <span class="prev-role">UX/UI Designer</span>
+          <span class="prev-co">UAL</span>
         </div>
         <div class="prev-item">
           <span class="prev-date">2014 – 2021</span>
-          <span class="prev-role">Product Designer</span>
-          <span class="prev-co">Various (China)</span>
+          <span class="prev-role">Senior UX/UI Designer</span>
+          <span class="prev-co">Baidu</span>
         </div>
       </div>
     </div>
@@ -659,17 +676,15 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
     </div>
   </div>
 
-  <!-- WORDS/MATTER MARQUEE — 142px high, 74px font -->
-  <div class="words-mq">
-    <div class="wm-track">
-      <span class="wm-word">Words</span><span class="bm-slash" style="font-size:28px">&nbsp;////////////////////&nbsp;</span>
-      <span class="wm-word">Matter</span><span class="bm-slash" style="font-size:28px">&nbsp;////////////////////&nbsp;</span>
-      <span class="wm-word">Words</span><span class="bm-slash" style="font-size:28px">&nbsp;////////////////////&nbsp;</span>
-      <span class="wm-word">Matter</span><span class="bm-slash" style="font-size:28px">&nbsp;////////////////////&nbsp;</span>
-      <span class="wm-word">Words</span><span class="bm-slash" style="font-size:28px">&nbsp;////////////////////&nbsp;</span>
-      <span class="wm-word">Matter</span><span class="bm-slash" style="font-size:28px">&nbsp;////////////////////&nbsp;</span>
-      <span class="wm-word">Words</span><span class="bm-slash" style="font-size:28px">&nbsp;////////////////////&nbsp;</span>
-      <span class="wm-word">Matter</span><span class="bm-slash" style="font-size:28px">&nbsp;////////////////////&nbsp;</span>
+  <!-- GET IN / TOUCH REVEAL -->
+  <div class="about-reveal contact-reveal" id="contact-reveal">
+    <div class="about-reveal-row">
+      <span class="ar-word ar-from-left">GET IN</span>
+      <span class="ar-slash ar-from-right" style="text-align:right;">///////////////////////</span>
+    </div>
+    <div class="about-reveal-row">
+      <span class="ar-slash ar-from-left">//////////////////////</span>
+      <span class="ar-word ar-from-right">TOUCH</span>
     </div>
   </div>
 
@@ -780,6 +795,23 @@ requestAnimationFrame(()=>{
     const r=el.getBoundingClientRect();
     if(r.top<window.innerHeight&&r.bottom>0)el.classList.add('visible');
   });
+});
+
+/* SCROLL-TRIGGERED REVEAL (shared for about-reveal + contact-reveal) */
+['about-reveal','contact-reveal'].forEach(function(id){
+  var el = document.getElementById(id);
+  if(!el) return;
+  var triggered = false;
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting && !triggered){
+        triggered = true;
+        el.classList.add('triggered');
+        observer.disconnect();
+      }
+    });
+  },{threshold:0.2});
+  observer.observe(el);
 });
 
 /* ACTIVE NAV */
