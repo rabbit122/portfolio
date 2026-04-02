@@ -101,7 +101,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 
 /* Body: padding:0 30px 30px, gap:30px — CONFIRMED */
 .l-body{padding:0 30px 30px;display:flex;flex-direction:column;gap:30px;}
-.l-bio{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--muted);line-height:20px;max-width:240px;}
+.l-bio{font-family:var(--mono);font-size:14px;font-weight:500;color:var(--muted);line-height:20px;max-width:240px;}
 /* Info rows gap: 20px confirmed from framer-197opxj */
 .l-infos{display:flex;flex-direction:column;gap:20px;}
 .l-info{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:14px;font-weight:500;color:var(--muted);}
@@ -132,15 +132,15 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .gutter-col{width:44px;min-width:44px;flex-shrink:0;border-right:1px solid var(--sep);display:flex;flex-direction:column;align-items:flex-end;padding:0 8px;padding-top:22px;user-select:none;position:sticky;top:44px;height:calc(100vh - 44px);overflow:hidden;}
 .ln{font-family:var(--mono);font-size:11px;font-weight:400;color:#bbbbbb;line-height:22px;height:22px;white-space:pre;text-align:right;display:block;}
 .content{flex:1;min-width:0;}
-#home .content,#work .content,#about .content,#services .content,#stack .content,#contact .content{padding-bottom:60px;}
-.comment{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);padding:22px 30px 0;line-height:22px;opacity:.75;}
+#home .content,#work .content,#about .content,#services .content,#stack .content,#contact .content{padding-bottom:20px;}
+.comment{font-family:var(--mono);font-size:14px;font-weight:500;color:var(--dim);padding:22px 30px 0;line-height:22px;opacity:.75;}
 
 /* ── HERO ── */
 .hero{padding:0 30px 56px;}
 .hero h1{font-family:var(--sans);font-size:92px;font-weight:700;line-height:1.1;letter-spacing:-.03em;margin-bottom:22px;margin-top:4px;}
 .hero h1 .l1{color:var(--white);display:block;}
 .hero h1 .l2{color:var(--muted);display:block;}
-.hero-desc{font-family:var(--mono);font-size:16px;font-weight:500;color:var(--muted);line-height:1.6;max-width:680px;margin-bottom:20px;opacity:0;transform:translateX(-30px);animation:heroDescIn 0.75s linear(0,0.213,0.456,0.628,0.746,0.827,0.882,0.919,0.945,0.962,0.974,0.982,0.988,0.992,0.994,0.996,0.997,0.998,0.999,1) 0s forwards;}
+.hero-desc{font-family:var(--mono);font-size:18px;font-weight:500;color:var(--muted);line-height:1.6;max-width:680px;margin-bottom:20px;opacity:0;transform:translateX(-30px);animation:heroDescIn 0.75s linear(0,0.213,0.456,0.628,0.746,0.827,0.882,0.919,0.945,0.962,0.974,0.982,0.988,0.992,0.994,0.996,0.997,0.998,0.999,1) 0s forwards;}
 @keyframes heroDescIn{to{opacity:1;transform:translateX(0);}}
 
 /* ── WORKS ── */
@@ -156,20 +156,20 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
    Arrow container: 54×54 sits inside the 70px right padding, flush right */
 .wcard-hdr{
   display:flex;align-items:center;justify-content:center;
-  padding:16px 70px 16px 18px;
-  height:54px;
+  padding:24px 70px 24px 24px;
+  height:72px;
   background:var(--panel);
   position:relative;
 }
 .wcard-title{
-  font-family:var(--mono);font-size:16px;font-weight:500;
+  font-family:var(--mono);font-size:18px;font-weight:500;
   color:var(--white);line-height:22.4px;
   flex:1;
 }
 /* Arrow: 54×54 box positioned flush right, bg:#181818, contains 22×20 SVG arrow */
 .wcard-arr{
   position:absolute;right:0;top:0;
-  width:54px;height:54px;
+  width:72px;height:72px;
   display:flex;align-items:center;justify-content:center;
   background:var(--panel);
   border-left:1px solid var(--sep);
@@ -224,9 +224,9 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .about-l{padding:44px 30px;}
 .about-h{font-family:var(--sans);font-size:52px;font-weight:700;letter-spacing:-.03em;line-height:1.1;color:var(--white);margin-bottom:22px;}
 .about-h .dim{color:var(--muted);}
-.about-p{font-family:var(--mono);font-size:14px;font-weight:500;color:var(--muted);line-height:1.75;max-width:510px;margin-bottom:14px;}
+.about-p{font-family:var(--mono);font-size:16px;font-weight:500;color:var(--muted);line-height:1.75;max-width:510px;margin-bottom:14px;}
 .about-p .hl{background:#e4e4e4;color:var(--white);padding:1px 6px;}
-.about-dl{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;margin-top:8px;border:1px solid var(--sep);font-family:var(--mono);font-size:13px;font-weight:600;color:var(--white);transition:background .15s;}
+.about-dl{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;margin-top:8px;border:1px solid var(--sep);font-family:var(--mono);font-size:14px;font-weight:600;color:var(--white);transition:background .15s;}
 .about-dl:hover{background:#efefef;}
 .about-r{display:flex;flex-direction:column;align-self:flex-start;padding:44px 30px 0 20px;}
 .timeline{padding:24px 20px;border-bottom:1px solid var(--sep);}
@@ -249,11 +249,11 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .prev-co{font-family:var(--mono);font-size:14px;color:var(--muted);}
 
 /* ── SERVICES ── */
-.svc-list{padding:32px 30px 44px;}
+.svc-list{padding:32px 30px 32px;}
 .svc-group{margin-bottom:28px;}
-.svc-group-title{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--dim);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;}
+.svc-group-title{font-family:var(--mono);font-size:18px;font-weight:600;color:var(--white);text-transform:capitalize;margin-bottom:12px;}
 .svc-tags-row{display:grid;grid-template-columns:repeat(3,1fr);gap:4px 0;}
-.svc-tag-item{display:flex;align-items:baseline;gap:6px;font-family:var(--mono);font-size:13px;color:var(--muted);margin-right:20px;margin-bottom:8px;}
+.svc-tag-item{display:flex;align-items:baseline;gap:6px;font-family:var(--mono);font-size:14px;color:var(--muted);margin-right:20px;margin-bottom:8px;}
 .svc-tag-item::before{content:'·';color:var(--white);font-size:16px;flex-shrink:0;}
 
 /* ── TECH STACK ── */
@@ -294,7 +294,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .blog-cta{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap;padding-top:2px;transition:color .15s;}
 .blog-item:hover .blog-cta{color:var(--white);}
 .blog-foot{display:flex;justify-content:flex-end;padding:16px 30px;}
-.blog-all{font-family:var(--mono);font-size:12px;color:var(--muted);border:1px solid var(--sep);padding:7px 14px;transition:color .15s,border-color .15s;}
+.blog-all{font-family:var(--mono);font-size:14px;color:var(--muted);border:1px solid var(--sep);padding:7px 14px;transition:color .15s,border-color .15s;}
 .blog-all:hover{color:var(--white);border-color:#555;}
 
 /* ── CONTACT ── */
@@ -529,9 +529,9 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
     <div class="content">
       <p class="comment">&lt;!-- Featured work --&gt;</p>
       <div class="wgrid">
-        <div class="wcard"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:2px;flex:1;"><span class="wcard-title">Circularity</span><span style="font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.08em;">WASTE MANAGEMENT · B2B</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"></div></div>
-        <div class="wcard"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:2px;flex:1;"><span class="wcard-title">RemarkAI</span><span style="font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.08em;">AI SAFETY ANALYTICS · B2B SAAS</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"></div></div>
-        <div class="wcard"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:2px;flex:1;"><span class="wcard-title">UAL Graduate Showcase</span><span style="font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.08em;">EDUCATION · WEB DESIGN</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"></div></div>
+        <div class="wcard"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">Circularity</span><span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.08em;">WASTE MANAGEMENT · B2B</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"></div></div>
+        <div class="wcard"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">RemarkAI</span><span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.08em;">AI SAFETY ANALYTICS · B2B SAAS</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"></div></div>
+        <div class="wcard"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">UAL Graduate Showcase</span><span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.08em;">EDUCATION · WEB DESIGN</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"></div></div>
       </div>
     </div>
   </div>
@@ -549,7 +549,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   </div>
 
   <!-- ABOUT -->
-  <div class="srow reveal" id="about">
+  <div class="srow reveal" id="about" style="margin-top:60px;">
     <div class="content">
       <p class="comment">&lt;!-- About me section --&gt;</p>
       <div class="about-grid">
@@ -599,7 +599,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   </div>
 
   <!-- WHAT I DO -->
-  <div class="srow reveal" id="services">
+  <div class="srow reveal" id="services" style="margin-top:20px;">
     <div class="content">
       <p class="comment">&lt;!-- What I do --&gt;</p>
       <div class="svc-list">
@@ -621,7 +621,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
             <div class="svc-tag-item">User Flow Diagrams</div>
             <div class="svc-tag-item">Interactive Prototypes</div>
             <div class="svc-tag-item">Design Systems</div>
-            <div class="svc-tag-item">Mobile-first &amp; Responsive Design</div>
+            <div class="svc-tag-item">Responsive Design</div>
             <div class="svc-tag-item">Usability Testing</div>
           </div>
         </div>
@@ -689,7 +689,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   </div>
 
   <!-- CONTACT -->
-  <div class="srow reveal" id="contact">
+  <div class="srow reveal" id="contact" style="margin-top:40px;">
     <div class="content">
       <p class="comment">&lt;!-- Get in Touch --&gt;</p>
       <div class="sec-pad"><h2 class="sec-h">Let's Work <span class="dim">Together</span></h2></div>
