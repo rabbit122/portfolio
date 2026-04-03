@@ -106,6 +106,9 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .l-infos{display:flex;flex-direction:column;gap:20px;}
 .l-info{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:14px;font-weight:500;color:var(--muted);}
 .l-info svg{width:16px;height:16px;flex-shrink:0;opacity:.65;}
+.l-info a{position:relative;display:inline-block;}
+.l-info a::after{content:'';position:absolute;bottom:-1px;left:0;width:0;height:1px;background:#22c55e;transition:width .25s ease;}
+.l-info a:hover::after{width:100%;}
 
 /* Button area — sticky to bottom of left panel */
 .l-btns{position:sticky;bottom:0;background:var(--panel);border-top:1px solid var(--sep);margin-top:auto;padding:20px 30px;display:flex;flex-direction:column;gap:12px;align-items:center;}
@@ -164,8 +167,9 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .wcard-title{
   font-family:var(--mono);font-size:18px;font-weight:500;
   color:var(--white);line-height:22.4px;
-  flex:1;
+  flex:1;transition:color .15s;
 }
+.wcard:hover .wcard-title{color:#22c55e;}
 /* Arrow: 54×54 box positioned flush right, bg:#181818, contains 22×20 SVG arrow */
 .wcard-arr{
   position:absolute;right:0;top:0;
@@ -181,7 +185,8 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 }
 .wcard:hover .wcard-arr svg{color:#22c55e;}
 .wcard-img{width:100%;aspect-ratio:4/3;overflow:hidden;background:#e8e8e8;display:flex;align-items:center;justify-content:center;position:relative;}
-.wcard-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(100%);display:block;}
+.wcard-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s ease;}
+.wcard:hover .wcard-img img{transform:scale(1.03);}
 .wcard-img canvas{position:absolute;inset:0;width:100%;height:100%;opacity:0;pointer-events:none;}
 .ph{display:flex;flex-direction:column;gap:7px;padding:22px;width:68%;}
 .ph-bar{height:5px;border-radius:2px;background:#e0e0e0;}
@@ -528,9 +533,9 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
     <div class="content">
       <p class="comment">&lt;!-- Featured work --&gt;</p>
       <div class="wgrid">
-        <div class="wcard"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">Circularity</span><span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.08em;">WASTE MANAGEMENT · B2B</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"></div></div>
-        <div class="wcard"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">RemarkAI</span><span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.08em;">AI SAFETY ANALYTICS · B2B SAAS</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"></div></div>
-        <div class="wcard"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">UAL Graduate Showcase</span><span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.08em;">EDUCATION · WEB DESIGN</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"></div></div>
+        <div class="wcard"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">Circularity</span><span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.08em;">WASTE MANAGEMENT · B2B SAAS</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"><img src="images/Circularity.png" alt="Circularity"></div></div>
+        <div class="wcard"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">RemarkAI</span><span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.08em;">AI SAFETY ANALYTICS · B2B SAAS</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"><img src="images/SSP-All.png" alt="RemarkAI"></div></div>
+        <div class="wcard"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">UAL Graduate Showcase</span><span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.08em;">EDUCATION · DESIGN SYSTEM</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"><img src="images/UAL Graduate Showcase.png" alt="UAL Graduate Showcase"></div></div>
       </div>
     </div>
   </div>
@@ -866,113 +871,6 @@ document.querySelectorAll('a[href]').forEach(a=>{
   }
 });
 
-/* ── MOSAIC HOVER EFFECT ── 
-   Animates pixel block size: 1px (sharp) → MAX_PIXEL (mosaic) on enter
-   Reverses MAX_PIXEL → 1px on leave, then hides canvas
-   Canvas always covers the img; pixel size IS the transition.
-*/
-const MOSAIC_MAX  = 18;   // max block size in px (fully pixelated)
-const MOSAIC_STEP = 0.55; // px change per frame — controls speed
-const MOSAIC_MIN  = 1;    // 1px = visually identical to original
-
-function drawPixelated(img, canvas, blockSize) {
-  const cw = canvas.width;
-  const ch = canvas.height;
-  const ctx = canvas.getContext('2d');
-  const size = Math.max(1, Math.round(blockSize));
-  const cols = Math.ceil(cw / size);
-  const rows = Math.ceil(ch / size);
-  const off = document.createElement('canvas');
-  off.width  = cols;
-  off.height = rows;
-  const octx = off.getContext('2d');
-  octx.imageSmoothingEnabled = false;
-  octx.filter = 'grayscale(100%)';
-  try {
-    octx.drawImage(img, 0, 0, cols, rows);
-    ctx.imageSmoothingEnabled = false;
-    ctx.clearRect(0, 0, cw, ch);
-    ctx.drawImage(off, 0, 0, cols, rows, 0, 0, cw, ch);
-  } catch(e) {
-    // CORS fallback: use CSS filter on the img instead
-    img._corsBlocked = true;
-  }
-}
-
-document.querySelectorAll('.wcard-img').forEach(wrap => {
-  const img = wrap.querySelector('img');
-  if (!img) return;
-
-  const canvas = document.createElement('canvas');
-  // Start hidden; will be shown once we start animating
-  canvas.style.opacity = '0';
-  canvas.style.transition = 'none'; // we manage rendering manually
-  wrap.appendChild(canvas);
-
-  let animFrame = null;
-  let pixelSize  = MOSAIC_MIN; // current block size
-  let direction  = 0;          // +1 = pixelating, -1 = clearing
-
-  function ensureCanvasSize() {
-    const w = wrap.offsetWidth;
-    const h = wrap.offsetHeight;
-    if (canvas.width !== w || canvas.height !== h) {
-      canvas.width  = w;
-      canvas.height = h;
-    }
-  }
-
-  function animate() {
-    ensureCanvasSize();
-    pixelSize += direction * MOSAIC_STEP;
-
-    if (direction > 0) {
-      // Pixelating in
-      pixelSize = Math.min(pixelSize, MOSAIC_MAX);
-      const ready = img.complete && img.naturalWidth;
-      if (ready) {
-        canvas.style.opacity = '1';
-        drawPixelated(img, canvas, pixelSize);
-      }
-      if (pixelSize < MOSAIC_MAX) {
-        animFrame = requestAnimationFrame(animate);
-      }
-    } else {
-      // Clearing out
-      pixelSize = Math.max(pixelSize, MOSAIC_MIN);
-      const ready = img.complete && img.naturalWidth;
-      if (ready) {
-        drawPixelated(img, canvas, pixelSize);
-      }
-      if (pixelSize > MOSAIC_MIN) {
-        animFrame = requestAnimationFrame(animate);
-      } else {
-        // Fully cleared — hide the canvas so original img shows
-        canvas.style.opacity = '0';
-      }
-    }
-  }
-
-  function startAnim(dir) {
-    cancelAnimationFrame(animFrame);
-    direction = dir;
-    if (img.complete && img.naturalWidth) {
-      ensureCanvasSize();
-      animFrame = requestAnimationFrame(animate);
-    } else {
-      img.addEventListener('load', () => {
-        ensureCanvasSize();
-        animFrame = requestAnimationFrame(animate);
-      }, { once: true });
-    }
-  }
-
-  const card = wrap.closest('.wcard');
-  if (card) {
-    card.addEventListener('mouseenter', () => startAnim(1));
-    card.addEventListener('mouseleave', () => startAnim(-1));
-  }
-});
 
 /* ── TEXT SCRAMBLE EFFECT ──────────────────────────────────────────────
    Usage: initScramble(triggerEl)            — scrambles triggerEl's text
@@ -1030,6 +928,12 @@ document.querySelectorAll('.wcard-img').forEach(wrap => {
   // Simple text buttons: scramble self
   document.querySelectorAll('.btn-sched, .form-sub, .btn-view-all, .btn-work, .blog-all').forEach(el => {
     initScramble(el);
+  });
+
+  // .wcard-title: hover on card, scramble title text
+  document.querySelectorAll('.wcard').forEach(card => {
+    const title = card.querySelector('.wcard-title');
+    if (title) initScramble(card, title);
   });
 
   // .about-dl: contains text + SVG — isolate the text node into a span first
