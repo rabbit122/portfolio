@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Circularity — Xiaoran Sun</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Geist:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+img{display:block;}
+button{cursor:pointer;background:none;border:none;}
+
+:root{
+  --panel: #ffffff;
+  --bg:    #fafafa;
+  --muted: #555555;
+  --dim:   #999999;
+  --sep:   #e0e0e0;
+  --white: #171717;
+  --green: #22c55e;
+  --mono:  "IBM Plex Mono", monospace;
+  --sans:  "Geist", sans-serif;
+}
+body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:14px;line-height:1.4;overflow-x:hidden;}
+
+/* ════════════ TOP BAR ════════════ */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:200;height:44px;background:var(--panel);border-bottom:1px solid var(--sep);display:flex;align-items:center;}
+.tb-mq{width:300px;min-width:300px;height:100%;border-right:1px solid var(--sep);display:flex;align-items:center;}
+.tb-nav{flex:1;display:flex;align-items:center;height:100%;}
+.tnav{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--muted);height:100%;padding:0 24px;display:flex;align-items:center;position:relative;transition:color .15s;}
+.tnav:hover{color:var(--white);}
+.tnav.active{color:var(--white);}
+.tnav.active::after{content:'';position:absolute;bottom:0;left:24px;right:24px;height:1px;background:#22c55e;}
+.tb-right{display:flex;align-items:center;gap:6px;padding:0 14px;height:100%;border-left:1px solid var(--sep);font-family:var(--mono);font-size:12px;font-weight:500;}
+.tb-dot{width:12px;height:12px;border-radius:50%;background:var(--green);flex-shrink:0;animation:dotPulse 2.5s ease-in-out infinite;}
+@keyframes dotPulse{0%,100%{opacity:1}50%{opacity:.3}}
+.tb-green{color:var(--green);}
+.tb-bull{color:var(--sep);margin:0 2px;}
+.tb-muted{color:var(--muted);}
+
+/* ════════════ LAYOUT ════════════ */
+.layout{display:flex;min-height:100vh;padding-top:44px;}
+
+/* ════════════ LEFT PANEL ════════════ */
+.left{width:300px;min-width:300px;background:var(--panel);border-right:1px solid var(--sep);position:sticky;top:44px;height:calc(100vh - 44px);overflow-y:auto;scrollbar-width:none;display:flex;flex-direction:column;}
+.left::-webkit-scrollbar{display:none;}
+.l-head{display:flex;align-items:center;gap:10px;padding:30px;}
+.l-avatar{width:56px;min-width:56px;height:56px;overflow:hidden;flex-shrink:0;background:#f5f5f5;border:1px solid var(--sep);position:relative;}
+.l-avatar img{width:100%;height:100%;object-fit:cover;object-position:center center;}
+.l-namestack{display:flex;flex-direction:column;gap:4px;justify-content:center;}
+.l-name{font-family:var(--mono);font-size:20px;font-weight:600;color:var(--white);line-height:26px;margin:0;padding:0;}
+.l-role{font-family:var(--mono);font-size:14px;font-weight:500;color:var(--muted);line-height:20px;margin:0;padding:0;}
+.l-body{padding:0 30px 30px;display:flex;flex-direction:column;gap:30px;}
+.l-infos{display:flex;flex-direction:column;gap:20px;}
+.l-info{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:14px;font-weight:500;color:var(--muted);}
+.l-info svg{width:16px;height:16px;flex-shrink:0;opacity:.65;}
+.l-info a{position:relative;display:inline-block;}
+.l-info a::after{content:'';position:absolute;bottom:-1px;left:0;width:0;height:1px;background:#22c55e;transition:width .25s ease;}
+.l-info a:hover::after{width:100%;}
+.l-btns{position:sticky;bottom:0;background:var(--panel);border-top:1px solid var(--sep);margin-top:auto;padding:20px 30px;display:flex;flex-direction:column;gap:12px;align-items:center;}
+.btn-cv{display:flex;align-items:center;width:100%;height:42px;border:1px solid var(--sep);font-family:var(--mono);font-size:14px;font-weight:600;color:var(--white);overflow:hidden;transition:opacity .15s;}
+.btn-cv:hover{opacity:.85;}
+.btn-cv-text{flex:1;padding:0 14px;display:flex;align-items:center;height:100%;}
+.btn-cv-icon{width:42px;height:42px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#171717;border-left:1px solid #171717;}
+.btn-cv-icon svg{width:20px;height:20px;color:#22c55e;}
+.btn-sched{display:flex;align-items:center;justify-content:center;width:100%;height:40px;background:#171717;font-family:var(--mono);font-size:14px;font-weight:600;color:#ffffff;transition:opacity .15s;}
+.btn-sched:hover{opacity:.88;}
+
+/* ════════════ GUTTER ════════════ */
+.gutter-col{width:44px;min-width:44px;flex-shrink:0;border-right:1px solid var(--sep);display:flex;flex-direction:column;align-items:flex-end;padding:0 8px;padding-top:22px;user-select:none;position:sticky;top:44px;height:calc(100vh - 44px);overflow:hidden;}
+.ln{font-family:var(--mono);font-size:11px;font-weight:400;color:#bbbbbb;line-height:22px;height:22px;white-space:pre;text-align:right;display:block;}
+
+/* ════════════ CENTER ════════════ */
+.center{flex:1;min-width:0;display:flex;flex-direction:column;margin-right:200px;padding-bottom:60px;}
+.comment{font-family:var(--mono);font-size:14px;font-weight:500;color:#22c55e;padding:22px 30px 0;line-height:22px;opacity:.85;}
+
+/* ── BACK LINK ── */
+.back-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:14px;font-weight:500;color:var(--muted);padding:30px 30px 0;transition:color .15s;}
+.back-link:hover{color:#22c55e;}
+.back-link svg{width:16px;height:16px;flex-shrink:0;transition:transform .15s;}
+.back-link:hover svg{transform:translateX(-3px);}
+
+/* ── PROJECT TITLE ── */
+.project-title{font-family:var(--sans);font-size:72px;font-weight:800;letter-spacing:-.03em;line-height:1.05;color:var(--white);padding:20px 30px 0;}
+
+
+/* ── COVER IMAGE ── */
+.cover-img{width:100%;aspect-ratio:16/9;overflow:hidden;background:#e8e8e8;margin-top:32px;}
+.cover-img img{width:100%;height:100%;object-fit:cover;display:block;}
+
+/* ── CASE STUDY SECTIONS ── */
+.cs-section{padding:56px 30px 0;}
+.cs-section-label{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;}
+.cs-h{font-family:var(--sans);font-size:36px;font-weight:700;letter-spacing:-.02em;color:var(--white);line-height:1.15;margin-bottom:20px;}
+.cs-p{font-family:var(--mono);font-size:15px;font-weight:500;color:var(--muted);line-height:1.75;max-width:680px;margin-bottom:14px;}
+.cs-divider{border:none;border-top:1px solid var(--sep);margin:56px 30px 0;}
+
+/* ── SEE MORE PROJECTS ── */
+.more-section{padding:56px 30px 0;}
+.more-h{font-family:var(--sans);font-size:36px;font-weight:700;letter-spacing:-.02em;color:var(--white);line-height:1.15;margin-bottom:28px;}
+.wgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;}
+.wcard{cursor:pointer;overflow:hidden;border:1px solid var(--sep);transition:background .15s;display:block;}
+.wcard:hover{background:#f0f0f0;}
+.wcard-hdr{display:flex;align-items:center;justify-content:center;padding:24px 70px 24px 24px;height:72px;background:var(--panel);position:relative;}
+.wcard-title{font-family:var(--mono);font-size:18px;font-weight:500;color:var(--white);line-height:22.4px;flex:1;transition:color .15s;}
+.wcard:hover .wcard-title{color:#22c55e;}
+.wcard-arr{position:absolute;right:0;top:0;width:72px;height:72px;display:flex;align-items:center;justify-content:center;background:var(--panel);border-left:1px solid var(--sep);}
+.wcard-arr svg{width:22px;height:20px;color:#aaaaaa;transition:color .15s;}
+.wcard:hover .wcard-arr svg{color:#22c55e;}
+.wcard-img{width:100%;aspect-ratio:4/3;overflow:hidden;background:#e8e8e8;display:flex;align-items:center;justify-content:center;}
+.wcard-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s ease;}
+.wcard:hover .wcard-img img{transform:scale(1.03);}
+
+/* ════════════ RIGHT PANEL ════════════ */
+.right{width:200px;min-width:200px;background:var(--panel);border-left:1px solid var(--sep);position:fixed;top:44px;right:0;height:calc(100vh - 44px);overflow-y:auto;scrollbar-width:none;display:flex;flex-direction:column;z-index:50;}
+.right::-webkit-scrollbar{display:none;}
+.idx-title{font-family:var(--mono);font-size:16px;font-weight:500;color:var(--muted);padding:16px 16px 12px 30px;}
+.idx-hr{height:1px;background:var(--sep);}
+.idx-links{display:flex;flex-direction:column;padding-top:4px;}
+.idx-link{display:flex;align-items:center;padding:10px 16px 10px 30px;font-family:var(--mono);font-size:14px;font-weight:500;color:var(--muted);transition:color .15s;position:relative;}
+.idx-link:hover{color:var(--white);}
+.idx-link.active{color:#22c55e;}
+.idx-bar{position:absolute;top:50%;left:0;transform:translateY(-50%);width:2px;height:24px;background:#22c55e;opacity:0;transition:opacity .15s;}
+.idx-link.active .idx-bar{opacity:1;}
+
+/* ── STATUS BAR ── */
+.statusbar{position:fixed;bottom:0;left:300px;right:200px;height:26px;background:var(--panel);border-top:1px solid var(--sep);display:flex;align-items:center;padding:0 16px;font-family:var(--mono);font-size:12px;font-weight:500;color:var(--muted);z-index:100;}
+
+/* ── SCROLL REVEAL ── */
+.reveal{opacity:1;transform:translateY(0);transition:opacity .55s ease,transform .55s ease;}
+.reveal.hidden-pre{opacity:0;transform:translateY(16px);}
+.reveal.hidden-pre.visible{opacity:1;transform:translateY(0);}
+
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:#cccccc;}
+
+/* ════════════ MOBILE TOPBAR ELEMENTS ════════════ */
+.tb-mob-logo{display:none;width:44px;min-width:44px;height:44px;border-right:1px solid var(--sep);overflow:hidden;flex-shrink:0;}
+.tb-mob-logo img{width:100%;height:100%;object-fit:cover;object-position:center center;}
+.tb-mob-status{display:none;flex:1;align-items:center;gap:6px;padding:0 12px;font-family:var(--mono);font-size:12px;font-weight:500;}
+.tb-hamburger{display:none;width:44px;height:100%;border-left:1px solid var(--sep);font-size:20px;line-height:1;color:var(--white);flex-shrink:0;}
+.mob-menu{display:none;position:fixed;top:44px;left:0;right:0;background:var(--panel);border-bottom:1px solid var(--sep);z-index:190;flex-direction:column;}
+.mob-menu.open{display:flex;}
+.mob-menu-link,.mob-menu-plain{font-family:var(--mono);font-size:14px;font-weight:500;color:var(--white);padding:14px 20px;border-bottom:1px solid var(--sep);}
+.mob-menu-link:last-child,.mob-menu-plain:last-child{border-bottom:none;}
+.mob-menu-plain{color:var(--muted);}
+.mob-menu-link:hover{background:#f5f5f5;}
+
+/* ════════════ TABLET: 810–1199px ════════════ */
+@media (max-width:1199px){
+  .left{display:none;}
+  .right{display:none;}
+  .center{margin-right:0;}
+  .statusbar{left:0;right:0;}
+  .tb-mq{display:none;}
+  .tb-nav{display:none;}
+  .tb-right{display:none;}
+  .tb-mob-logo{display:flex;}
+  .tb-mob-status{display:flex;}
+  .tb-hamburger{display:flex;align-items:center;justify-content:center;}
+  .project-title{font-size:48px;}
+  .work-info{grid-template-columns:1fr 1fr 1fr;}
+}
+
+/* ════════════ MOBILE: ≤809px ════════════ */
+@media (max-width:809px){
+  .project-title{font-size:32px;padding:16px 20px 0;}
+  .back-link{padding:20px 20px 0;}
+  .cover-img{margin-top:20px;}
+  .cs-section{padding:36px 20px 0;}
+  .cs-h{font-size:26px;}
+  .cs-p{font-size:14px;}
+  .cs-divider{margin:36px 20px 0;}
+  .comment{padding:16px 20px 0;}
+  .more-section{padding:36px 20px 0;}
+  .more-h{font-size:26px;}
+  .wgrid{grid-template-columns:1fr;gap:16px;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="topbar">
+  <!-- Desktop elements -->
+  <div class="tb-mq" style="padding:0 16px;font-family:var(--mono);font-size:12px;font-weight:500;color:var(--muted);">Welcome to my world!</div>
+  <nav class="tb-nav">
+    <a class="tnav" href="index.html">xiaoran.info</a>
+    <a class="tnav active" href="index.html#work">Work</a>
+  </nav>
+  <div class="tb-right">
+    <span class="tb-dot"></span>
+    <span class="tb-green">Open to new work</span>
+    <span class="tb-bull">•</span>
+    <span class="tb-muted">London, UK</span>
+  </div>
+  <!-- Mobile/tablet elements -->
+  <a href="index.html" class="tb-mob-logo mob-nav-link" aria-label="Home">
+    <img src="images/avatar.png" alt="Xiaoran Sun">
+  </a>
+  <div class="tb-mob-status">
+    <span class="tb-dot"></span>
+    <span class="tb-green">Open to new work</span>
+  </div>
+  <button class="tb-hamburger" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">≡</button>
+</header>
+
+<!-- MOBILE MENU -->
+<nav class="mob-menu" id="mob-menu" aria-hidden="true">
+  <a href="index.html" class="mob-menu-link mob-nav-link">Home</a>
+  <span class="mob-menu-plain">London, UK</span>
+  <a href="mailto:sunxiaoran1314@gmail.com" class="mob-menu-link">sunxiaoran1314@gmail.com</a>
+  <a href="XiaoranSun-CV2026.pdf" class="mob-menu-link">Download CV</a>
+</nav>
+
+<div class="layout">
+
+<!-- LEFT PANEL -->
+<aside class="left">
+  <div class="l-head">
+    <div class="l-avatar"><img src="images/avatar.png" alt="Xiaoran Sun"></div>
+    <div class="l-namestack">
+      <p class="l-name">Xiaoran Sun</p>
+      <p class="l-role">Product Designer</p>
+    </div>
+  </div>
+  <div class="l-body">
+    <div class="l-infos">
+      <div class="l-info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>10 years of experience</div>
+      <div class="l-info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>London, UK</div>
+      <div class="l-info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/><path d="M8 7h8M8 11h5"/></svg>English, Mandarin</div>
+      <div class="l-info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:sunxiaoran1314@gmail.com">sunxiaoran1314@gmail.com</a></div>
+      <div class="l-info"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><a href="https://www.linkedin.com/in/xiaoran-sun-82706919a/" target="_blank" rel="noopener">LinkedIn</a></div>
+    </div>
+    <a href="XiaoranSun-CV2026.pdf" class="btn-cv" style="width:100%;">
+      <span class="btn-cv-text">Download CV</span>
+      <div class="btn-cv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+    </a>
+  </div>
+  <div class="l-btns">
+    <a href="index.html#contact" class="btn-sched">Contact me</a>
+  </div>
+</aside>
+
+<!-- GUTTER -->
+<div class="gutter-col" id="main-gutter"></div>
+<script>(function(){var g=document.getElementById('main-gutter');var h='';for(var i=1;i<=500;i++)h+='<span class="ln">'+i+'</span>';g.innerHTML=h;})();</script>
+
+<!-- CENTER -->
+<main class="center">
+
+  <!-- BACK LINK -->
+  <a href="index.html#work" class="back-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back to all works
+  </a>
+
+  <!-- PROJECT TITLE -->
+  <h1 class="project-title">Circularity</h1>
+
+
+  <!-- COVER IMAGE -->
+  <div class="cover-img">
+    <img src="images/Circularity.png" alt="Circularity project cover">
+  </div>
+
+  <!-- OVERVIEW -->
+  <section class="cs-section reveal" id="overview">
+    <div class="cs-section-label">01 — Overview</div>
+    <h2 class="cs-h">Project Overview</h2>
+    <p class="cs-p">Circularity is a B2B SaaS platform built for waste management companies seeking to digitise and optimise their collection and recycling workflows. The platform surfaces real-time data across the full waste lifecycle — from collection scheduling to material recovery tracking — enabling operators to make faster, more informed decisions.</p>
+    <p class="cs-p">My role spanned the end-to-end design process: from initial discovery and stakeholder alignment through to high-fidelity prototyping and handoff. Working closely with product managers and engineers, I translated complex operational requirements into a coherent, usable interface.</p>
+  </section>
+
+  <hr class="cs-divider">
+
+  <!-- CHALLENGE -->
+  <section class="cs-section reveal" id="challenge">
+    <div class="cs-section-label">02 — Challenge</div>
+    <h2 class="cs-h">The Problem Space</h2>
+    <p class="cs-p">Waste management operations are inherently complex — they involve multiple stakeholders, time-sensitive logistics, and regulatory reporting requirements that vary by region. Existing tools were fragmented: operators relied on spreadsheets, legacy ERPs, and manual paper trails that made it nearly impossible to get a unified view of performance.</p>
+    <p class="cs-p">The core challenge was designing a system that could surface the right information at the right moment without overwhelming users who were often working in fast-paced, high-pressure environments. This meant ruthless prioritisation of what to show, and careful consideration of how information hierarchy could guide decisions without adding cognitive load.</p>
+  </section>
+
+  <hr class="cs-divider">
+
+  <!-- PROCESS -->
+  <section class="cs-section reveal" id="process">
+    <div class="cs-section-label">03 — Process</div>
+    <h2 class="cs-h">Design Process</h2>
+    <p class="cs-p">I began with a discovery sprint — conducting contextual interviews with field operators, depot managers, and sustainability leads to understand the distinct mental models at each level of the organisation. These sessions surfaced a recurring tension: field staff needed speed and clarity, while management needed depth and auditability.</p>
+    <p class="cs-p">From those insights I mapped out user journeys and information architecture before moving into low-fidelity wireframes. Iterative usability testing with representative users shaped each round of design, surfacing friction points that weren't visible in the initial flows. The final design system was built in Figma with reusable components to support a fast-moving engineering team.</p>
+  </section>
+
+  <hr class="cs-divider">
+
+  <!-- RESULT -->
+  <section class="cs-section reveal" id="result">
+    <div class="cs-section-label">04 — Result</div>
+    <h2 class="cs-h">Outcome</h2>
+    <p class="cs-p">The platform launched to a pilot group of operators and received strong early feedback — particularly around the clarity of the dashboard and the reduction in steps required to log and report collections. Internal testing showed a measurable reduction in time-on-task for the most common workflows.</p>
+    <p class="cs-p">The design system established during this project became the foundation for future feature development, enabling the team to ship new capabilities with greater speed and consistency. The project reinforced the value of spending time upfront in discovery — the decisions made early in the process paid dividends throughout delivery.</p>
+  </section>
+
+  <!-- SEE MORE PROJECTS -->
+  <div class="more-section reveal">
+    <h2 class="more-h">See more projects</h2>
+    <div class="wgrid">
+      <a class="wcard" href="https://www.figma.com/proto/n9RihhA9PD81XStq6AVJKI/Xiaoran-Sun%E2%80%A8Portfolio-2025?node-id=1198-10730&t=gnggWIJhvsPIAtYr-0&scaling=scale-down-width&content-scaling=fixed&page-id=1198%3A10729" target="_blank" rel="noopener">
+        <div class="wcard-hdr">
+          <div style="display:flex;flex-direction:column;gap:8px;flex:1;">
+            <span class="wcard-title">RemarkAI</span>
+            <span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.08em;">AI SAFETY ANALYTICS · B2B SAAS</span>
+          </div>
+          <div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="wcard-img"><img src="images/SSP-All.png" alt="RemarkAI"></div>
+      </a>
+      <a class="wcard" href="ual.html">
+        <div class="wcard-hdr">
+          <div style="display:flex;flex-direction:column;gap:8px;flex:1;">
+            <span class="wcard-title">UAL Graduate Showcase</span>
+            <span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.08em;">EDUCATION · DESIGN SYSTEM</span>
+          </div>
+          <div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+        <div class="wcard-img"><img src="images/UAL Graduate Showcase.png" alt="UAL Graduate Showcase"></div>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!-- RIGHT PANEL -->
+<aside class="right">
+  <p class="idx-title">On this page</p>
+  <div class="idx-hr"></div>
+  <nav class="idx-links">
+    <a href="#overview"  class="idx-link" data-s="overview"><span class="idx-bar"></span>Overview</a>
+    <a href="#challenge" class="idx-link" data-s="challenge"><span class="idx-bar"></span>Challenge</a>
+    <a href="#process"   class="idx-link" data-s="process"><span class="idx-bar"></span>Process</a>
+    <a href="#result"    class="idx-link" data-s="result"><span class="idx-bar"></span>Result</a>
+  </nav>
+</aside>
+
+</div>
+
+<div class="statusbar">Circularity — Case Study · 2025</div>
+
+<script>
+
+/* HAMBURGER MENU */
+(function(){
+  var btn = document.getElementById('hamburger-btn');
+  var menu = document.getElementById('mob-menu');
+  function closeMenu(){
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+    menu.setAttribute('aria-hidden','true');
+  }
+  function toggleMenu(){
+    var open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+  }
+  btn.addEventListener('click', function(e){ e.stopPropagation(); toggleMenu(); });
+  document.querySelectorAll('.mob-menu-link, .mob-nav-link').forEach(function(el){
+    el.addEventListener('click', closeMenu);
+  });
+  document.addEventListener('click', function(e){
+    if(menu.classList.contains('open') && !menu.contains(e.target)){ closeMenu(); }
+  });
+})();
+
+/* GUTTER LINES */
+function fillMainGutter() {
+  const g = document.getElementById('main-gutter');
+  if (!g) return;
+  const totalLines = Math.ceil(document.body.scrollHeight / 22) + 20;
+  let html = '';
+  for (let i = 1; i <= totalLines; i++) {
+    html += `<span class="ln">${i}</span>`;
+  }
+  g.innerHTML = html;
+}
+window.addEventListener('scroll', () => {
+  const g = document.getElementById('main-gutter');
+  if (g) g.scrollTop = window.scrollY;
+}, { passive: true });
+window.addEventListener('load', fillMainGutter);
+setTimeout(fillMainGutter, 100);
+
+/* SCROLL REVEAL */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('visible');
+    e.target.classList.remove('hidden-pre');
+  });
+}, { threshold: .06 });
+document.querySelectorAll('.reveal').forEach(el => {
+  const r = el.getBoundingClientRect();
+  if (r.top >= window.innerHeight) el.classList.add('hidden-pre');
+  io.observe(el);
+});
+requestAnimationFrame(() => {
+  document.querySelectorAll('.reveal').forEach(el => {
+    const r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('visible');
+  });
+});
+
+/* ACTIVE NAV */
+const sio = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const id = e.target.id;
+    document.querySelectorAll('.idx-link').forEach(l => l.classList.toggle('active', l.dataset.s === id));
+  });
+}, { rootMargin: '-36% 0px -58% 0px' });
+document.querySelectorAll('#overview,#challenge,#process,#result').forEach(s => sio.observe(s));
+
+/* SMOOTH SCROLL for in-page anchors */
+document.querySelectorAll('a[href]').forEach(a => {
+  const href = a.getAttribute('href');
+  if (href && href.startsWith('#')) {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const t = document.querySelector(href);
+      if (t) t.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+});
+
+/* TEXT SCRAMBLE */
+(function() {
+  const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*?';
+  const FRAME_MS = 20;
+  const FRAMES_PER_CHAR = 2;
+
+  class ScrambleText {
+    constructor(el) {
+      this.el = el;
+      this.original = el.textContent;
+      this._timer = null;
+    }
+    play() {
+      clearTimeout(this._timer);
+      const orig = this.original;
+      const len = orig.length;
+      let frame = 0;
+      const total = len * FRAMES_PER_CHAR;
+      const tick = () => {
+        let out = '';
+        for (let i = 0; i < len; i++) {
+          if (orig[i] === ' ') { out += ' '; continue; }
+          out += (frame >= (i + 1) * FRAMES_PER_CHAR)
+            ? orig[i]
+            : CHARS[Math.floor(Math.random() * CHARS.length)];
+        }
+        this.el.textContent = out;
+        if (frame < total) { frame++; this._timer = setTimeout(tick, FRAME_MS); }
+      };
+      tick();
+    }
+    reset() {
+      clearTimeout(this._timer);
+      this.el.textContent = this.original;
+    }
+  }
+
+  function initScramble(triggerEl, textEl) {
+    const s = new ScrambleText(textEl || triggerEl);
+    triggerEl.addEventListener('mouseenter', () => s.play());
+    triggerEl.addEventListener('mouseleave', () => s.reset());
+  }
+
+  document.querySelectorAll('.btn-cv').forEach(el => {
+    const textEl = el.querySelector('.btn-cv-text');
+    if (textEl) initScramble(el, textEl);
+  });
+  document.querySelectorAll('.btn-sched').forEach(el => initScramble(el));
+
+  // .back-link: hover on whole link, scramble only the text (not the SVG arrow)
+  document.querySelectorAll('.back-link').forEach(el => {
+    const textNode = [...el.childNodes].find(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim());
+    if (textNode) {
+      const span = document.createElement('span');
+      span.textContent = textNode.textContent;
+      el.replaceChild(span, textNode);
+      initScramble(el, span);
+    }
+  });
+})();
+
+</script>
+</body>
+</html>
