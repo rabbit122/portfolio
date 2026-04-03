@@ -35,7 +35,7 @@ button{cursor:pointer;background:none;border:none;}
   --dim:   #999999;
   --sep:   #e0e0e0;
   --white: #171717;
-  --green: #16a34a;
+  --green: #22c55e;
   --mono:  "IBM Plex Mono", monospace;
   --sans:  "Geist", sans-serif;
 }
@@ -53,7 +53,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .tnav:hover{color:var(--white);}
 .tnav.active{color:var(--white);}
 /* Active indicator: 1px bottom line, color #f7f4be (cream) — confirmed from framer-4pa6fi */
-.tnav.active::after{content:'';position:absolute;bottom:0;left:24px;right:24px;height:1px;background:#171717;}
+.tnav.active::after{content:'';position:absolute;bottom:0;left:24px;right:24px;height:1px;background:#22c55e;}
 
 /* Right: dot + status + location + time */
 .tb-right{display:flex;align-items:center;gap:6px;padding:0 14px;height:100%;border-left:1px solid var(--sep);font-family:var(--mono);font-size:12px;font-weight:500;}
@@ -114,9 +114,9 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .btn-cv{display:flex;align-items:center;width:100%;height:42px;border:1px solid var(--sep);font-family:var(--mono);font-size:14px;font-weight:600;color:var(--white);overflow:hidden;transition:opacity .15s;}
 .btn-cv:hover{opacity:.85;}
 .btn-cv-text{flex:1;padding:0 14px;display:flex;align-items:center;height:100%;}
-.btn-cv-icon{width:42px;height:42px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:var(--sep);border-left:1px solid var(--sep);}
-.btn-cv-icon svg{width:15px;height:15px;}
-/* Schedule: white bg, dark text #181818, 240×40, 14px/600 — CONFIRMED */
+.btn-cv-icon{width:42px;height:42px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#171717;border-left:1px solid #171717;}
+.btn-cv-icon svg{width:20px;height:20px;color:#22c55e;}
+/* Schedule: dark bg */
 .btn-sched{display:flex;align-items:center;justify-content:center;width:100%;height:40px;background:#171717;font-family:var(--mono);font-size:14px;font-weight:600;color:#ffffff;transition:opacity .15s;}
 .btn-sched:hover{opacity:.88;}
 /* Work with me: transparent bg, border 1px solid WHITE (#fff) — CONFIRMED */
@@ -133,7 +133,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .ln{font-family:var(--mono);font-size:11px;font-weight:400;color:#bbbbbb;line-height:22px;height:22px;white-space:pre;text-align:right;display:block;}
 .content{flex:1;min-width:0;}
 #home .content,#work .content,#about .content,#services .content,#stack .content,#awards .content,#contact .content{padding-bottom:20px;}
-.comment{font-family:var(--mono);font-size:14px;font-weight:500;color:var(--dim);padding:22px 30px 0;line-height:22px;opacity:.75;}
+.comment{font-family:var(--mono);font-size:14px;font-weight:500;color:#22c55e;padding:22px 30px 0;line-height:22px;opacity:.85;}
 
 /* ── HERO ── */
 .hero{padding:0 30px 56px;}
@@ -179,7 +179,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   color:#aaaaaa; /* golden arrow color from original */
   transition:color .15s;
 }
-.wcard:hover .wcard-arr svg{color:var(--white);}
+.wcard:hover .wcard-arr svg{color:#22c55e;}
 .wcard-img{width:100%;aspect-ratio:4/3;overflow:hidden;background:#e8e8e8;display:flex;align-items:center;justify-content:center;position:relative;}
 .wcard-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(100%);display:block;}
 .wcard-img canvas{position:absolute;inset:0;width:100%;height:100%;opacity:0;pointer-events:none;}
@@ -225,7 +225,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .about-h{font-family:var(--sans);font-size:52px;font-weight:700;letter-spacing:-.03em;line-height:1.1;color:var(--white);margin-bottom:22px;}
 .about-h .dim{color:var(--muted);}
 .about-p{font-family:var(--mono);font-size:16px;font-weight:500;color:var(--muted);line-height:1.75;max-width:510px;margin-bottom:14px;}
-.about-p .hl{background:#e4e4e4;color:var(--white);padding:1px 6px;}
+.about-p .hl{background:#171717;color:#22c55e;padding:1px 6px;}
 .about-dl{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;margin-top:8px;border:1px solid var(--sep);font-family:var(--mono);font-size:14px;font-weight:600;color:var(--white);transition:background .15s;}
 .about-dl:hover{background:#efefef;}
 .about-r{display:flex;flex-direction:column;align-self:flex-start;padding:44px 30px 0 20px;}
@@ -301,8 +301,8 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .cform{display:flex;flex-direction:column;gap:15px;padding:0 30px 54px;max-width:620px;}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:15px;}
 .fg{display:flex;flex-direction:column;gap:6px;}
-.fg label{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;}
-.fg input,.fg textarea,.fg select{background:#ffffff;border:1px solid var(--sep);padding:10px 13px;font-family:var(--mono);font-size:13px;color:#171717;outline:none;transition:border-color .15s;-webkit-appearance:none;}
+.fg label{font-family:var(--mono);font-size:14px;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;}
+.fg input,.fg textarea,.fg select{background:#ffffff;border:1px solid var(--sep);padding:10px 13px;font-family:var(--mono);font-size:14px;color:#171717;outline:none;transition:border-color .15s;-webkit-appearance:none;}
 .fg input::placeholder,.fg textarea::placeholder{color:#bbbbbb;}
 .fg input:focus,.fg textarea:focus{border-color:#555;}
 .fg textarea{min-height:116px;resize:vertical;}
@@ -325,8 +325,8 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .idx-links{display:flex;flex-direction:column;padding-top:4px;}
 .idx-link{display:flex;align-items:center;padding:10px 16px 10px 30px;font-family:var(--mono);font-size:14px;font-weight:500;color:var(--muted);transition:color .15s;position:relative;}
 .idx-link:hover{color:var(--white);}
-.idx-link.active{color:var(--white);}
-.idx-bar{position:absolute;top:50%;left:0;transform:translateY(-50%);width:2px;height:24px;background:#171717;opacity:0;transition:opacity .15s;}
+.idx-link.active{color:#22c55e;}
+.idx-bar{position:absolute;top:50%;left:0;transform:translateY(-50%);width:2px;height:24px;background:#22c55e;opacity:0;transition:opacity .15s;}
 .idx-link.active .idx-bar{opacity:1;}
 
 /* ── STATUS BAR ── */
@@ -528,9 +528,9 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
     <div class="content">
       <p class="comment">&lt;!-- Featured work --&gt;</p>
       <div class="wgrid">
-        <div class="wcard"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">Circularity</span><span style="font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.04em;">WASTE MANAGEMENT · B2B</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"></div></div>
-        <div class="wcard"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">RemarkAI</span><span style="font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.04em;">AI SAFETY ANALYTICS · B2B SAAS</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"></div></div>
-        <div class="wcard"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">UAL Graduate Showcase</span><span style="font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.04em;">EDUCATION · WEB DESIGN</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"></div></div>
+        <div class="wcard"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">Circularity</span><span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.08em;">WASTE MANAGEMENT · B2B</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"></div></div>
+        <div class="wcard"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">RemarkAI</span><span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.08em;">AI SAFETY ANALYTICS · B2B SAAS</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"></div></div>
+        <div class="wcard"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">UAL Graduate Showcase</span><span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.08em;">EDUCATION · WEB DESIGN</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"></div></div>
       </div>
     </div>
   </div>
@@ -662,10 +662,10 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
         <div class="scard"><div class="scard-ico">img</div><div class="scard-name">Figma</div></div>
         <div class="scard"><div class="scard-ico">img</div><div class="scard-name">Miro</div></div>
         <div class="scard"><div class="scard-ico">img</div><div class="scard-name">Sketch</div></div>
-        <div class="scard"><div class="scard-ico">img</div><div class="scard-name">Adobe Creative Suite</div></div>
+        <div class="scard"><div class="scard-ico">img</div><div class="scard-name">Adobe</div></div>
         <div class="scard"><div class="scard-ico">img</div><div class="scard-name">Framer</div></div>
         <div class="scard"><div class="scard-ico">img</div><div class="scard-name">WordPress</div></div>
-        <div class="scard"><div class="scard-ico">img</div><div class="scard-name">Claude AI</div></div>
+        <div class="scard"><div class="scard-ico">img</div><div class="scard-name">Claude</div></div>
         <div class="scard"><div class="scard-ico">img</div><div class="scard-name">Cursor</div></div>
         <div class="scard-empty"></div>
         <div class="scard-empty"></div>
