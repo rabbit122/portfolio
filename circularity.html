@@ -89,15 +89,21 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 
 
 /* ── COVER IMAGE ── */
-.cover-img{aspect-ratio:16/9;overflow:hidden;background:#e8e8e8;margin:32px 30px 0;}
-.cover-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.cover-img{margin:32px 30px 0;}
+.cover-img img{width:100%;height:auto;display:block;}
 
 /* ── CASE STUDY SECTIONS ── */
 .cs-section{padding:56px 30px 0;}
-.cs-section-label{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;}
+.cs-section-label{font-family:var(--mono);font-size:14px;font-weight:500;color:#22c55e;line-height:22px;opacity:.85;margin-bottom:16px;}
 .cs-h{font-family:var(--sans);font-size:36px;font-weight:700;letter-spacing:-.02em;color:var(--white);line-height:1.15;margin-bottom:20px;}
 .cs-p{font-family:var(--mono);font-size:15px;font-weight:500;color:var(--muted);line-height:1.75;max-width:680px;margin-bottom:14px;}
-.cs-divider{border:none;border-top:1px solid var(--sep);margin:56px 30px 0;}
+
+/* ── OVERVIEW TWO-COLUMN ── */
+.cs-overview-grid{display:grid;grid-template-columns:260px 1fr;gap:0;margin-top:20px;}
+.cs-overview-meta{padding-right:24px;display:flex;flex-direction:column;gap:24px;}
+.cs-meta-label{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;}
+.cs-meta-value{font-family:var(--mono);font-size:14px;font-weight:500;color:var(--white);}
+.cs-overview-body{padding-left:24px;}
 
 /* ── SEE MORE PROJECTS ── */
 .more-section{padding:56px 30px 0;}
@@ -172,10 +178,12 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   .project-title{font-size:32px;padding:16px 20px 0;}
   .back-link{padding:20px 20px 0;}
   .cover-img{margin:20px 20px 0;}
+  .cs-overview-grid{grid-template-columns:1fr;}
+  .cs-overview-meta{padding-right:0;flex-direction:row;flex-wrap:wrap;gap:16px 32px;margin-bottom:24px;}
+  .cs-overview-body{padding-left:0;padding-top:24px;}
   .cs-section{padding:36px 20px 0;}
   .cs-h{font-size:26px;}
   .cs-p{font-size:14px;}
-  .cs-divider{margin:36px 20px 0;}
   .comment{padding:16px 20px 0;}
   .more-section{padding:36px 20px 0;}
   .more-h{font-size:26px;}
@@ -261,48 +269,93 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   </a>
 
   <!-- PROJECT TITLE -->
-  <h1 class="project-title">Circularity</h1>
-
+  <h1 class="project-title">Building greenfield B2B platform from assumption to launch</h1>
+  <div class="cs-section-label" style="padding:12px 30px 0;">&lt;!-- Highlights --&gt;</div>
 
   <!-- COVER IMAGE -->
   <div class="cover-img">
-    <img src="images/Circularity.png" alt="Circularity project cover">
+    <img src="images/Circularity-Hightlight.png" alt="Circularity project cover">
   </div>
+
+  <!-- HIGHLIGHTS -->
+  <section class="cs-section reveal" id="highlights">
+  </section>
+
 
   <!-- OVERVIEW -->
   <section class="cs-section reveal" id="overview">
-    <div class="cs-section-label">01 — Overview</div>
-    <h2 class="cs-h">Project Overview</h2>
-    <p class="cs-p">Circularity is a B2B SaaS platform built for waste management companies seeking to digitise and optimise their collection and recycling workflows. The platform surfaces real-time data across the full waste lifecycle — from collection scheduling to material recovery tracking — enabling operators to make faster, more informed decisions.</p>
-    <p class="cs-p">My role spanned the end-to-end design process: from initial discovery and stakeholder alignment through to high-fidelity prototyping and handoff. Working closely with product managers and engineers, I translated complex operational requirements into a coherent, usable interface.</p>
+    <div class="cs-section-label">&lt;!-- Overview --&gt;</div>
+    <div class="cs-overview-grid">
+      <div class="cs-overview-meta">
+        <div class="cs-meta-item">
+          <div class="cs-meta-label">Company</div>
+          <div class="cs-meta-value">Martin Brower</div>
+        </div>
+        <div class="cs-meta-item">
+          <div class="cs-meta-label">Role</div>
+          <div class="cs-meta-value">UX/UI Designer</div>
+        </div>
+        <div class="cs-meta-item">
+          <div class="cs-meta-label">Duration</div>
+          <div class="cs-meta-value">Jun–Dec '25</div>
+        </div>
+        <div class="cs-meta-item">
+          <div class="cs-meta-label">Platform</div>
+          <div class="cs-meta-value">Web · Mobile · Tablet</div>
+        </div>
+      </div>
+      <div class="cs-overview-body">
+        <div class="cs-meta-label" style="margin-bottom:10px;">Background</div>
+        <p class="cs-p">Circularity is a B2B waste management platform built for Martin Brower, one of the world's largest supply chain companies serving restaurant brands like McDonald's.</p>
+        <p class="cs-p">The product was built in response to new UK waste regulations. Nobody in the market had a clear reference point, not even the stakeholders.</p>
+        <div class="cs-meta-label" style="margin-top:28px;margin-bottom:10px;">The key technical context</div>
+        <p class="cs-p">The product was built on Salesforce. This means the technical capabilities were already decided. My job wasn't to design and hand off to engineers to build from scratch.</p>
+        <p class="cs-p">My job was: given what Salesforce can serve, how do I design an interface that actually helps users make decisions, without over-serving data or under-serving context?</p>
+      </div>
+    </div>
   </section>
 
-  <hr class="cs-divider">
 
-  <!-- CHALLENGE -->
-  <section class="cs-section reveal" id="challenge">
-    <div class="cs-section-label">02 — Challenge</div>
-    <h2 class="cs-h">The Problem Space</h2>
-    <p class="cs-p">Waste management operations are inherently complex — they involve multiple stakeholders, time-sensitive logistics, and regulatory reporting requirements that vary by region. Existing tools were fragmented: operators relied on spreadsheets, legacy ERPs, and manual paper trails that made it nearly impossible to get a unified view of performance.</p>
-    <p class="cs-p">The core challenge was designing a system that could surface the right information at the right moment without overwhelming users who were often working in fast-paced, high-pressure environments. This meant ruthless prioritisation of what to show, and careful consideration of how information hierarchy could guide decisions without adding cognitive load.</p>
+  <!-- IMPACT 0 -->
+  <section class="cs-section reveal" id="impact-0">
+    <div class="cs-section-label">&lt;!-- Impact 0 --&gt;</div>
+    <h2 class="cs-h">Impact 0</h2>
+    <p class="cs-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+    <p class="cs-p">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
   </section>
 
-  <hr class="cs-divider">
 
-  <!-- PROCESS -->
-  <section class="cs-section reveal" id="process">
-    <div class="cs-section-label">03 — Process</div>
-    <h2 class="cs-h">Design Process</h2>
-    <p class="cs-p">I began with a discovery sprint — conducting contextual interviews with field operators, depot managers, and sustainability leads to understand the distinct mental models at each level of the organisation. These sessions surfaced a recurring tension: field staff needed speed and clarity, while management needed depth and auditability.</p>
-    <p class="cs-p">From those insights I mapped out user journeys and information architecture before moving into low-fidelity wireframes. Iterative usability testing with representative users shaped each round of design, surfacing friction points that weren't visible in the initial flows. The final design system was built in Figma with reusable components to support a fast-moving engineering team.</p>
+  <!-- IMPACT 1 -->
+  <section class="cs-section reveal" id="impact-1">
+    <div class="cs-section-label">&lt;!-- Impact 1 --&gt;</div>
+    <h2 class="cs-h">Impact 1</h2>
+    <p class="cs-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+    <p class="cs-p">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
   </section>
 
-  <hr class="cs-divider">
 
-  <!-- RESULT -->
-  <section class="cs-section reveal" id="result">
-    <div class="cs-section-label">04 — Result</div>
-    <h2 class="cs-h">Outcome</h2>
+  <!-- IMPACT 2 -->
+  <section class="cs-section reveal" id="impact-2">
+    <div class="cs-section-label">&lt;!-- Impact 2 --&gt;</div>
+    <h2 class="cs-h">Impact 2</h2>
+    <p class="cs-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+    <p class="cs-p">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+  </section>
+
+
+  <!-- IMPACT 3 -->
+  <section class="cs-section reveal" id="impact-3">
+    <div class="cs-section-label">&lt;!-- Impact 3 --&gt;</div>
+    <h2 class="cs-h">Impact 3</h2>
+    <p class="cs-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+    <p class="cs-p">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+  </section>
+
+
+  <!-- ENDING -->
+  <section class="cs-section reveal" id="ending">
+    <div class="cs-section-label">&lt;!-- Ending --&gt;</div>
+    <h2 class="cs-h">Ending</h2>
     <p class="cs-p">The platform launched to a pilot group of operators and received strong early feedback — particularly around the clarity of the dashboard and the reduction in steps required to log and report collections. Internal testing showed a measurable reduction in time-on-task for the most common workflows.</p>
     <p class="cs-p">The design system established during this project became the foundation for future feature development, enabling the team to ship new capabilities with greater speed and consistency. The project reinforced the value of spending time upfront in discovery — the decisions made early in the process paid dividends throughout delivery.</p>
   </section>
@@ -310,28 +363,10 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   <!-- SEE MORE PROJECTS -->
   <div class="more-section reveal">
     <h2 class="more-h">See more projects</h2>
-    <div class="wgrid">
-      <a class="wcard" href="https://www.figma.com/proto/n9RihhA9PD81XStq6AVJKI/Xiaoran-Sun%E2%80%A8Portfolio-2025?node-id=1198-10730&t=gnggWIJhvsPIAtYr-0&scaling=scale-down-width&content-scaling=fixed&page-id=1198%3A10729" target="_blank" rel="noopener">
-        <div class="wcard-hdr">
-          <div style="display:flex;flex-direction:column;gap:8px;flex:1;">
-            <span class="wcard-title">RemarkAI</span>
-            <span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.08em;">AI SAFETY ANALYTICS · B2B SAAS</span>
-          </div>
-          <div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        </div>
-        <div class="wcard-img"><img src="images/SSP-All.png" alt="RemarkAI"></div>
-      </a>
-      <a class="wcard" href="ual.html">
-        <div class="wcard-hdr">
-          <div style="display:flex;flex-direction:column;gap:8px;flex:1;">
-            <span class="wcard-title">UAL Graduate Showcase</span>
-            <span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.08em;">EDUCATION · DESIGN SYSTEM</span>
-          </div>
-          <div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        </div>
-        <div class="wcard-img"><img src="images/UAL Graduate Showcase.png" alt="UAL Graduate Showcase"></div>
-      </a>
-    </div>
+      <div class="wgrid">
+        <a class="wcard" href="https://www.figma.com/proto/n9RihhA9PD81XStq6AVJKI/Xiaoran-Sun%E2%80%A8Portfolio-2025?node-id=1198-10730&t=gnggWIJhvsPIAtYr-0&scaling=scale-down-width&content-scaling=fixed&page-id=1198%3A10729" target="_blank" rel="noopener"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">RemarkAI</span><span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.08em;">AI SAFETY ANALYTICS · B2B SAAS</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"><img src="images/SSP-All.png" alt="RemarkAI"></div></a>
+        <a class="wcard" href="https://www.figma.com/design/X8I6AXOU4byccpthVz9jXg/UAL-Digital-design-system-link-to-web?node-id=1-13732&t=KLjgDTjs3AtWaIoJ-1" target="_blank" rel="noopener"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">UAL Graduate Showcase</span><span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.08em;">EDUCATION · DESIGN SYSTEM</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"><img src="images/UAL Graduate Showcase.png" alt="UAL Graduate Showcase"></div></a>
+      </div>
   </div>
 
 </main>
@@ -341,10 +376,13 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   <p class="idx-title">On this page</p>
   <div class="idx-hr"></div>
   <nav class="idx-links">
-    <a href="#overview"  class="idx-link" data-s="overview"><span class="idx-bar"></span>Overview</a>
-    <a href="#challenge" class="idx-link" data-s="challenge"><span class="idx-bar"></span>Challenge</a>
-    <a href="#process"   class="idx-link" data-s="process"><span class="idx-bar"></span>Process</a>
-    <a href="#result"    class="idx-link" data-s="result"><span class="idx-bar"></span>Result</a>
+    <a href="#highlights" class="idx-link" data-s="highlights"><span class="idx-bar"></span>Highlights</a>
+    <a href="#overview"   class="idx-link" data-s="overview"><span class="idx-bar"></span>Overview</a>
+    <a href="#impact-0"   class="idx-link" data-s="impact-0"><span class="idx-bar"></span>Impact 0</a>
+    <a href="#impact-1"   class="idx-link" data-s="impact-1"><span class="idx-bar"></span>Impact 1</a>
+    <a href="#impact-2"   class="idx-link" data-s="impact-2"><span class="idx-bar"></span>Impact 2</a>
+    <a href="#impact-3"   class="idx-link" data-s="impact-3"><span class="idx-bar"></span>Impact 3</a>
+    <a href="#ending"     class="idx-link" data-s="ending"><span class="idx-bar"></span>Ending</a>
   </nav>
 </aside>
 
@@ -423,7 +461,7 @@ const sio = new IntersectionObserver(entries => {
     document.querySelectorAll('.idx-link').forEach(l => l.classList.toggle('active', l.dataset.s === id));
   });
 }, { rootMargin: '-36% 0px -58% 0px' });
-document.querySelectorAll('#overview,#challenge,#process,#result').forEach(s => sio.observe(s));
+document.querySelectorAll('#highlights,#overview,#impact-0,#impact-1,#impact-2,#impact-3,#ending').forEach(s => sio.observe(s));
 
 /* SMOOTH SCROLL for in-page anchors */
 document.querySelectorAll('a[href]').forEach(a => {
@@ -485,6 +523,12 @@ document.querySelectorAll('a[href]').forEach(a => {
     if (textEl) initScramble(el, textEl);
   });
   document.querySelectorAll('.btn-sched').forEach(el => initScramble(el));
+
+  // .wcard-title: hover on card, scramble title text
+  document.querySelectorAll('.wcard').forEach(card => {
+    const title = card.querySelector('.wcard-title');
+    if (title) initScramble(card, title);
+  });
 
   // .back-link: hover on whole link, scramble only the text (not the SVG arrow)
   document.querySelectorAll('.back-link').forEach(el => {
