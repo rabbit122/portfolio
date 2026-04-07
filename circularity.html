@@ -118,6 +118,18 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .cs-track-h{font-family:var(--sans);font-size:18px;font-weight:700;letter-spacing:-.01em;color:var(--white);line-height:1.2;margin-bottom:14px;}
 .cs-track-p{font-family:var(--mono);font-size:16px;font-weight:500;color:var(--muted);line-height:1.75;margin-bottom:12px;}
 
+/* ── BEFORE / AFTER SLIDER ── */
+.ba-wrap{margin-top:40px;}
+.ba-label-row{display:flex;justify-content:space-between;margin-bottom:10px;}
+.ba-label{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);}
+.ba-container{position:relative;width:100%;overflow:hidden;cursor:ew-resize;user-select:none;border:0.5px solid var(--sep);background:#1a2744;}
+.ba-img-after{display:block;width:100%;height:auto;pointer-events:none;-webkit-user-drag:none;}
+.ba-img-before{position:absolute;top:0;left:0;bottom:0;right:50%;overflow:hidden;}
+.ba-img-before img{display:block;position:absolute;top:0;left:0;height:100%;width:auto;max-width:none;pointer-events:none;-webkit-user-drag:none;}
+.ba-divider{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;cursor:ew-resize;z-index:10;transform:translateX(-50%);}
+.ba-handle{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);width:36px;height:36px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.3);pointer-events:none;}
+.ba-caption{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--dim);text-align:center;margin-top:10px;letter-spacing:.03em;}
+
 /* ── SEE MORE PROJECTS ── */
 .more-section{padding:56px 30px 0;}
 .more-h{font-family:var(--sans);font-size:36px;font-weight:700;letter-spacing:-.02em;color:var(--white);line-height:1.15;margin-bottom:28px;}
@@ -371,9 +383,40 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   <!-- IMPACT 1 -->
   <section class="cs-section reveal" id="impact-1">
     <div class="cs-section-label">&lt;!-- Impact 1 --&gt;</div>
-    <h2 class="cs-h">Impact 1</h2>
-    <p class="cs-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-    <p class="cs-p">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+    <h2 class="cs-h">Design as a tool<br>for alignment.</h2>
+    <p class="cs-p">Multiple stakeholders had different views on product direction — but no shared language to discuss priorities. Rather than scheduling more meetings, I used rapid mockups as artifacts to make decisions concrete and visible.</p>
+
+    <div class="ba-wrap" data-ba>
+      <div class="ba-label-row">
+        <span class="ba-label">Before — Early design</span>
+        <span class="ba-label">After — Final design</span>
+      </div>
+      <div class="ba-container">
+        <img src="images/impact1-after.png" alt="After" class="ba-img-after" draggable="false">
+        <div class="ba-img-before" data-ba-before>
+          <img src="images/impact1-before.png" alt="Before" data-ba-before-img draggable="false">
+        </div>
+        <div class="ba-divider" data-ba-divider>
+          <div class="ba-handle">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M5 8H11M5 8L3 6M5 8L3 10M11 8L13 6M11 8L13 10" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="ba-caption">← Drag to compare →</div>
+    </div>
+
+    <div class="cs-two-col" style="margin-top:40px;">
+      <div>
+        <div class="cs-track-label">Why this approach.</div>
+        <p class="cs-track-p">When technical constraints are already set by Salesforce, debating features in the abstract is inefficient. A concrete mockup surfaces real concerns faster than any meeting. Each removal wasn't an opinion — it was driven by evidence that emerged only when stakeholders had something tangible to react to.</p>
+      </div>
+      <div>
+        <div class="cs-track-label">Result</div>
+        <p class="cs-track-p">Three features removed before a single line of unnecessary code was written. Design wasn't just delivery — it was how we discovered what the product actually needed to be.</p>
+      </div>
+    </div>
   </section>
 
 
@@ -434,6 +477,42 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 <div class="statusbar">Circularity — Case Study · 2025</div>
 
 <script>
+
+/* BEFORE / AFTER SLIDERS */
+(function(){
+  document.querySelectorAll('[data-ba]').forEach(function(wrap){
+    var container = wrap.querySelector('.ba-container');
+    var before    = wrap.querySelector('[data-ba-before]');
+    var beforeImg = wrap.querySelector('[data-ba-before-img]');
+    var divider   = wrap.querySelector('[data-ba-divider]');
+    var dragging  = false;
+
+    function syncImgWidth(){
+      if(beforeImg) beforeImg.style.width = container.offsetWidth + 'px';
+    }
+    syncImgWidth();
+    window.addEventListener('resize', syncImgWidth);
+
+    function setPos(pct){
+      pct = Math.max(5, Math.min(95, pct));
+      before.style.right = (100 - pct) + '%';
+      divider.style.left = pct + '%';
+    }
+
+    function getX(e){ return e.touches ? e.touches[0].clientX : e.clientX; }
+    function move(e){
+      var rect = container.getBoundingClientRect();
+      setPos((getX(e) - rect.left) / rect.width * 100);
+    }
+
+    container.addEventListener('mousedown',  function(e){ e.preventDefault(); dragging=true; move(e); });
+    container.addEventListener('touchstart', function(e){ dragging=true; move(e); }, {passive:true});
+    window.addEventListener('mouseup',   function(){ dragging=false; });
+    window.addEventListener('touchend',  function(){ dragging=false; });
+    window.addEventListener('mousemove', function(e){ if(dragging) move(e); });
+    window.addEventListener('touchmove', function(e){ if(dragging) move(e); }, {passive:true});
+  });
+})();
 
 /* HAMBURGER MENU */
 (function(){
