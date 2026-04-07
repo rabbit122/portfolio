@@ -85,25 +85,38 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .back-link:hover svg{transform:translateX(-3px);}
 
 /* ── PROJECT TITLE ── */
-.project-title{font-family:var(--sans);font-size:72px;font-weight:800;letter-spacing:-.03em;line-height:1.05;color:var(--white);padding:20px 30px 0;}
+.project-title{font-family:var(--sans);font-size:72px;font-weight:800;letter-spacing:-.03em;line-height:1.05;color:var(--white);padding:60px 30px 0;}
 
 
 /* ── COVER IMAGE ── */
-.cover-img{margin:32px 30px 0;}
+.cover-img{margin:60px 30px 0;}
 .cover-img img{width:100%;height:auto;display:block;}
 
 /* ── CASE STUDY SECTIONS ── */
-.cs-section{padding:56px 30px 0;}
-.cs-section-label{font-family:var(--mono);font-size:14px;font-weight:500;color:#22c55e;line-height:22px;opacity:.85;margin-bottom:16px;}
+.cs-section{padding:100px 30px 0;}
+.cs-section-label{font-family:var(--mono);font-size:12px;font-weight:500;color:#22c55e;line-height:22px;opacity:.85;margin-bottom:16px;}
 .cs-h{font-family:var(--sans);font-size:36px;font-weight:700;letter-spacing:-.02em;color:var(--white);line-height:1.15;margin-bottom:20px;}
-.cs-p{font-family:var(--mono);font-size:15px;font-weight:500;color:var(--muted);line-height:1.75;max-width:680px;margin-bottom:14px;}
+.cs-p{font-family:var(--mono);font-size:16px;font-weight:500;color:var(--muted);line-height:1.75;max-width:680px;margin-bottom:14px;}
 
 /* ── OVERVIEW TWO-COLUMN ── */
 .cs-overview-grid{display:grid;grid-template-columns:260px 1fr;gap:0;margin-top:20px;}
 .cs-overview-meta{padding-right:24px;display:flex;flex-direction:column;gap:24px;}
-.cs-meta-label{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;}
+.cs-meta-label{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;}
 .cs-meta-value{font-family:var(--mono);font-size:14px;font-weight:500;color:var(--white);}
 .cs-overview-body{padding-left:24px;}
+
+/* ── TWO-COLUMN TEXT + IMAGE ── */
+.cs-two-col{display:grid;grid-template-columns:calc(50% - 100px) calc(50% + 40px);gap:60px;margin-top:40px;align-items:start;}
+.cs-two-col-img{width:100%;height:auto;display:block;}
+
+/* ── TRACK THREE-COLUMN ── */
+.cs-track-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:40px;}
+.cs-track-col{padding:24px 24px 0 0;}
+.cs-track-col:last-child{padding-right:0;}
+.cs-track-col:not(:first-child){padding-left:24px;}
+.cs-track-label{font-family:var(--mono);font-size:12px;font-weight:500;color:#22c55e;letter-spacing:.05em;margin-bottom:16px;}
+.cs-track-h{font-family:var(--sans);font-size:18px;font-weight:700;letter-spacing:-.01em;color:var(--white);line-height:1.2;margin-bottom:14px;}
+.cs-track-p{font-family:var(--mono);font-size:16px;font-weight:500;color:var(--muted);line-height:1.75;margin-bottom:12px;}
 
 /* ── SEE MORE PROJECTS ── */
 .more-section{padding:56px 30px 0;}
@@ -270,8 +283,6 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 
   <!-- PROJECT TITLE -->
   <h1 class="project-title">Building greenfield B2B platform from assumption to launch</h1>
-  <div class="cs-section-label" style="padding:12px 30px 0;">&lt;!-- Highlights --&gt;</div>
-
   <!-- COVER IMAGE -->
   <div class="cover-img">
     <img src="images/Circularity-Hightlight.png" alt="Circularity project cover">
@@ -319,9 +330,41 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   <!-- IMPACT 0 -->
   <section class="cs-section reveal" id="impact-0">
     <div class="cs-section-label">&lt;!-- Impact 0 --&gt;</div>
-    <h2 class="cs-h">Impact 0</h2>
-    <p class="cs-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-    <p class="cs-p">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+    <h2 class="cs-h">How I started<br>without a brief, without a handover.</h2>
+    <div class="cs-track-grid">
+      <div class="cs-track-col">
+        <div class="cs-track-label">Track 01</div>
+        <div class="cs-track-h">Read the documents</div>
+        <p class="cs-track-p">Product briefs, regulatory background, early stage Figma frames.</p>
+        <p class="cs-track-p">Understanding what existed before forming any opinion.</p>
+      </div>
+      <div class="cs-track-col">
+        <div class="cs-track-label">Track 02</div>
+        <div class="cs-track-h">Talk to the people</div>
+        <p class="cs-track-p">One-on-one meetings with the PM and key stakeholders.</p>
+        <p class="cs-track-p">Not to gather requirements, to understand priorities, constraints, and what "good" meant to each person.</p>
+      </div>
+      <div class="cs-track-col">
+        <div class="cs-track-label">Track 03</div>
+        <div class="cs-track-h">Read the documents</div>
+        <p class="cs-track-p">Existing Figma frames told me where the project stood.</p>
+        <p class="cs-track-p">What had been decided, what was still open, and where the first real design decisions needed to happen.</p>
+      </div>
+    </div>
+    <img src="images/impact0.png" alt="" style="width:80%;height:auto;display:block;margin-top:40px;">
+    <div class="cs-two-col">
+      <div>
+        <div class="cs-track-label">Why this approach.</div>
+        <p class="cs-track-p">In a greenfield project with no market reference, the most dangerous move is to assume I understand the direction and start executing. I needed to know three things first: what problem the product was solving, where the technical boundaries were (Salesforce constraints), and what each stakeholder's priorities actually were. None of that lives in a document alone.</p>
+      </div>
+      <div>
+        <img src="images/impact01.png" alt="" class="cs-two-col-img">
+      </div>
+    </div>
+    <div style="margin-top:40px;">
+      <div class="cs-track-label">Result</div>
+      <p class="cs-track-p">Within the first 2 weeks, I had built enough of a judgment foundation to identify where to start, the highest-traffic page, the main dashboard, and began moving the project forward without being guided.</p>
+    </div>
   </section>
 
 
