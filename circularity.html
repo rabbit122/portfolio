@@ -130,6 +130,88 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .ba-handle{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);width:36px;height:36px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.3);pointer-events:none;}
 .ba-caption{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--dim);text-align:center;margin-top:10px;letter-spacing:.03em;}
 
+/* ── FINDING BLOCKS ── */
+.cs-quote{border-left:2px solid #22c55e;padding:14px 20px;margin:0;font-family:var(--mono);font-size:15px;font-weight:500;font-style:italic;color:var(--white);line-height:1.65;}
+.img-placeholder{background:#f5f5f5;border:1px dashed #cccccc;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);letter-spacing:.03em;}
+
+/* process grid */
+.cs-process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:40px;overflow:hidden;}
+.cs-process-step{background:#f5f5f5;padding:30px 26px;}
+.cs-process-step.pactive{background:#171717;}
+.cs-process-step-badge{display:inline-block;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;background:#22c55e;color:#fff;margin-bottom:14px;}
+.cs-process-step-num{font-family:var(--mono);font-size:11px;font-style:italic;color:var(--dim);margin-bottom:14px;}
+.cs-process-step.pactive .cs-process-step-num{color:rgba(255,255,255,.3);}
+.cs-process-step-title{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--white);margin-bottom:8px;}
+.cs-process-step.pactive .cs-process-step-title{color:#fff;}
+.cs-process-step-desc{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--muted);line-height:1.65;}
+.cs-process-step.pactive .cs-process-step-desc{color:rgba(255,255,255,.55);}
+
+/* finding header */
+.cs-finding-header{display:grid;grid-template-columns:100px 1fr;gap:24px;align-items:baseline;margin-top:56px;padding-top:56px;border-top:1px solid var(--sep);}
+.cs-finding-num{font-family:var(--mono);font-size:11px;font-weight:500;color:#22c55e;letter-spacing:.05em;padding-top:7px;}
+.cs-finding-hl{font-family:var(--sans);font-size:28px;font-weight:700;letter-spacing:-.02em;color:var(--white);line-height:1.2;}
+.cs-finding-body{display:grid;grid-template-columns:100px 1fr;gap:24px;margin-top:32px;}
+.cs-finding-content{display:flex;flex-direction:column;gap:28px;}
+
+/* stat row */
+.cs-stat-row{display:grid;grid-template-columns:1fr 1fr;gap:2px;overflow:hidden;max-width:380px;}
+.cs-stat-cell{background:#f5f5f5;padding:22px 26px;display:flex;flex-direction:column;gap:6px;}
+.cs-stat-cell.accent{background:#22c55e;}
+.cs-stat-label{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
+.cs-stat-cell.accent .cs-stat-label{color:rgba(255,255,255,.7);}
+.cs-stat-value{font-family:var(--sans);font-size:40px;font-weight:800;color:var(--white);line-height:1;}
+.cs-stat-cell.accent .cs-stat-value{color:#fff;}
+.cs-stat-sub{font-family:var(--mono);font-size:12px;color:var(--muted);}
+.cs-stat-cell.accent .cs-stat-sub{color:rgba(255,255,255,.7);}
+
+/* before/after panels */
+.cs-ba-panels{display:grid;grid-template-columns:1fr 1fr;gap:2px;overflow:hidden;max-width:500px;}
+.cs-ba-panel{padding:22px 24px;background:#f5f5f5;}
+.cs-ba-panel.after{background:#171717;}
+.cs-ba-panel-label{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;}
+.cs-ba-panel.after .cs-ba-panel-label{color:rgba(255,255,255,.35);}
+.cs-ba-panel-content{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--muted);line-height:1.6;}
+.cs-ba-panel.after .cs-ba-panel-content{color:rgba(255,255,255,.7);}
+.cs-ba-panel-sub{margin-top:8px;font-family:var(--mono);font-size:12px;color:var(--dim);}
+.cs-ba-panel.after .cs-ba-panel-sub{color:rgba(255,255,255,.35);}
+
+/* ranking mockup */
+.cs-ranking{background:var(--panel);border:1px solid var(--sep);overflow:hidden;max-width:460px;}
+.cs-ranking-hdr{padding:14px 18px;border-bottom:1px solid var(--sep);font-family:var(--mono);font-size:12px;font-weight:600;color:var(--white);display:flex;align-items:center;justify-content:space-between;}
+.cs-ranking-hdr span{font-weight:400;color:var(--dim);}
+.cs-ranking-row{display:flex;align-items:center;gap:12px;padding:10px 18px;font-family:var(--mono);font-size:12px;color:var(--muted);}
+.cs-ranking-row.hi{background:#f0fdf4;border-left:2px solid #22c55e;}
+.cs-ranking-row.hi .cs-rank-n{color:#22c55e;font-weight:700;}
+.cs-rank-n{width:24px;font-size:11px;font-weight:600;color:var(--dim);flex-shrink:0;}
+.cs-rank-dot{width:6px;height:6px;border-radius:50%;background:var(--sep);flex-shrink:0;}
+.cs-ranking-row.hi .cs-rank-dot{background:#22c55e;}
+.cs-rank-name{flex:1;}
+.cs-rank-score{font-size:11px;font-weight:600;color:var(--white);}
+.cs-ranking-ellipsis{padding:4px 18px 4px 54px;font-family:var(--mono);font-size:16px;letter-spacing:4px;color:var(--sep);}
+.cs-ranking-caption{padding:10px 18px;background:#f5f5f5;font-family:var(--mono);font-size:11px;color:var(--muted);}
+
+/* callout block */
+.cs-callout{display:flex;align-items:center;gap:16px;padding:24px 28px;background:#171717;max-width:420px;}
+.cs-callout-num{font-family:var(--sans);font-size:52px;font-weight:800;color:#22c55e;line-height:1;flex-shrink:0;}
+.cs-callout-text{font-family:var(--mono);font-size:13px;line-height:1.7;color:rgba(255,255,255,.6);}
+.cs-callout-text strong{color:#fff;font-weight:600;}
+
+/* outcome strip */
+.cs-outcome{display:flex;align-items:center;gap:10px;}
+.cs-outcome-dot{width:26px;height:26px;border-radius:50%;background:#dcfce7;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;font-weight:700;color:#16a34a;}
+.cs-outcome-dot.warn{background:#fef3c7;color:#b45309;}
+.cs-outcome-text{font-family:var(--mono);font-size:12px;font-weight:500;color:#16a34a;}
+.cs-outcome-text.warn{color:#b45309;}
+
+@media(max-width:809px){
+  .cs-process-grid{grid-template-columns:1fr;}
+  .cs-finding-header,.cs-finding-body{grid-template-columns:1fr;}
+  .cs-finding-header .cs-finding-num{padding-top:0;}
+  .cs-ba-panels{max-width:100%;grid-template-columns:1fr;}
+  .cs-stat-row{max-width:100%;}
+  .cs-ranking,.cs-callout{max-width:100%;}
+}
+
 /* ── SEE MORE PROJECTS ── */
 .more-section{padding:56px 30px 0;}
 .more-h{font-family:var(--sans);font-size:36px;font-weight:700;letter-spacing:-.02em;color:var(--white);line-height:1.15;margin-bottom:28px;}
@@ -423,18 +505,145 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   <!-- IMPACT 2 -->
   <section class="cs-section reveal" id="impact-2">
     <div class="cs-section-label">&lt;!-- Impact 2 --&gt;</div>
-    <h2 class="cs-h">Impact 2</h2>
-    <p class="cs-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-    <p class="cs-p">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+    <h2 class="cs-h">Judgment after<br>user testing.</h2>
+    <p class="cs-p">After usability testing, I compiled all findings into two categories — issues users explicitly raised, and new insights based on my own design judgment. Together with the PM, we filtered these into a report for senior leadership, who made the final call on what would be actioned.</p>
+
+    <!-- How it worked: 3-step process -->
+    <div class="cs-process-grid">
+      <div class="cs-process-step">
+        <div class="cs-process-step-num">Step 01</div>
+        <div class="cs-process-step-title">User findings</div>
+        <p class="cs-process-step-desc">Issues users explicitly raised during testing sessions.</p>
+      </div>
+      <div class="cs-process-step">
+        <div class="cs-process-step-num">Step 02</div>
+        <div class="cs-process-step-title">Design judgment</div>
+        <p class="cs-process-step-desc">New insights identified through my own design lens — beyond what users articulated.</p>
+      </div>
+      <div class="cs-process-step pactive">
+        <div class="cs-process-step-badge">My role</div>
+        <div class="cs-process-step-num">Step 03</div>
+        <div class="cs-process-step-title">First filter</div>
+        <p class="cs-process-step-desc">Prioritised three findings to advocate for — framed clearly enough to survive two more rounds of review.</p>
+      </div>
+    </div>
+
+    <!-- User testing photo placeholder -->
+    <div class="img-placeholder" style="height:260px;margin-top:40px;">[Photo — user testing session]</div>
+
+    <!-- ── Finding 01 — Accessibility ── -->
+    <div class="cs-finding-header">
+      <div class="cs-finding-num">Finding 01 —</div>
+      <h3 class="cs-finding-hl">Accessibility</h3>
+    </div>
+    <div class="cs-finding-body">
+      <div></div>
+      <div class="cs-finding-content">
+        <div class="cs-stat-row">
+          <div class="cs-stat-cell">
+            <div class="cs-stat-label">Industry Minimum</div>
+            <div class="cs-stat-value">12</div>
+            <div class="cs-stat-sub">px font size</div>
+          </div>
+          <div class="cs-stat-cell accent">
+            <div class="cs-stat-label">Our New Standard</div>
+            <div class="cs-stat-value">14</div>
+            <div class="cs-stat-sub">px font size</div>
+          </div>
+        </div>
+        <div>
+          <blockquote class="cs-quote">"I need my reading glasses."</blockquote>
+          <p class="cs-track-p" style="margin-top:10px;font-size:12px;color:var(--dim);">— A restaurant manager in his mid-forties, during user testing</p>
+        </div>
+        <p class="cs-track-p">We had been designing on large monitors in an office. But our real users were middle-aged managers working in busy kitchens, on older devices with lower screen quality. Using Figma's accessibility plugin, I ran a full audit across the entire product — reviewing font sizes, font weights, and colour contrast ratios.</p>
+        <div class="cs-outcome">
+          <div class="cs-outcome-dot">✓</div>
+          <p class="cs-outcome-text">Shipped at near-zero engineering cost · Full product audit completed</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Finding 02 — Ranking motivation ── -->
+    <div class="cs-finding-header">
+      <div class="cs-finding-num">Finding 02 —</div>
+      <h3 class="cs-finding-hl">Ranking motivation</h3>
+    </div>
+    <div class="cs-finding-body">
+      <div></div>
+      <div class="cs-finding-content">
+        <div>
+          <blockquote class="cs-quote">"It's not about being number one — it's about not being the worst."</blockquote>
+          <p class="cs-track-p" style="margin-top:10px;font-size:12px;color:var(--dim);">— Restaurant manager, user testing session</p>
+        </div>
+        <div class="cs-ba-panels">
+          <div class="cs-ba-panel">
+            <div class="cs-ba-panel-label">Before</div>
+            <div class="cs-ba-panel-content">All restaurants listed across 23 pages of results.</div>
+            <div class="cs-ba-panel-sub">A manager ranked 47th had no way to jump to their position.</div>
+          </div>
+          <div class="cs-ba-panel after">
+            <div class="cs-ba-panel-label">Proposed</div>
+            <div class="cs-ba-panel-content">Dynamic ranking: top 3, ellipsis, user's position highlighted.</div>
+            <div class="cs-ba-panel-sub">The people who need feedback most see it immediately.</div>
+          </div>
+        </div>
+        <div class="cs-ranking">
+          <div class="cs-ranking-hdr">Restaurant Rankings <span>Proposed design</span></div>
+          <div class="cs-ranking-row">
+            <div class="cs-rank-n">#1</div><div class="cs-rank-dot"></div>
+            <div class="cs-rank-name">The Golden Fork</div><div class="cs-rank-score">98.2</div>
+          </div>
+          <div class="cs-ranking-row">
+            <div class="cs-rank-n">#2</div><div class="cs-rank-dot"></div>
+            <div class="cs-rank-name">Harbour Kitchen</div><div class="cs-rank-score">95.7</div>
+          </div>
+          <div class="cs-ranking-row">
+            <div class="cs-rank-n">#3</div><div class="cs-rank-dot"></div>
+            <div class="cs-rank-name">Northside Bistro</div><div class="cs-rank-score">93.1</div>
+          </div>
+          <div class="cs-ranking-ellipsis">· · ·</div>
+          <div class="cs-ranking-row hi">
+            <div class="cs-rank-n">#47</div><div class="cs-rank-dot"></div>
+            <div class="cs-rank-name">Your Restaurant</div><div class="cs-rank-score">71.4</div>
+          </div>
+          <div class="cs-ranking-caption">↑ Your position is always visible — no scrolling through 23 pages</div>
+        </div>
+        <p class="cs-track-p">The feature didn't get built due to Salesforce constraints, but the proposal directly influenced the product roadmap discussion.</p>
+        <div class="cs-outcome">
+          <div class="cs-outcome-dot warn">!</div>
+          <p class="cs-outcome-text warn">Not built · Salesforce constraints · Influenced product roadmap</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Finding 03 — Market average benchmark ── -->
+    <div class="cs-finding-header">
+      <div class="cs-finding-num">Finding 03 —</div>
+      <h3 class="cs-finding-hl">Market average benchmark</h3>
+    </div>
+    <div class="cs-finding-body">
+      <div></div>
+      <div class="cs-finding-content">
+        <p class="cs-track-p">The Summary page showed recycling data through multiple donut charts. But data alone doesn't drive behaviour — users had no reference point to judge whether their numbers were good or bad.</p>
+        <div class="img-placeholder" style="height:240px;">[Design screenshot — market average line highlighted]</div>
+        <div class="cs-callout">
+          <div class="cs-callout-num">1</div>
+          <div class="cs-callout-text"><strong>One line.</strong> It gave every user an immediate answer to the question they were actually asking:<br><span style="color:rgba(255,255,255,.4);">am I ahead or behind?</span></div>
+        </div>
+        <div class="cs-outcome">
+          <div class="cs-outcome-dot">✓</div>
+          <p class="cs-outcome-text">Shipped · Context transforms data into behaviour-driving insight</p>
+        </div>
+      </div>
+    </div>
   </section>
 
 
   <!-- IMPACT 3 -->
   <section class="cs-section reveal" id="impact-3">
     <div class="cs-section-label">&lt;!-- Impact 3 --&gt;</div>
-    <h2 class="cs-h">Impact 3</h2>
-    <p class="cs-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-    <p class="cs-p">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+    <h2 class="cs-h">Responsive design as<br>a strategic decision.</h2>
+    <p class="cs-p">Responsive design isn't about shrinking the web version — it's about rethinking what data matters most, and how to present it, for each context of use.</p>
   </section>
 
 
