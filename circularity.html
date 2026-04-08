@@ -135,12 +135,14 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .ba-img-after{display:block;width:100%;height:auto;pointer-events:none;-webkit-user-drag:none;}
 .ba-img-before{position:absolute;top:0;left:0;bottom:0;right:50%;overflow:hidden;}
 .ba-img-before img{display:block;position:absolute;top:0;left:0;height:100%;width:auto;max-width:none;pointer-events:none;-webkit-user-drag:none;}
-.ba-divider{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;cursor:ew-resize;z-index:10;transform:translateX(-50%);}
-.ba-handle{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);width:36px;height:36px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.3);pointer-events:none;}
+.ba-divider{position:absolute;top:0;bottom:0;left:50%;width:1px;background:rgba(255,255,255,0.5);cursor:ew-resize;z-index:10;transform:translateX(-50%);transition:background .2s, width .2s;}
+.ba-container:hover .ba-divider{width:2px;background:rgba(255,255,255,0.9);}
+.ba-handle{position:absolute;bottom:10%;left:50%;transform:translateX(-50%);width:14px;height:26px;background:#fff;border-radius:99px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.2);pointer-events:none;transition:opacity .2s, box-shadow .2s;}
+.ba-container:hover .ba-handle{box-shadow:0 3px 14px rgba(0,0,0,.28);}
 .ba-caption{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);text-align:center;margin-top:10px;letter-spacing:.03em;}
 
 /* ── FINDING BLOCKS ── */
-.cs-quote{border-left:2px solid #22c55e;padding:14px 20px;margin:0;font-family:var(--mono);font-size:15px;font-weight:500;font-style:italic;color:var(--white);line-height:1.65;}
+.cs-quote{border-left:2px solid #22c55e;padding:14px 20px;margin:0;font-family:var(--mono);font-size:18px;font-weight:500;font-style:italic;color:var(--white);line-height:1.65;}
 .img-placeholder{background:#f5f5f5;border:1px dashed #cccccc;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);letter-spacing:.03em;}
 
 /* process grid */
@@ -208,7 +210,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .cs-outcome{display:flex;align-items:center;gap:10px;}
 .cs-outcome-dot{width:26px;height:26px;border-radius:50%;background:#dcfce7;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;font-weight:700;color:#16a34a;}
 .cs-outcome-dot.warn{background:#fef3c7;color:#b45309;}
-.cs-outcome-text{font-family:var(--mono);font-size:12px;font-weight:500;color:#16a34a;}
+.cs-outcome-text{font-family:var(--mono);font-size:14px;font-weight:500;color:#16a34a;}
 .cs-outcome-text.warn{color:#b45309;}
 
 @media(max-width:809px){
@@ -485,9 +487,6 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
         </div>
         <div class="ba-divider" data-ba-divider>
           <div class="ba-handle">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M5 8H11M5 8L3 6M5 8L3 10M11 8L13 6M11 8L13 10" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
           </div>
         </div>
       </div>
@@ -555,7 +554,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
       <div class="cs-finding-content">
         <div>
           <blockquote class="cs-quote">"I need my reading glasses."</blockquote>
-          <p class="cs-track-p" style="margin-top:10px;font-size:12px;color:var(--dim);">— A restaurant manager in his mid-forties, during user testing</p>
+          <p class="cs-track-p" style="margin-top:10px;font-size:14px;color:var(--dim);">— A restaurant manager in his mid-forties, during user testing</p>
         </div>
         <p class="cs-track-p">We had been designing on large monitors in an office. But our real users were middle-aged managers working in busy environment, on older devices with lower screen quality. Using Figma's accessibility plugin, I ran a full audit across the entire product — reviewing font sizes, font weights, and colour contrast ratios.</p>
         <div class="cs-audit-grid">
@@ -582,9 +581,27 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
       </div>
     </div>
 
-    <!-- ── Finding 02 — Ranking motivation ── -->
+    <!-- ── Finding 02 — Market average benchmark ── -->
     <div class="cs-finding-header">
       <div class="cs-finding-num">Finding 02 —</div>
+      <h3 class="cs-finding-hl">Market average benchmark</h3>
+    </div>
+    <div class="cs-finding-body">
+      <div></div>
+      <div class="cs-finding-content">
+        <p class="cs-track-p">The Summary page showed recycling data through multiple donut charts. But data alone doesn't drive behaviour — users had no reference point to judge whether their numbers were good or bad.</p>
+        <div class="img-placeholder" style="height:240px;">[Design screenshot — market average line highlighted]</div>
+        <p class="cs-track-p"><strong style="color:var(--white);font-weight:600;">One line.</strong> <em>It gave every user an immediate answer to the question they were actually asking: <span style="color:var(--dim);">am I ahead or behind?</span></em></p>
+        <div class="cs-outcome">
+          <div class="cs-outcome-dot">✓</div>
+          <p class="cs-outcome-text">Shipped · Context transforms data into behaviour-driving insight</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Finding 03 — Ranking motivation ── -->
+    <div class="cs-finding-header">
+      <div class="cs-finding-num">Finding 03 —</div>
       <h3 class="cs-finding-hl">Ranking motivation</h3>
     </div>
     <div class="cs-finding-body">
@@ -592,7 +609,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
       <div class="cs-finding-content">
         <div>
           <blockquote class="cs-quote">"It's not about being number one — it's about not being the worst."</blockquote>
-          <p class="cs-track-p" style="margin-top:10px;font-size:12px;color:var(--dim);">— Restaurant manager, user testing session</p>
+          <p class="cs-track-p" style="margin-top:10px;font-size:14px;color:var(--dim);">— Restaurant manager, user testing session</p>
         </div>
         <div class="cs-ba-panels">
           <div class="cs-ba-panel">
@@ -631,27 +648,6 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
         <div class="cs-outcome">
           <div class="cs-outcome-dot warn">!</div>
           <p class="cs-outcome-text warn">Not built · Salesforce constraints · Influenced product roadmap</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── Finding 03 — Market average benchmark ── -->
-    <div class="cs-finding-header">
-      <div class="cs-finding-num">Finding 03 —</div>
-      <h3 class="cs-finding-hl">Market average benchmark</h3>
-    </div>
-    <div class="cs-finding-body">
-      <div></div>
-      <div class="cs-finding-content">
-        <p class="cs-track-p">The Summary page showed recycling data through multiple donut charts. But data alone doesn't drive behaviour — users had no reference point to judge whether their numbers were good or bad.</p>
-        <div class="img-placeholder" style="height:240px;">[Design screenshot — market average line highlighted]</div>
-        <div class="cs-callout">
-          <div class="cs-callout-num">1</div>
-          <div class="cs-callout-text"><strong>One line.</strong> It gave every user an immediate answer to the question they were actually asking:<br><span style="color:rgba(255,255,255,.4);">am I ahead or behind?</span></div>
-        </div>
-        <div class="cs-outcome">
-          <div class="cs-outcome-dot">✓</div>
-          <p class="cs-outcome-text">Shipped · Context transforms data into behaviour-driving insight</p>
         </div>
       </div>
     </div>
