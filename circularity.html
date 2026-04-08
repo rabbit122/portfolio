@@ -156,22 +156,21 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .cs-process-connector-label{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);letter-spacing:.06em;}
 
 /* finding header */
-.cs-finding-header{display:grid;grid-template-columns:100px 1fr;gap:24px;align-items:start;margin-top:56px;padding-top:56px;border-top:1px solid var(--sep);}
+.cs-finding-header{display:grid;grid-template-columns:100px 1fr;gap:24px;align-items:start;margin-top:72px;}
 .cs-finding-num{font-family:var(--mono);font-size:12px;font-weight:500;color:#22c55e;letter-spacing:.05em;padding-top:7px;}
 .cs-finding-hl{font-family:var(--sans);font-size:28px;font-weight:700;letter-spacing:-.02em;color:var(--white);line-height:1.2;}
 .cs-finding-body{display:grid;grid-template-columns:100px 1fr;gap:24px;margin-top:32px;}
 .cs-finding-content{display:flex;flex-direction:column;gap:28px;}
 
 /* stat row */
-.cs-stat-row{display:grid;grid-template-columns:1fr 1fr;gap:2px;overflow:hidden;max-width:380px;}
-.cs-stat-cell{background:#f5f5f5;padding:22px 26px;display:flex;flex-direction:column;gap:6px;}
-.cs-stat-cell.accent{background:#22c55e;}
-.cs-stat-label{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
-.cs-stat-cell.accent .cs-stat-label{color:rgba(255,255,255,.7);}
-.cs-stat-value{font-family:var(--sans);font-size:40px;font-weight:800;color:var(--white);line-height:1;}
-.cs-stat-cell.accent .cs-stat-value{color:#fff;}
-.cs-stat-sub{font-family:var(--mono);font-size:12px;color:var(--muted);}
-.cs-stat-cell.accent .cs-stat-sub{color:rgba(255,255,255,.7);}
+/* audit cards */
+.cs-audit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:0;}
+.cs-audit-card{background:#f5f5f5;padding:22px 22px 24px;display:flex;flex-direction:column;gap:10px;}
+.cs-audit-label{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
+.cs-audit-value{font-family:var(--mono);font-size:16px;font-weight:600;color:var(--white);display:flex;align-items:center;gap:8px;}
+.cs-audit-arrow{color:#22c55e;font-style:normal;}
+.cs-audit-sub{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.55;}
+@media(max-width:809px){.cs-audit-grid{grid-template-columns:1fr;}}
 
 /* before/after panels */
 .cs-ba-panels{display:grid;grid-template-columns:1fr 1fr;gap:2px;overflow:hidden;max-width:500px;}
@@ -554,23 +553,28 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
     <div class="cs-finding-body">
       <div></div>
       <div class="cs-finding-content">
-        <div class="cs-stat-row">
-          <div class="cs-stat-cell">
-            <div class="cs-stat-label">Industry Minimum</div>
-            <div class="cs-stat-value">12</div>
-            <div class="cs-stat-sub">px font size</div>
-          </div>
-          <div class="cs-stat-cell accent">
-            <div class="cs-stat-label">Our New Standard</div>
-            <div class="cs-stat-value">14</div>
-            <div class="cs-stat-sub">px font size</div>
-          </div>
-        </div>
         <div>
           <blockquote class="cs-quote">"I need my reading glasses."</blockquote>
           <p class="cs-track-p" style="margin-top:10px;font-size:12px;color:var(--dim);">— A restaurant manager in his mid-forties, during user testing</p>
         </div>
-        <p class="cs-track-p">We had been designing on large monitors in an office. But our real users were middle-aged managers working in busy kitchens, on older devices with lower screen quality. Using Figma's accessibility plugin, I ran a full audit across the entire product — reviewing font sizes, font weights, and colour contrast ratios.</p>
+        <p class="cs-track-p">We had been designing on large monitors in an office. But our real users were middle-aged managers working in busy environment, on older devices with lower screen quality. Using Figma's accessibility plugin, I ran a full audit across the entire product — reviewing font sizes, font weights, and colour contrast ratios.</p>
+        <div class="cs-audit-grid">
+          <div class="cs-audit-card">
+            <div class="cs-audit-label">Font Size</div>
+            <div class="cs-audit-value">12px <span class="cs-audit-arrow">→</span> 14px</div>
+            <div class="cs-audit-sub">Raised above industry minimum across all body copy</div>
+          </div>
+          <div class="cs-audit-card">
+            <div class="cs-audit-label">Font Weight</div>
+            <div class="cs-audit-value">Regular <span class="cs-audit-arrow">→</span> Medium</div>
+            <div class="cs-audit-sub">Secondary text adjusted for low-res screens</div>
+          </div>
+          <div class="cs-audit-card">
+            <div class="cs-audit-label">Colour Contrast</div>
+            <div class="cs-audit-value">AA <span class="cs-audit-arrow">→</span> AAA</div>
+            <div class="cs-audit-sub">Contrast ratios reviewed and corrected throughout</div>
+          </div>
+        </div>
         <div class="cs-outcome">
           <div class="cs-outcome-dot">✓</div>
           <p class="cs-outcome-text">Shipped at near-zero engineering cost · Full product audit completed</p>
