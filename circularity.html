@@ -590,7 +590,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
       <div></div>
       <div class="cs-finding-content">
         <p class="cs-track-p">The Summary page showed recycling data through multiple donut charts. But data alone doesn't drive behaviour — users had no reference point to judge whether their numbers were good or bad.</p>
-        <div class="img-placeholder" style="height:240px;">[Design screenshot — market average line highlighted]</div>
+        <img src="images/market average line highlighted.png" alt="Market average line highlighted" style="width:100%;height:auto;display:block;">
         <p class="cs-track-p"><strong style="color:var(--white);font-weight:600;">One line.</strong> <em>It gave every user an immediate answer to the question they were actually asking: <span style="color:var(--dim);">am I ahead or behind?</span></em></p>
         <div class="cs-outcome">
           <div class="cs-outcome-dot">✓</div>
@@ -611,38 +611,16 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
           <blockquote class="cs-quote">"It's not about being number one — it's about not being the worst."</blockquote>
           <p class="cs-track-p" style="margin-top:10px;font-size:14px;color:var(--dim);">— Restaurant manager, user testing session</p>
         </div>
-        <div class="cs-ba-panels">
-          <div class="cs-ba-panel">
-            <div class="cs-ba-panel-label">Before</div>
-            <div class="cs-ba-panel-content">All restaurants listed across 23 pages of results.</div>
-            <div class="cs-ba-panel-sub">A manager ranked 47th had no way to jump to their position.</div>
+        <p class="cs-track-p">The current design listed all restaurants across 23 pages of results. A manager ranked 47th had no way to jump directly to their position — meaning the people who most needed that feedback were least likely to see it.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div>
+            <div class="cs-ba-panel-label" style="margin-bottom:10px;">Before</div>
+            <img src="images/RankBefore.png" alt="Ranking before" style="width:100%;height:auto;display:block;">
           </div>
-          <div class="cs-ba-panel after">
-            <div class="cs-ba-panel-label">Proposed</div>
-            <div class="cs-ba-panel-content">Dynamic ranking: top 3, ellipsis, user's position highlighted.</div>
-            <div class="cs-ba-panel-sub">The people who need feedback most see it immediately.</div>
+          <div>
+            <div class="cs-ba-panel-label" style="margin-bottom:10px;">Proposed</div>
+            <img src="images/RankAfter.png" alt="Ranking after" style="width:100%;height:auto;display:block;">
           </div>
-        </div>
-        <div class="cs-ranking">
-          <div class="cs-ranking-hdr">Restaurant Rankings <span>Proposed design</span></div>
-          <div class="cs-ranking-row">
-            <div class="cs-rank-n">#1</div><div class="cs-rank-dot"></div>
-            <div class="cs-rank-name">The Golden Fork</div><div class="cs-rank-score">98.2</div>
-          </div>
-          <div class="cs-ranking-row">
-            <div class="cs-rank-n">#2</div><div class="cs-rank-dot"></div>
-            <div class="cs-rank-name">Harbour Kitchen</div><div class="cs-rank-score">95.7</div>
-          </div>
-          <div class="cs-ranking-row">
-            <div class="cs-rank-n">#3</div><div class="cs-rank-dot"></div>
-            <div class="cs-rank-name">Northside Bistro</div><div class="cs-rank-score">93.1</div>
-          </div>
-          <div class="cs-ranking-ellipsis">· · ·</div>
-          <div class="cs-ranking-row hi">
-            <div class="cs-rank-n">#47</div><div class="cs-rank-dot"></div>
-            <div class="cs-rank-name">Your Restaurant</div><div class="cs-rank-score">71.4</div>
-          </div>
-          <div class="cs-ranking-caption">↑ Your position is always visible — no scrolling through 23 pages</div>
         </div>
         <p class="cs-track-p">The feature didn't get built due to Salesforce constraints, but the proposal directly influenced the product roadmap discussion.</p>
         <div class="cs-outcome">
