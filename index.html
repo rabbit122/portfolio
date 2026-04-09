@@ -360,6 +360,54 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .mob-menu-plain{color:var(--muted);}
 .mob-menu-link:hover{background:#f5f5f5;}
 
+/* ════════════ WHEN I CLOSE THE LAPTOP ════════════ */
+.lsec-header{padding:16px 30px 28px;}
+.lsec-title{font-family:var(--sans);font-size:52px;font-weight:700;letter-spacing:-.03em;line-height:1.1;color:var(--white);margin-bottom:16px;}
+.lsec-sub{font-family:var(--mono);font-size:16px;font-weight:500;color:var(--muted);line-height:1.75;max-width:510px;}
+.lcards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:4px 30px 52px;}
+.lcard{background:#ffffff;border-radius:0;overflow:hidden;border:2px solid #1a1a1a;box-shadow:4px 4px 0 0 #22c55e;transition:transform .18s ease,box-shadow .18s ease;cursor:default;position:relative;}
+.lcard::before{content:'';position:absolute;top:-2px;left:-2px;width:6px;height:6px;background:var(--bg);z-index:2;pointer-events:none;}
+.lcard::after{content:'';position:absolute;top:-2px;right:-2px;width:6px;height:6px;background:var(--bg);z-index:2;pointer-events:none;}
+.lcard:nth-child(1){transform:rotate(-1.2deg);}
+.lcard:nth-child(2){transform:rotate(.6deg) translateY(8px);}
+.lcard:nth-child(3){transform:rotate(-.5deg);}
+.lcard:nth-child(1):hover{transform:rotate(-1.2deg) translate(-2px,-2px);box-shadow:6px 6px 0 0 #22c55e;}
+.lcard:nth-child(2):hover{transform:rotate(.6deg) translateY(6px) translate(-2px,-2px);box-shadow:6px 6px 0 0 #22c55e;}
+.lcard:nth-child(3):hover{transform:rotate(-.5deg) translate(-2px,-2px);box-shadow:6px 6px 0 0 #22c55e;}
+.lcard-visual{width:100%;aspect-ratio:4/3;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+/* Travel card */
+.lcard-travel .lcard-visual{background:#14103c;}
+#pixel-landscape{width:100%;height:100%;display:block;image-rendering:pixelated;image-rendering:crisp-edges;}
+/* Coding card */
+.lcard-code .lcard-visual{background:#1e1e1e;align-items:flex-start;padding:16px;}
+.csnip{font-family:var(--mono);font-size:11px;line-height:1.7;text-align:left;width:100%;}
+.csnip .kw{color:#569cd6;}.csnip .fn{color:#dcdcaa;}.csnip .str{color:#ce9178;}.csnip .cm{color:#6a9955;}.csnip .vr{color:#9cdcfe;}.csnip .pn{color:#d4d4d4;}
+/* Strudel card */
+.lcard-strudel .lcard-visual{background:linear-gradient(160deg,#0d0d1a 0%,#1a0d2e 100%);flex-direction:column;gap:10px;padding:20px;}
+.strudel-waveform{display:flex;align-items:center;gap:3px;height:40px;}
+.wbar{width:4px;background:linear-gradient(to top,#8b5cf6,#a78bfa);border-radius:0;animation:wbPulse 1.2s ease-in-out infinite;}
+.wbar:nth-child(1){height:12px;animation-delay:0.0s;}.wbar:nth-child(2){height:28px;animation-delay:0.1s;}.wbar:nth-child(3){height:18px;animation-delay:0.2s;}.wbar:nth-child(4){height:36px;animation-delay:0.3s;}.wbar:nth-child(5){height:22px;animation-delay:0.4s;}.wbar:nth-child(6){height:40px;animation-delay:0.5s;}.wbar:nth-child(7){height:16px;animation-delay:0.6s;}.wbar:nth-child(8){height:30px;animation-delay:0.7s;}.wbar:nth-child(9){height:24px;animation-delay:0.8s;}.wbar:nth-child(10){height:14px;animation-delay:0.9s;}.wbar:nth-child(11){height:32px;animation-delay:1.0s;}.wbar:nth-child(12){height:20px;animation-delay:1.1s;}
+@keyframes wbPulse{0%,100%{transform:scaleY(1);opacity:.7;}50%{transform:scaleY(1.4);opacity:1;}}
+.strudel-code{font-family:var(--mono);font-size:10px;color:rgba(167,139,250,.6);text-align:center;line-height:1.5;}
+/* Pixel avatar + bubble next to title */
+.lsec-title{margin-bottom:16px;}
+.lsec-sub-row{display:flex;align-items:center;gap:32px;}
+.lsec-sub{flex:1;}
+.lsec-avatar-group{position:relative;flex-shrink:0;margin-right:0px;}
+.lsec-avatar-group .pixel-bubble{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%) rotate(1.5deg);}
+.lsec-avatar{width:88px;height:88px;overflow:hidden;flex-shrink:0;transform:rotate(-5deg);transition:transform .3s ease;animation:avatarFloat 3.5s ease-in-out infinite;}
+.lsec-avatar:hover{transform:rotate(0deg) scale(1.08);animation:none;}
+.lsec-avatar img{width:100%;height:100%;object-fit:cover;image-rendering:pixelated;image-rendering:crisp-edges;}
+@keyframes avatarFloat{0%,100%{transform:rotate(-5deg) translateY(0);}50%{transform:rotate(-5deg) translateY(-5px);}}
+.pixel-bubble{background:white;border:2px solid #1a1a1a;padding:6px 10px;font-family:var(--mono);font-size:11px;color:var(--white);white-space:nowrap;box-shadow:3px 3px 0 0 #22c55e;position:relative;}
+.pixel-bubble::after{content:'';position:absolute;bottom:-8px;left:calc(50% - 3px);width:6px;height:6px;background:white;border-right:2px solid #1a1a1a;border-bottom:2px solid #1a1a1a;transform:rotate(45deg);}
+
+/* Card body */
+.lcard-body{padding:16px 18px 18px;}
+.lcard-tag{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--green);margin-bottom:6px;}
+.lcard-title{font-family:var(--mono);font-size:16px;font-weight:600;color:var(--white);margin-bottom:6px;line-height:1.3;}
+.lcard-desc{font-family:var(--mono);font-size:14px;color:var(--muted);line-height:1.65;}
+
 /* ════════════ TABLET: 810–1199px ════════════ */
 @media (max-width:1199px){
   /* Hide desktop side panels */
@@ -386,6 +434,9 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   .awards-grid{grid-template-columns:1fr;}
   .award-col+.award-col{border-left:none;border-top:1px solid var(--sep);padding-left:0;padding-top:20px;}
   .wgrid{grid-template-columns:1fr;}
+  .lcards{grid-template-columns:1fr;padding:4px 30px 52px;}
+  .lcard:nth-child(1),.lcard:nth-child(2),.lcard:nth-child(3){transform:none;}
+  .lcard:nth-child(1):hover,.lcard:nth-child(2):hover,.lcard:nth-child(3):hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 0 #22c55e;}
 }
 
 /* ════════════ MOBILE: ≤809px ════════════ */
@@ -426,6 +477,15 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   /* Awards */
   .awards-grid{grid-template-columns:1fr;padding:0 20px 30px;}
   .award-col+.award-col{border-left:none;border-top:1px solid var(--sep);padding-left:0;padding-top:20px;}
+
+  /* When I close the laptop */
+  .lsec-header{padding:12px 20px 20px;}
+  .lsec-title{font-size:36px;}
+  .lcards{grid-template-columns:1fr;padding:4px 20px 40px;}
+  .lcard:nth-child(1),.lcard:nth-child(2),.lcard:nth-child(3){transform:none;}
+  .lcard:nth-child(1):hover,.lcard:nth-child(2):hover,.lcard:nth-child(3):hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 0 #22c55e;}
+  .lsec-footer{padding:8px 20px 40px;}
+  .pixel-bubble{white-space:normal;max-width:160px;}
 
   /* Testimonials */
   .tgrid{grid-template-columns:1fr;padding:0 20px 30px;}
@@ -706,6 +766,79 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
     </div>
   </div>
 
+  <!-- WHEN I CLOSE THE LAPTOP -->
+  <div class="srow reveal" id="laptop">
+    <div class="content">
+      <p class="comment">&lt;!-- when I close the laptop --&gt;</p>
+      <div class="lsec-header">
+        <h2 class="lsec-title">Outside of work</h2>
+        <div class="lsec-sub-row">
+          <p class="lsec-sub">I'm also a travel vlogger behind the scenes, a hobbyist coder, and I make music with a live coding language called Strudel. Somehow it all makes sense together.</p>
+          <div class="lsec-avatar-group">
+            <div class="pixel-bubble">that's me btw 👋</div>
+            <div class="lsec-avatar"><img src="images/your-pixel-avatar.png" alt="Xiaoran Sun"></div>
+          </div>
+        </div>
+      </div>
+      <div class="lcards">
+
+        <!-- Card 1: Travel -->
+        <div class="lcard lcard-travel">
+          <div class="lcard-visual">
+            <canvas id="pixel-landscape" width="128" height="96"></canvas>
+          </div>
+          <div class="lcard-body">
+            <div class="lcard-tag">Travel · Vlog</div>
+            <div class="lcard-title">Travel Content Creator</div>
+            <div class="lcard-desc">My partner is the face. I'm the brain — content planning, scripting, and all the editing.</div>
+          </div>
+        </div>
+
+        <!-- Card 2: Vibe Coding -->
+        <div class="lcard lcard-code">
+          <div class="lcard-visual">
+            <div class="csnip">
+              <div><span class="cm">// xiaoran.info — yes, I built this</span></div>
+              <div><span class="kw">const</span> <span class="vr">me</span> <span class="pn">= {</span></div>
+              <div>&nbsp;&nbsp;<span class="vr">role</span><span class="pn">:</span> <span class="str">"designer who codes"</span><span class="pn">,</span></div>
+              <div>&nbsp;&nbsp;<span class="vr">stack</span><span class="pn">:</span> <span class="pn">[</span><span class="str">"HTML"</span><span class="pn">,</span> <span class="str">"CSS"</span><span class="pn">,</span> <span class="str">"JS"</span><span class="pn">],</span></div>
+              <div>&nbsp;&nbsp;<span class="vr">vibe</span><span class="pn">:</span> <span class="str">"learning in public"</span></div>
+              <div><span class="pn">}</span></div>
+              <div>&nbsp;</div>
+              <div><span class="fn">console</span><span class="pn">.</span><span class="fn">log</span><span class="pn">(</span><span class="str">"still figuring it out"</span><span class="pn">)</span></div>
+            </div>
+          </div>
+          <div class="lcard-body">
+            <div class="lcard-tag">Dev · Side Projects</div>
+            <div class="lcard-title">Vibe Coding Newbie</div>
+            <div class="lcard-desc">I build things for fun. This website is one of them. Bridging design and dev is my favourite place to be.</div>
+          </div>
+        </div>
+
+        <!-- Card 3: Strudel -->
+        <div class="lcard lcard-strudel">
+          <div class="lcard-visual">
+            <div class="strudel-waveform">
+              <div class="wbar"></div><div class="wbar"></div>
+              <div class="wbar"></div><div class="wbar"></div>
+              <div class="wbar"></div><div class="wbar"></div>
+              <div class="wbar"></div><div class="wbar"></div>
+              <div class="wbar"></div><div class="wbar"></div>
+              <div class="wbar"></div><div class="wbar"></div>
+            </div>
+            <div class="strudel-code">note("c3 eb3 g3 bb3")<br>.slow(2).reverb(0.6)</div>
+          </div>
+          <div class="lcard-body">
+            <div class="lcard-tag">Music · Live Coding</div>
+            <div class="lcard-title">Strudel Live Coding</div>
+            <div class="lcard-desc">I make music by typing code in real time. It sounds better than it looks.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <!--
   GET IN / TOUCH REVEAL — hidden, preserved for future use
   <div class="about-reveal contact-reveal" id="contact-reveal">
@@ -750,6 +883,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
     <a href="#services" class="idx-link" data-s="services"><span class="idx-bar"></span>What I do</a>
     <a href="#stack"    class="idx-link" data-s="stack"><span class="idx-bar"></span>Tech stack</a>
     <a href="#awards"   class="idx-link" data-s="awards"><span class="idx-bar"></span>Awards</a>
+    <a href="#laptop"   class="idx-link" data-s="laptop"><span class="idx-bar"></span>Life offline</a>
     <a href="mailto:sunxiaoran1314@gmail.com" class="idx-link" target="_blank"><span class="idx-bar"></span>Contact me</a>
   </nav>
 </aside>
@@ -948,6 +1082,58 @@ document.querySelectorAll('a[href]').forEach(a=>{
     }
   });
 })();
+
+/* ── Pixel art landscape ── */
+(function(){
+  var canvas = document.getElementById('pixel-landscape');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  ctx.imageSmoothingEnabled = false;
+  var P = 4;
+  function px(c,x,y,w,h){ ctx.fillStyle=c; ctx.fillRect(x*P,y*P,(w||1)*P,(h||1)*P); }
+
+  // Sky — sunset gradient, rows 0–15
+  ['#14103c','#14103c','#1e1452','#2d1464',
+   '#4a1880','#6b208c','#92286a','#b03050',
+   '#c83828','#d94818','#e85e16','#f07818',
+   '#f49020','#f4a028','#f4b030','#f4b838'
+  ].forEach(function(c,i){ px(c,0,i,32,1); });
+
+  // Ground
+  px('#152015',0,16,32,1);
+  px('#0d150d',0,17,32,7);
+
+  // Stars
+  [[8,0],[13,1],[18,0],[22,2],[27,1],[30,0],[25,3]].forEach(function(s){ px('#fffbe8',s[0],s[1]); });
+
+  // Moon
+  px('#fffff2',4,1); px('#fffff2',3,2,3); px('#fffff2',3,3,3); px('#fffff2',4,4);
+
+  // Cherry blossom tree (left)
+  px('#3d1520',4,14,1,3);
+  px('#3d1520',3,13,3); px('#3d1520',2,12,2); px('#3d1520',5,12,2);
+  [[1,9],[2,9],[3,9],[4,9],[5,9],[6,9],
+   [0,10],[1,10],[2,10],[3,10],[4,10],[5,10],[6,10],[7,10],
+   [1,11],[2,11],[3,11],[4,11],[5,11],[6,11],[7,11],
+   [2,12],[3,12],[4,12],[5,12],[6,12],
+   [3,13],[4,13],[5,13]
+  ].forEach(function(p){ px('#f4b8d0',p[0],p[1]); });
+  [[1,10],[4,10],[6,11],[3,12]].forEach(function(p){ px('#d488a8',p[0],p[1]); });
+  [[8,14],[9,15],[9,13]].forEach(function(p){ px('#f4c8dc',p[0],p[1]); });
+
+  // Mount Fuji silhouette (center)
+  var mtn = '#060a12';
+  px(mtn,15,11,3); px(mtn,13,12,7); px(mtn,11,13,11);
+  px(mtn,9,14,15); px(mtn,7,15,19); px(mtn,5,16,23);
+
+  // Torii gate (right, drawn after mountain = in front)
+  var red = '#d42020';
+  px(red,20,11,11); px(red,21,12,9);
+  px(red,21,12,2,5); px(red,28,12,2,5);
+  // Reflection
+  px('#661111',22,17,7,1); px('#661111',22,17,1,2); px('#661111',28,17,1,2);
+})();
+
 
 </script>
 </body>
