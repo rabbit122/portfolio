@@ -99,6 +99,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 
 /* ── CASE STUDY SECTIONS ── */
 .cs-section{padding:100px 30px 0;}
+#ending{padding-top:72px;}
 .cs-section-label{font-family:var(--mono);font-size:14px;font-weight:500;color:#22c55e;line-height:22px;opacity:.85;margin-bottom:28px;}
 .cs-h{font-family:var(--sans);font-size:36px;font-weight:700;letter-spacing:-.02em;color:var(--white);line-height:1.15;margin-bottom:40px;}
 .cs-h-lg{font-size:52px;letter-spacing:-.03em;line-height:1.1;}
@@ -150,8 +151,8 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .cs-process-step{background:#f5f5f5;padding:30px 26px;border:1px solid var(--sep);}
 .cs-process-step.pactive{grid-column:1/-1;background:#f5f5f5;border:1px solid var(--sep);}
 .cs-process-step-num{font-family:var(--mono);font-size:12px;font-style:italic;color:var(--dim);margin-bottom:14px;}
-.cs-process-step-title{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--white);margin-bottom:8px;}
-.cs-process-step-desc{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--muted);line-height:1.65;}
+.cs-process-step-title{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--white);margin-bottom:8px;}
+.cs-process-step-desc{font-family:var(--mono);font-size:14px;font-weight:500;color:var(--muted);line-height:1.65;}
 .cs-process-connector{grid-column:1/-1;display:flex;flex-direction:column;align-items:center;gap:6px;padding:4px 0;}
 .cs-process-arrows{display:flex;gap:40px;color:var(--dim);}
 .cs-process-arrows svg{width:16px;height:16px;}
@@ -223,7 +224,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 }
 
 /* ── SEE MORE PROJECTS ── */
-.more-section{padding:56px 30px 0;}
+.more-section{padding:140px 30px 120px;}
 .more-h{font-family:var(--sans);font-size:36px;font-weight:700;letter-spacing:-.02em;color:var(--white);line-height:1.15;margin-bottom:28px;}
 .wgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;}
 .wcard{cursor:pointer;overflow:hidden;border:1px solid var(--sep);transition:background .15s;display:block;}
@@ -300,7 +301,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   .cs-h{font-size:26px;}
   .cs-p{font-size:14px;}
   .comment{padding:16px 20px 0;}
-  .more-section{padding:36px 20px 0;}
+  .more-section{padding:36px 20px 60px;}
   .more-h{font-size:26px;}
   .wgrid{grid-template-columns:1fr;gap:16px;}
 }
@@ -337,8 +338,8 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 <nav class="mob-menu" id="mob-menu" aria-hidden="true">
   <a href="index.html" class="mob-menu-link mob-nav-link">Home</a>
   <span class="mob-menu-plain">London, UK</span>
-  <a href="mailto:sunxiaoran1314@gmail.com" class="mob-menu-link">sunxiaoran1314@gmail.com</a>
-  <a href="XiaoranSun-CV2026.pdf" class="mob-menu-link">Download CV</a>
+  <a href="mailto:sunxiaoran1314@gmail.com" class="mob-menu-link" target="_blank">sunxiaoran1314@gmail.com</a>
+  <a href="XiaoranSun-CV2026.pdf" class="mob-menu-link" target="_blank">Download CV</a>
 </nav>
 
 <div class="layout">
@@ -357,16 +358,16 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
       <div class="l-info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>10 years of experience</div>
       <div class="l-info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>London, UK</div>
       <div class="l-info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/><path d="M8 7h8M8 11h5"/></svg>English, Mandarin</div>
-      <div class="l-info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:sunxiaoran1314@gmail.com">sunxiaoran1314@gmail.com</a></div>
+      <div class="l-info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:sunxiaoran1314@gmail.com" target="_blank">sunxiaoran1314@gmail.com</a></div>
       <div class="l-info"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><a href="https://www.linkedin.com/in/xiaoran-sun-82706919a/" target="_blank" rel="noopener">LinkedIn</a></div>
     </div>
-    <a href="XiaoranSun-CV2026.pdf" class="btn-cv" style="width:100%;">
+    <a href="XiaoranSun-CV2026.pdf" class="btn-cv" style="width:100%;" target="_blank">
       <span class="btn-cv-text">Download CV</span>
       <div class="btn-cv-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
     </a>
   </div>
   <div class="l-btns">
-    <a href="index.html#contact" class="btn-sched">Contact me</a>
+    <a href="mailto:sunxiaoran1314@gmail.com" class="btn-sched" target="_blank">Contact me</a>
   </div>
 </aside>
 
@@ -642,23 +643,38 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
     <blockquote class="cs-quote" style="margin-top:32px;max-width:680px;">Responsive design isn't about shrinking the web version — it's about rethinking what data matters most, and how to present it, for each context of use.</blockquote>
     <p class="cs-p" style="margin-top:20px;">A restaurant manager checking data on their phone while standing in a kitchen has completely different needs from someone reviewing reports on a desktop.</p>
 
-    <!-- Two decisions -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:60px;">
-      <div class="cs-process-step" style="padding:32px 28px;">
-        <div class="cs-process-step-num" style="margin-bottom:10px;">Decision 01</div>
-        <div class="cs-process-step-title" style="font-size:15px;margin-bottom:14px;">Rethink the visual language</div>
-        <p class="cs-process-step-desc">Donut charts became Bar charts on Mobile. Bar charts became tables where space required it. Every change was driven by what would communicate most clearly at that size — not by what was easiest to replicate.</p>
-      </div>
-      <div class="cs-process-step" style="padding:32px 28px;">
-        <div class="cs-process-step-num" style="margin-bottom:10px;">Decision 02</div>
-        <div class="cs-process-step-title" style="font-size:15px;margin-bottom:14px;">Push back on feature removal</div>
-        <p class="cs-process-step-desc">When the PM proposed simply removing two complex feature tabs from Mobile, I pushed back. Instead of removing them, I proposed keeping the navigation structure with an empty state message and a direct link to the web version.</p>
-        <p class="cs-process-step-desc" style="margin-top:10px;">Every tap on that link would generate usage data — real evidence of how often users tried to access these features in the field, which is exactly the kind of data that changes investment decisions.</p>
+    <!-- Decision 01 -->
+    <div class="cs-finding-header" style="margin-top:60px;grid-template-columns:120px 1fr;">
+      <div class="cs-finding-num">Decision 01 —</div>
+      <h3 class="cs-finding-hl">Rethink the visual language</h3>
+    </div>
+    <div class="cs-finding-body" style="grid-template-columns:120px 1fr;">
+      <div></div>
+      <div class="cs-finding-content">
+        <p class="cs-track-p">Donut charts became Bar charts on Mobile. Bar charts became tables where space required it. Every change was driven by what would communicate most clearly at that size — not by what was easiest to replicate.</p>
+        <div>
+          <div style="width:88%;margin-right:auto;">
+            <img src="images/responsive design01.png" alt="Responsive design comparison 1" style="width:100%;height:auto;display:block;">
+          </div>
+          <div style="width:88%;margin-left:auto;margin-top:16px;">
+            <img src="images/responsive design02.png" alt="Responsive design comparison 2" style="width:100%;height:auto;display:block;">
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Image placeholder for mobile/tablet screens -->
-    <div class="img-placeholder" style="height:300px;margin-top:60px;">[Mobile and Tablet design screens]</div>
+    <!-- Decision 02 -->
+    <div class="cs-finding-header" style="grid-template-columns:120px 1fr;">
+      <div class="cs-finding-num">Decision 02 —</div>
+      <h3 class="cs-finding-hl">Push back on feature removal</h3>
+    </div>
+    <div class="cs-finding-body" style="grid-template-columns:120px 1fr;">
+      <div></div>
+      <div class="cs-finding-content">
+        <p class="cs-track-p">When the PM proposed simply removing two complex feature tabs from Mobile, I pushed back. Instead of removing them, I proposed keeping the navigation structure with an empty state message and a direct link to the web version.</p>
+        <p class="cs-track-p">Every tap on that link would generate usage data — real evidence of how often users tried to access these features in the field, which is exactly the kind of data that changes investment decisions.</p>
+      </div>
+    </div>
 
     <!-- Result -->
     <div style="margin-top:40px;">
@@ -673,9 +689,6 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
     <p class="cs-p">Circularity shipped on time. But more importantly, it shipped as a product that had been interrogated — features removed, assumptions challenged, and real user behaviour accounted for.</p>
     <p class="cs-p">As a contractor joining mid-project, my job wasn't just to design. It was to bring enough structure and judgment to move things forward — without the runway of a full-time role.</p>
   </section>
-
-  <!-- DIVIDER -->
-  <div style="margin:80px 30px 0;height:1px;background:var(--sep);"></div>
 
   <!-- SEE MORE PROJECTS -->
   <div class="more-section reveal">
@@ -699,7 +712,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
     <a href="#impact-1"   class="idx-link" data-s="impact-1"><span class="idx-bar"></span>Impact 1</a>
     <a href="#impact-2"   class="idx-link" data-s="impact-2"><span class="idx-bar"></span>Impact 2</a>
     <a href="#impact-3"   class="idx-link" data-s="impact-3"><span class="idx-bar"></span>Impact 3</a>
-    <a href="#ending"     class="idx-link" data-s="ending"><span class="idx-bar"></span>Takeaways</a>
+    <a href="#ending"     class="idx-link" data-s="ending"><span class="idx-bar"></span>Wrap it up</a>
   </nav>
 </aside>
 
@@ -807,14 +820,33 @@ requestAnimationFrame(() => {
 });
 
 /* ACTIVE NAV */
+let navLock = false;
+
+function setActiveNav(id) {
+  document.querySelectorAll('.idx-link').forEach(l => l.classList.toggle('active', l.dataset.s === id));
+}
+
 const sio = new IntersectionObserver(entries => {
+  if (navLock) return;
   entries.forEach(e => {
     if (!e.isIntersecting) return;
-    const id = e.target.id;
-    document.querySelectorAll('.idx-link').forEach(l => l.classList.toggle('active', l.dataset.s === id));
+    setActiveNav(e.target.id);
   });
 }, { rootMargin: '-36% 0px -58% 0px' });
 document.querySelectorAll('#highlights,#overview,#impact-0,#impact-1,#impact-2,#impact-3,#ending').forEach(s => sio.observe(s));
+
+// Set initial highlight on page load
+(function initActiveNav() {
+  const sections = [...document.querySelectorAll('#highlights,#overview,#impact-0,#impact-1,#impact-2,#impact-3,#ending')];
+  const vh = window.innerHeight;
+  let best = null, bestDist = Infinity;
+  sections.forEach(s => {
+    const r = s.getBoundingClientRect();
+    const dist = Math.abs((r.top + r.bottom) / 2 - vh * 0.5);
+    if (dist < bestDist) { bestDist = dist; best = s; }
+  });
+  if (best) setActiveNav(best.id);
+})();
 
 /* SMOOTH SCROLL for in-page anchors */
 document.querySelectorAll('a[href]').forEach(a => {
@@ -823,7 +855,18 @@ document.querySelectorAll('a[href]').forEach(a => {
     a.addEventListener('click', e => {
       e.preventDefault();
       const t = document.querySelector(href);
-      if (t) t.scrollIntoView({ behavior: 'smooth' });
+      if (t) {
+        if (a.dataset.s) {
+          setActiveNav(a.dataset.s);
+          navLock = true;
+          setTimeout(() => { navLock = false; }, 1000);
+        }
+        if (t.id === 'highlights') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          t.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
     });
   }
 });
