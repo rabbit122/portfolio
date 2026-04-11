@@ -140,7 +140,11 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .ba-container:hover .ba-divider{width:2px;background:rgba(255,255,255,0.9);}
 .ba-handle{position:absolute;bottom:10%;left:50%;transform:translateX(-50%);width:14px;height:26px;background:#fff;border-radius:99px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.2);pointer-events:none;transition:opacity .2s, box-shadow .2s;}
 .ba-container:hover .ba-handle{box-shadow:0 3px 14px rgba(0,0,0,.28);}
+.ba-hint{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,0.58);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.06em;padding:8px 18px;border-radius:99px;pointer-events:none;white-space:nowrap;z-index:20;transition:opacity .5s ease;}
+.ba-hint.hidden{opacity:0;}
 .ba-caption{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);text-align:center;margin-top:10px;letter-spacing:.03em;}
+.ba-smooth .ba-img-before{transition:right .38s cubic-bezier(.4,0,.2,1);}
+.ba-smooth .ba-divider{transition:left .38s cubic-bezier(.4,0,.2,1), background .2s, width .2s;}
 
 /* ── FINDING BLOCKS ── */
 .cs-quote{border-left:2px solid #22c55e;padding:14px 20px;margin:0;font-family:var(--mono);font-size:18px;font-weight:500;font-style:italic;color:var(--white);line-height:1.65;}
@@ -476,10 +480,10 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
     <h2 class="cs-h cs-h-lg">Design as a tool<span class="dim"><br>for alignment.</span></h2>
     <p class="cs-p">Multiple stakeholders had different views on product direction — but no shared language to discuss priorities. Rather than scheduling more meetings, I used rapid mockups as artifacts to make decisions concrete and visible.</p>
 
-    <div class="ba-wrap" data-ba>
+    <div class="ba-wrap" data-ba data-ba-wiggle style="width:80%;margin-left:0;">
       <div class="ba-label-row">
-        <span class="ba-label">Before — Early design</span>
-        <span class="ba-label">After — Final design</span>
+        <span class="ba-label">Dashboard — Before</span>
+        <span class="ba-label">Dashboard — After</span>
       </div>
       <div class="ba-container">
         <img src="images/impact1-after.png" alt="After" class="ba-img-after" draggable="false">
@@ -487,11 +491,45 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
           <img src="images/impact1-before.png" alt="Before" data-ba-before-img draggable="false">
         </div>
         <div class="ba-divider" data-ba-divider>
-          <div class="ba-handle">
-          </div>
+          <div class="ba-handle"></div>
+        </div>
+        <div class="ba-hint">← Drag to compare →</div>
+      </div>
+      <div class="ba-caption"></div>
+    </div>
+
+    <div class="ba-wrap" data-ba style="width:80%;margin-left:auto;margin-right:0;margin-top:20px;">
+      <div class="ba-label-row">
+        <span class="ba-label">— Before</span>
+        <span class="ba-label">— After</span>
+      </div>
+      <div class="ba-container">
+        <img src="images/impact1-after-1.png" alt="After" class="ba-img-after" draggable="false">
+        <div class="ba-img-before" data-ba-before>
+          <img src="images/impact1-before-1.png" alt="Before" data-ba-before-img draggable="false">
+        </div>
+        <div class="ba-divider" data-ba-divider>
+          <div class="ba-handle"></div>
         </div>
       </div>
-      <div class="ba-caption">← Drag to compare →</div>
+      <div class="ba-caption"></div>
+    </div>
+
+    <div class="ba-wrap" data-ba style="width:80%;margin-left:0;margin-right:auto;margin-top:20px;">
+      <div class="ba-label-row">
+        <span class="ba-label">— Before</span>
+        <span class="ba-label">— After</span>
+      </div>
+      <div class="ba-container">
+        <img src="images/impact1-after-2.png" alt="After" class="ba-img-after" draggable="false">
+        <div class="ba-img-before" data-ba-before>
+          <img src="images/impact1-before-2.png" alt="Before" data-ba-before-img draggable="false">
+        </div>
+        <div class="ba-divider" data-ba-divider>
+          <div class="ba-handle"></div>
+        </div>
+      </div>
+      <div class="ba-caption"></div>
     </div>
 
     <div class="cs-two-col" style="margin-top:100px;">
@@ -705,10 +743,10 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   <nav class="idx-links">
     <a href="#highlights" class="idx-link" data-s="highlights"><span class="idx-bar"></span>Highlights</a>
     <a href="#overview"   class="idx-link" data-s="overview"><span class="idx-bar"></span>Overview</a>
-    <a href="#impact-0"   class="idx-link" data-s="impact-0"><span class="idx-bar"></span>Impact 0</a>
-    <a href="#impact-1"   class="idx-link" data-s="impact-1"><span class="idx-bar"></span>Impact 1</a>
-    <a href="#impact-2"   class="idx-link" data-s="impact-2"><span class="idx-bar"></span>Impact 2</a>
-    <a href="#impact-3"   class="idx-link" data-s="impact-3"><span class="idx-bar"></span>Impact 3</a>
+    <a href="#impact-0"   class="idx-link" data-s="impact-0"><span class="idx-bar"></span>How I Started</a>
+    <a href="#impact-1"   class="idx-link" data-s="impact-1"><span class="idx-bar"></span>Design for Alignment</a>
+    <a href="#impact-2"   class="idx-link" data-s="impact-2"><span class="idx-bar"></span>Judgment Call</a>
+    <a href="#impact-3"   class="idx-link" data-s="impact-3"><span class="idx-bar"></span>Responsive Design</a>
     <a href="#ending"     class="idx-link" data-s="ending"><span class="idx-bar"></span>Wrap it up</a>
   </nav>
 </aside>
@@ -726,7 +764,9 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
     var before    = wrap.querySelector('[data-ba-before]');
     var beforeImg = wrap.querySelector('[data-ba-before-img]');
     var divider   = wrap.querySelector('[data-ba-divider]');
+    var hint      = wrap.querySelector('.ba-hint');
     var dragging  = false;
+    var hintDismissed = false;
 
     function syncImgWidth(){
       if(beforeImg) beforeImg.style.width = container.offsetWidth + 'px';
@@ -740,14 +780,38 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
       divider.style.left = pct + '%';
     }
 
+    function dismissHint(){
+      if(hint && !hintDismissed){ hintDismissed = true; hint.classList.add('hidden'); }
+    }
+
+    function wiggle(){
+      container.classList.add('ba-smooth');
+      setTimeout(function(){ setPos(35); }, 0);
+      setTimeout(function(){ setPos(65); }, 420);
+      setTimeout(function(){ setPos(50); container.classList.remove('ba-smooth'); }, 860);
+    }
+
+    // Trigger wiggle once when slider enters viewport (only if data-ba-wiggle set)
+    if(wrap.hasAttribute('data-ba-wiggle')){
+      var wiggledOnce = false;
+      var wio = new IntersectionObserver(function(entries){
+        if(entries[0].isIntersecting && !wiggledOnce){
+          wiggledOnce = true;
+          setTimeout(wiggle, 500);
+          wio.disconnect();
+        }
+      }, { threshold: 0.6 });
+      wio.observe(container);
+    }
+
     function getX(e){ return e.touches ? e.touches[0].clientX : e.clientX; }
     function move(e){
       var rect = container.getBoundingClientRect();
       setPos((getX(e) - rect.left) / rect.width * 100);
     }
 
-    container.addEventListener('mousedown',  function(e){ e.preventDefault(); dragging=true; move(e); });
-    container.addEventListener('touchstart', function(e){ dragging=true; move(e); }, {passive:true});
+    container.addEventListener('mousedown',  function(e){ e.preventDefault(); dragging=true; move(e); dismissHint(); });
+    container.addEventListener('touchstart', function(e){ dragging=true; move(e); dismissHint(); }, {passive:true});
     window.addEventListener('mouseup',   function(){ dragging=false; });
     window.addEventListener('touchend',  function(){ dragging=false; });
     window.addEventListener('mousemove', function(e){ if(dragging) move(e); });
