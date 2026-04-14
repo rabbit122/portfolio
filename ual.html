@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Circularity — Xiaoran Sun</title>
+<title>UAL Graduate Showcase — Xiaoran Sun</title>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNDYQ3DZPP"></script>
 <script>
@@ -100,7 +100,6 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 @media(max-width:1199px){.project-title{font-size:56px;}}
 @media(max-width:809px){.project-title{font-size:32px;padding:16px 20px 0;}}
 
-
 /* ── COVER IMAGE ── */
 .cover-img{margin:60px 30px 0;}
 .cover-img img{width:100%;height:auto;display:block;}
@@ -177,7 +176,6 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .cs-finding-body{display:grid;grid-template-columns:100px 1fr;gap:24px;margin-top:32px;}
 .cs-finding-content{display:flex;flex-direction:column;gap:28px;}
 
-/* stat row */
 /* audit cards */
 .cs-audit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:0;}
 .cs-audit-card{background:#f5f5f5;padding:22px 22px 24px;display:flex;flex-direction:column;gap:10px;}
@@ -198,21 +196,6 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 .cs-ba-panel-sub{margin-top:8px;font-family:var(--mono);font-size:12px;color:var(--dim);}
 .cs-ba-panel.after .cs-ba-panel-sub{color:rgba(255,255,255,.35);}
 
-/* ranking mockup */
-.cs-ranking{background:var(--panel);border:1px solid var(--sep);overflow:hidden;max-width:460px;}
-.cs-ranking-hdr{padding:14px 18px;border-bottom:1px solid var(--sep);font-family:var(--mono);font-size:12px;font-weight:600;color:var(--white);display:flex;align-items:center;justify-content:space-between;}
-.cs-ranking-hdr span{font-weight:400;color:var(--dim);}
-.cs-ranking-row{display:flex;align-items:center;gap:12px;padding:10px 18px;font-family:var(--mono);font-size:12px;color:var(--muted);}
-.cs-ranking-row.hi{background:#f0fdf4;border-left:2px solid #22c55e;}
-.cs-ranking-row.hi .cs-rank-n{color:#22c55e;font-weight:700;}
-.cs-rank-n{width:24px;font-size:12px;font-weight:600;color:var(--dim);flex-shrink:0;}
-.cs-rank-dot{width:6px;height:6px;border-radius:50%;background:var(--sep);flex-shrink:0;}
-.cs-ranking-row.hi .cs-rank-dot{background:#22c55e;}
-.cs-rank-name{flex:1;}
-.cs-rank-score{font-size:12px;font-weight:600;color:var(--white);}
-.cs-ranking-ellipsis{padding:4px 18px 4px 54px;font-family:var(--mono);font-size:16px;letter-spacing:4px;color:var(--sep);}
-.cs-ranking-caption{padding:10px 18px;background:#f5f5f5;font-family:var(--mono);font-size:12px;color:var(--muted);}
-
 /* callout block */
 .cs-callout{display:flex;align-items:center;gap:16px;padding:24px 28px;background:#171717;max-width:420px;}
 .cs-callout-num{font-family:var(--sans);font-size:52px;font-weight:800;color:#22c55e;line-height:1;flex-shrink:0;}
@@ -231,7 +214,6 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   .cs-finding-header,.cs-finding-body{grid-template-columns:1fr;}
   .cs-finding-header .cs-finding-num{padding-top:0;}
   .cs-ba-panels{max-width:100%;grid-template-columns:1fr;}
-  .cs-stat-row{max-width:100%;}
   .cs-ranking,.cs-callout{max-width:100%;}
 }
 
@@ -299,7 +281,6 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   .tb-mob-logo{display:flex;}
   .tb-mob-status{display:flex;}
   .tb-hamburger{display:flex;align-items:center;justify-content:center;}
-  .work-info{grid-template-columns:1fr 1fr 1fr;}
 }
 
 /* ════════════ MOBILE: ≤809px ════════════ */
@@ -397,14 +378,13 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   </a>
 
   <!-- PROJECT TITLE -->
-  <h1 class="project-title"><span class="l1">Building <span class="kw">greenfield</span> B2B platform</span><span class="l2">from <span class="kw">assumption to launch.</span></span></h1>
-  <!-- COVER IMAGE -->
-  <div class="cover-img">
-    <img src="images/Circularity-Hightlight.png" alt="Circularity project cover">
-  </div>
+  <h1 class="project-title"><span class="l1" style="color:var(--muted)">UAL Graduate Showcase & Design System</span><span class="l2"><span class="kw">Redefining what a university showcase platform is for.</span></span></h1>
 
-  <!-- HIGHLIGHTS -->
-  <section class="cs-section reveal" id="highlights" style="padding:0"></section>
+  <!-- INTRO TEXT — directly under title -->
+  <div style="padding:40px 30px 0;">
+    <p class="cs-p">UAL is one of the world's top two art and design universities. Every year, its Graduate Showcase is the most important public moment for tens of thousands of students — the first time their work is seen by the world.</p>
+    <p class="cs-p">When the pandemic cancelled in-person events, UAL built an online showcase fast. I joined as a contractor in year two — the 2.0 version — alongside one other designer. Three months in, I moved onto the Design System team for the remaining contract period.</p>
+  </div>
 
 
   <!-- OVERVIEW -->
@@ -414,336 +394,289 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
       <div class="cs-overview-meta">
         <div class="cs-meta-item">
           <div class="cs-meta-label">Company</div>
-          <div class="cs-meta-value">Martin Brower</div>
+          <div class="cs-meta-value">University of the Arts London</div>
         </div>
         <div class="cs-meta-item">
           <div class="cs-meta-label">Role</div>
-          <div class="cs-meta-value">UX/UI Designer</div>
+          <div class="cs-meta-value">UX/UI Designer · Contract</div>
         </div>
         <div class="cs-meta-item">
           <div class="cs-meta-label">Duration</div>
-          <div class="cs-meta-value">Jun–Dec '25</div>
+          <div class="cs-meta-value">Feb–Jul 2022</div>
         </div>
         <div class="cs-meta-item">
           <div class="cs-meta-label">Platform</div>
-          <div class="cs-meta-value">Web · Mobile · Tablet</div>
+          <div class="cs-meta-value">Web · Design System</div>
         </div>
       </div>
+
+      <!-- TIMELINE BAR -->
       <div class="cs-overview-body">
-        <div class="cs-meta-label" style="margin-bottom:10px;">Background</div>
-        <p class="cs-p">Circularity is a B2B waste management platform built for Martin Brower, one of the world's largest supply chain companies serving restaurant brands like McDonald's.</p>
-        <p class="cs-p">The product was built in response to new UK waste regulations. Nobody in the market had a clear reference point, not even the stakeholders.</p>
-        <div class="cs-meta-label" style="margin-top:28px;margin-bottom:10px;">The key technical context</div>
-        <p class="cs-p">The product was built on Salesforce. This means the technical capabilities were already decided. My job wasn't to design and hand off to engineers to build from scratch.</p>
-        <p class="cs-p">My job was: given what Salesforce can serve, how do I design an interface that actually helps users make decisions, without over-serving data or under-serving context?</p>
+        <div style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;">6 months</div>
+        <div style="display:flex;height:6px;width:100%;overflow:hidden;">
+          <div style="width:58.33%;background:#FFB400;"></div>
+          <div style="width:1px;background:var(--bg);flex-shrink:0;"></div>
+          <div style="flex:1;background:#171717;"></div>
+        </div>
+        <div style="display:flex;margin-top:10px;">
+          <div style="width:58.33%;">
+            <div style="font-family:var(--mono);font-size:12px;font-weight:600;color:#FFB400;">Showcase Website</div>
+            <div style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);margin-top:2px;">3.5 months</div>
+          </div>
+          <div style="flex:1;padding-left:12px;">
+            <div style="font-family:var(--mono);font-size:12px;font-weight:600;color:var(--white);">Design System</div>
+            <div style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);margin-top:2px;">2.5 months</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TWO PROJECT IMAGES WITH LABELS -->
+    <div style="display:flex;flex-direction:column;gap:40px;margin-top:60px;">
+      <div>
+        <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Graduate Showcase Website</div>
+        <img src="images/UAL Graduate Showcase.png" alt="UAL Graduate Showcase Website" style="width:100%;height:auto;display:block;">
+      </div>
+      <div>
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:10px;">
+          <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);">Digital Design System</div>
+          <a href="https://www.figma.com/design/X8I6AXOU4byccpthVz9jXg/UAL-Digital-design-system-link-to-web?node-id=1-13732&t=KLjgDTjs3AtWaIoJ-1" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);display:inline-flex;align-items:center;gap:4px;transition:color .15s;" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--dim)'">View on Figma <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+        </div>
+        <img src="images/UALDesignsystemcover.png" alt="UAL Digital Design System" style="width:100%;height:auto;display:block;">
       </div>
     </div>
   </section>
 
 
-  <!-- IMPACT 0 -->
-  <section class="cs-section reveal" id="impact-0">
-    <div class="cs-section-label">&lt;!-- Impact 0 --&gt;</div>
-    <h2 class="cs-h cs-h-lg">How I started<span class="dim"><br>without a brief, without a handover.</span></h2>
-    <div class="cs-track-grid">
-      <div class="cs-track-col">
-        <div class="cs-track-label">Track 01</div>
-        <div class="cs-track-h">Read the documents</div>
-        <p class="cs-track-p">Product briefs, regulatory background, early stage Figma frames.</p>
-        <p class="cs-track-p">Understanding what existed before forming any opinion.</p>
+  <!-- CHOOSING NOT TO PLAY IT SAFE -->
+  <section class="cs-section reveal" id="not-safe">
+    <div class="cs-section-label">&lt;!-- Showcase Website --&gt;</div>
+    <h2 class="cs-h cs-h-lg"><span style="color:var(--muted)">Choosing</span><br>Not to Play It Safe</h2>
+
+    <div class="cs-finding-content" style="margin-top:40px;">
+
+      <div>
+        <div class="cs-track-label">Situation</div>
+        <p class="cs-p">When I joined, there was already a direction on the table. An external usability report had flagged high bounce rate and surface-level problems — filters hard to use, difficult to find a specific student's work. A colleague had produced layout-level wireframe revisions in response. The team reviewed it. It worked. Nobody could say it was wrong.</p>
+        <p class="cs-p">But nobody was quite convinced it was right either.</p>
       </div>
-      <div class="cs-track-col">
-        <div class="cs-track-label">Track 02</div>
-        <div class="cs-track-h">Talk to the people</div>
-        <p class="cs-track-p">One-on-one meetings with the PM and key stakeholders.</p>
-        <p class="cs-track-p">Not to gather requirements, to understand priorities, constraints, and what "good" meant to each person.</p>
+
+      <div>
+        <div class="cs-track-label">My judgment</div>
+        <p class="cs-p">Layout changes address what users struggle with. They don't address why users leave. The external report gave us symptoms; it didn't give us intent. If we shipped this direction, we'd have a tidier version of the same platform — but we still wouldn't know what students actually needed from it. So we needed to go back to users. Fast.</p>
       </div>
-      <div class="cs-track-col">
-        <div class="cs-track-label">Track 03</div>
-        <div class="cs-track-h">Read the documents</div>
-        <p class="cs-track-p">Existing Figma frames told me where the project stood.</p>
-        <p class="cs-track-p">What had been decided, what was still open, and where the first real design decisions needed to happen.</p>
+
+      <div>
+        <div class="cs-track-label">Why this was worth the time</div>
+        <p class="cs-p">Our office was directly above one of the UAL colleges. Testing didn't mean recruiting, scheduling, or a research budget. It meant walking downstairs to the canteen. The cost was low. The risk of not doing it — spending the rest of the contract optimising the wrong thing — was much higher.</p>
+      </div>
+
+      <div>
+        <div class="cs-track-label">What it immediately changed</div>
+        <p class="cs-p">It shifted the team's shared understanding of what the problem actually was. Before testing, we were solving for usability friction. After testing, we were solving for something more fundamental — which I'll come to next.</p>
+      </div>
+
+    </div>
+
+    <!-- SUMMARY CARD -->
+    <div class="cs-audit-grid" style="grid-template-columns:1fr 1fr;margin-top:48px;">
+      <div class="cs-audit-card">
+        <div class="cs-audit-label">What we had</div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;">
+          <div class="cs-audit-sub" style="color:var(--white);font-weight:500;font-size:14px;">— External usability report (high bounce rate flagged)</div>
+          <div class="cs-audit-sub" style="color:var(--white);font-weight:500;font-size:14px;">— Layout-level wireframe revisions</div>
+          <div class="cs-audit-sub" style="color:var(--white);font-weight:500;font-size:14px;">— A direction that worked, but felt flat</div>
+        </div>
+      </div>
+      <div class="cs-audit-card">
+        <div class="cs-audit-label">What we chose to do first</div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;">
+          <div class="cs-audit-sub" style="color:var(--white);font-weight:500;font-size:14px;">— Guerrilla testing with real UAL students</div>
+          <div class="cs-audit-sub" style="color:var(--white);font-weight:500;font-size:14px;">— Open questions, not task prompts</div>
+          <div class="cs-audit-sub" style="color:var(--white);font-weight:500;font-size:14px;">— Cost: walking downstairs</div>
+        </div>
       </div>
     </div>
-    <img src="images/impact0.png" alt="" style="width:80%;height:auto;display:block;margin-top:60px;">
-    <div class="cs-two-col" style="margin-top:80px;">
+  </section>
+
+
+  <!-- IMPACT 01 — THE INSIGHT THAT REFRAMED EVERYTHING -->
+  <section class="cs-section reveal" id="insight">
+    <div class="cs-section-label">&lt;!-- Impact 01 --&gt;</div>
+    <h2 class="cs-h cs-h-lg"><span style="color:var(--muted)">The Insight That</span><br>Reframed Everything</h2>
+
+    <div class="cs-finding-content" style="margin-top:40px;">
+
       <div>
-        <div class="cs-track-label">Why this approach.</div>
-        <p class="cs-track-p">In a greenfield project with no market reference, the most dangerous move is to assume I understand the direction and start executing. I needed to know three things first: what problem the product was solving, where the technical boundaries were (Salesforce constraints), and what each stakeholder's priorities actually were. None of that lives in a document alone.</p>
+        <div class="cs-track-label">Situation</div>
+        <p class="cs-p">The guerrilla testing surfaced something unexpected. Through open questions — What does this platform mean to you? What do you want it to do for you after graduation? — a pattern emerged immediately: students weren't thinking of this as an annual event. They were thinking of it as their first portfolio. Their first professional presence.</p>
+        <p class="cs-p">For UAL students — whether you're in fashion, UX, photography, or stage design — you need a portfolio to get work. Many don't have one yet when they graduate. The showcase was already doing this job accidentally. Nobody had designed for it intentionally.</p>
       </div>
+
       <div>
-        <img src="images/impact01.png" alt="" class="cs-two-col-img">
+        <div class="cs-track-label">My judgment</div>
+        <p class="cs-p">This wasn't a UX problem. It was a positioning problem. The platform had been designed as a ceremony. Students were trying to use it as career infrastructure. Those are two completely different design briefs.</p>
+      </div>
+
+    </div>
+
+    <!-- QUOTE PULLOUT -->
+    <div style="margin-top:72px;padding:60px 40px;background:#f5f5f5;text-align:center;">
+      <div style="font-family:var(--mono);font-size:24px;font-weight:500;font-style:italic;color:var(--white);line-height:1.55;max-width:620px;margin:0 auto;">"This is basically my first portfolio."</div>
+      <div style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);letter-spacing:.06em;margin-top:20px;">— UAL student, guerrilla usability test, 2022</div>
+    </div>
+
+    <!-- DESIGN MISSION -->
+    <div style="margin-top:72px;">
+      <div style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;">Design mission</div>
+      <div style="font-family:var(--sans);font-size:42px;font-weight:700;letter-spacing:-.02em;color:var(--white);line-height:1.1;">"First bridge for global design talent."</div>
+    </div>
+
+    <!-- BEFORE / AFTER -->
+    <div class="cs-audit-grid" style="grid-template-columns:1fr 1fr;margin-top:32px;">
+      <div class="cs-audit-card">
+        <div class="cs-audit-label">Before</div>
+        <div class="cs-audit-value" style="font-size:14px;">Showcase as ceremony</div>
+        <div class="cs-audit-sub" style="color:var(--white);font-weight:500;font-size:14px;">Optimised for the annual traffic spike</div>
+      </div>
+      <div class="cs-audit-card">
+        <div class="cs-audit-label">After</div>
+        <div class="cs-audit-value" style="font-size:14px;">Showcase as career infrastructure</div>
+        <div class="cs-audit-sub" style="color:var(--white);font-weight:500;font-size:14px;">Optimised for discovery, connection, and action</div>
       </div>
     </div>
+
+  </section>
+
+
+  <!-- IMPACT 02 — THREE MODES, ONE SHIFT -->
+  <section class="cs-section reveal" id="three-modes">
+    <div class="cs-section-label">&lt;!-- Impact 02 --&gt;</div>
+    <h2 class="cs-h cs-h-lg"><span style="color:var(--muted)">Three Modes,</span><br>One Shift</h2>
+
+    <div class="cs-finding-content" style="margin-top:40px;">
+
+      <div>
+        <div class="cs-track-label">Situation</div>
+        <p class="cs-p">Mission defined. Now: what does that actually mean in the product? We identified three things students wanted from this platform beyond showing work: sell their physical work, connect with employers, find collaborators.</p>
+      </div>
+
+      <div>
+        <div class="cs-track-label">My judgment</div>
+        <p class="cs-p">We didn't need to build a marketplace. We needed three flags at upload — Sell / Hire me / Collaborate — and a redesigned filter logic and hero section built around these three modes.</p>
+      </div>
+
+      <div>
+        <div class="cs-track-label">Why this over a full rebuild</div>
+        <p class="cs-p">The timeline was fixed and non-negotiable. UAL had assembled a contractor team — developers and designers — specifically to hit one hard deadline: the graduation ceremony. Missing it wasn't an option. So every decision had to answer: what delivers the most meaningful change within what we can actually ship?</p>
+      </div>
+
+    </div>
+
+    <!-- HERO BEFORE / AFTER PLACEHOLDER -->
+    <div style="margin-top:72px;">
+      <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Hero section — Before / After</div>
+      <div class="img-placeholder" style="width:100%;height:360px;">[ image placeholder ]</div>
+    </div>
+
+    <!-- THREE DECISIONS -->
+    <div style="margin-top:72px;">
+      <div style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;margin-bottom:32px;">Three decisions worth unpacking</div>
+      <div class="cs-finding-content">
+
+        <div>
+          <div class="cs-track-label">Sell</div>
+          <p class="cs-p">Historically, the in-person showcase functioned like a creative market; people genuinely bought things. That layer had disappeared online. We reconnected it: if a student had a shop listing, 'Buy' linked directly there. If not, it defaulted to their Instagram, DM, or email based on their preference. No new payment infrastructure. Minimal engineering lift.</p>
+        </div>
+
+        <div>
+          <div class="cs-track-label">Employ</div>
+          <p class="cs-p">Students wanted to be actively findable to employers — not just passively visible. Framing this as an intentional signal rather than passive presence was the design shift.</p>
+        </div>
+
+        <div>
+          <div class="cs-track-label">Collaborate</div>
+          <p class="cs-p">This addressed a pattern we hadn't expected — fashion students need photographers, stage designers need people. Cross-discipline collaboration was already happening; we just needed to make it findable.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- UPLOAD FLOW PLACEHOLDER -->
     <div style="margin-top:60px;">
+      <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Upload flow — three flag options</div>
+      <div class="img-placeholder" style="width:100%;height:280px;">[ image placeholder ]</div>
+    </div>
+
+    <!-- BUY FLOW DIAGRAM -->
+    <div style="margin-top:60px;">
+      <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:24px;">Buy flow</div>
+      <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0;max-width:560px;">
+
+        <!-- Step 1 -->
+        <div style="background:#f5f5f5;border:1px solid var(--sep);padding:16px 24px;width:100%;">
+          <div style="font-family:var(--mono);font-size:13px;font-weight:600;color:var(--white);">User clicks "Buy creative artwork"</div>
+        </div>
+
+        <!-- Arrow down -->
+        <div style="display:flex;flex-direction:column;align-items:center;width:100%;padding:6px 0;">
+          <div style="width:1px;height:16px;background:var(--sep);"></div>
+          <svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M5 7L0 0h10L5 7z" fill="#999"/></svg>
+        </div>
+
+        <!-- Decision -->
+        <div style="background:#171717;border:1px solid #171717;padding:16px 24px;width:100%;">
+          <div style="font-family:var(--mono);font-size:13px;font-weight:600;color:#ffffff;">Has any shop listing?</div>
+        </div>
+
+        <!-- Two branches -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;width:100%;margin-top:0;">
+
+          <!-- YES branch -->
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="display:flex;flex-direction:column;align-items:center;padding:6px 0;">
+              <div style="width:1px;height:16px;background:var(--sep);"></div>
+              <svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M5 7L0 0h10L5 7z" fill="#999"/></svg>
+            </div>
+            <div style="font-family:var(--mono);font-size:11px;font-weight:600;color:#22c55e;letter-spacing:.08em;margin-bottom:8px;">YES</div>
+            <div style="background:#f5f5f5;border:1px solid var(--sep);padding:14px 20px;width:90%;text-align:center;">
+              <div style="font-family:var(--mono);font-size:13px;font-weight:500;color:var(--white);">Link to UAL shop</div>
+            </div>
+          </div>
+
+          <!-- NO branch -->
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="display:flex;flex-direction:column;align-items:center;padding:6px 0;">
+              <div style="width:1px;height:16px;background:var(--sep);"></div>
+              <svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M5 7L0 0h10L5 7z" fill="#999"/></svg>
+            </div>
+            <div style="font-family:var(--mono);font-size:11px;font-weight:600;color:var(--dim);letter-spacing:.08em;margin-bottom:8px;">NO</div>
+            <div style="background:#f5f5f5;border:1px solid var(--sep);padding:14px 20px;width:90%;text-align:center;">
+              <div style="font-family:var(--mono);font-size:13px;font-weight:500;color:var(--white);">Student's preferred contact</div>
+              <div style="font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:6px;">Instagram · DM · Email</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- RESULT -->
+    <div style="margin-top:72px;">
       <div class="cs-track-label">Result</div>
-      <p class="cs-track-p">Within the first 2 weeks, I had built enough of a judgment foundation to identify where to start, the highest-traffic page, the main dashboard, and began moving the project forward without being guided.</p>
+      <p class="cs-p">The landing page shifted from "come see our works" to "find the world's most creative emerging talent", with three clear entry points. UAL graduates around 3,000 students a year. At peak, accounting for graduates' immediate networks, the showcase conservatively reaches an estimated 15,000 users in a concentrated window around graduation. The platform now had a reason to keep them there.</p>
     </div>
+
   </section>
 
-
-  <!-- IMPACT 1 -->
-  <section class="cs-section reveal" id="impact-1">
-    <div class="cs-section-label">&lt;!-- Impact 1 --&gt;</div>
-    <h2 class="cs-h cs-h-lg">Design as a tool<span class="dim"><br>for alignment.</span></h2>
-    <p class="cs-p">Multiple stakeholders had different views on product direction — but no shared language to discuss priorities. Rather than scheduling more meetings, I used rapid mockups as artifacts to make decisions concrete and visible.</p>
-
-    <div class="ba-wrap" data-ba data-ba-wiggle style="width:80%;margin-left:0;">
-      <div class="ba-label-row">
-        <span class="ba-label">Dashboard — Before</span>
-        <span class="ba-label">Dashboard — After</span>
-      </div>
-      <div class="ba-container">
-        <img src="images/impact1-after.png" alt="After" class="ba-img-after" draggable="false">
-        <div class="ba-img-before" data-ba-before>
-          <img src="images/impact1-before.png" alt="Before" data-ba-before-img draggable="false">
-        </div>
-        <div class="ba-divider" data-ba-divider>
-          <div class="ba-handle"></div>
-        </div>
-        <div class="ba-hint">← Drag to compare →</div>
-      </div>
-      <div class="ba-caption"></div>
-    </div>
-
-    <div class="ba-wrap" data-ba style="width:80%;margin-left:auto;margin-right:0;margin-top:20px;">
-      <div class="ba-label-row">
-        <span class="ba-label">— Before</span>
-        <span class="ba-label">— After</span>
-      </div>
-      <div class="ba-container">
-        <img src="images/impact1-after-1.png" alt="After" class="ba-img-after" draggable="false">
-        <div class="ba-img-before" data-ba-before>
-          <img src="images/impact1-before-1.png" alt="Before" data-ba-before-img draggable="false">
-        </div>
-        <div class="ba-divider" data-ba-divider>
-          <div class="ba-handle"></div>
-        </div>
-      </div>
-      <div class="ba-caption"></div>
-    </div>
-
-    <div class="ba-wrap" data-ba style="width:80%;margin-left:0;margin-right:auto;margin-top:20px;">
-      <div class="ba-label-row">
-        <span class="ba-label">— Before</span>
-        <span class="ba-label">— After</span>
-      </div>
-      <div class="ba-container">
-        <img src="images/impact1-after-2.png" alt="After" class="ba-img-after" draggable="false">
-        <div class="ba-img-before" data-ba-before>
-          <img src="images/impact1-before-2.png" alt="Before" data-ba-before-img draggable="false">
-        </div>
-        <div class="ba-divider" data-ba-divider>
-          <div class="ba-handle"></div>
-        </div>
-      </div>
-      <div class="ba-caption"></div>
-    </div>
-
-    <div class="cs-two-col" style="margin-top:100px;">
-      <div>
-        <div class="cs-track-label">Why this approach.</div>
-        <p class="cs-track-p">When technical constraints are already set by Salesforce, debating features in the abstract is inefficient. A concrete mockup surfaces real concerns faster than any meeting. Each removal wasn't an opinion — it was driven by evidence that emerged only when stakeholders had something tangible to react to.</p>
-      </div>
-      <div>
-        <div class="cs-track-label">Result</div>
-        <p class="cs-track-p">Three features removed before a single line of unnecessary code was written. Design wasn't just delivery — it was how we discovered what the product actually needed to be.</p>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- IMPACT 2 -->
-  <section class="cs-section reveal" id="impact-2">
-    <div class="cs-section-label">&lt;!-- Impact 2 --&gt;</div>
-    <h2 class="cs-h cs-h-lg">Judgment after<span class="dim"><br>user testing.</span></h2>
-    <p class="cs-p">After usability testing, I compiled all findings into two categories — issues users explicitly raised, and new insights based on my own design judgment. Together with the PM, we filtered these into a report for senior leadership, who made the final call on what would be actioned.</p>
-
-    <!-- How it worked: 3-step process -->
-    <div class="cs-process-grid">
-      <div class="cs-process-step">
-        <div class="cs-process-step-num">Step 01</div>
-        <div class="cs-process-step-title">User findings</div>
-        <p class="cs-process-step-desc">Issues users explicitly raised during testing sessions.</p>
-      </div>
-      <div class="cs-process-step">
-        <div class="cs-process-step-num">Step 02</div>
-        <div class="cs-process-step-title">Design judgment</div>
-        <p class="cs-process-step-desc">New insights identified through my own design lens — beyond what users articulated.</p>
-      </div>
-      <div class="cs-process-connector">
-        <div class="cs-process-arrows">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-        </div>
-        <div class="cs-process-connector-label">Combined & Filtered</div>
-      </div>
-      <div class="cs-process-step pactive">
-        <div class="cs-process-step-num">Step 03</div>
-        <div class="cs-process-step-title">First filter</div>
-        <p class="cs-process-step-desc">Synthesised both inputs into a prioritised recommendation for senior leadership — framed clearly enough to survive two more rounds of review, and advocate for what actually mattered.</p>
-      </div>
-    </div>
-
-    <!-- User testing photos -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:60px;">
-      <img src="images/user testing session01.png" alt="User testing session" style="width:100%;height:auto;display:block;">
-      <img src="images/user testing session02.png" alt="User testing session" style="width:100%;height:auto;display:block;">
-    </div>
-
-    <!-- ── Finding 01 — Accessibility ── -->
-    <div class="cs-finding-header">
-      <div class="cs-finding-num">Finding 01 —</div>
-      <h3 class="cs-finding-hl">Accessibility</h3>
-    </div>
-    <div class="cs-finding-body">
-      <div></div>
-      <div class="cs-finding-content">
-        <div>
-          <blockquote class="cs-quote">"I need my reading glasses."</blockquote>
-          <p class="cs-track-p" style="margin-top:10px;font-size:14px;color:var(--dim);">— A restaurant manager in his mid-forties, during user testing</p>
-        </div>
-        <p class="cs-track-p">We had been designing on large monitors in an office. But our real users were middle-aged managers working in busy environment, on older devices with lower screen quality. Using Figma's accessibility plugin, I ran a full audit across the entire product — reviewing font sizes, font weights, and colour contrast ratios.</p>
-        <div class="cs-audit-grid">
-          <div class="cs-audit-card">
-            <div class="cs-audit-label">Font Size</div>
-            <div class="cs-audit-value">12px <span class="cs-audit-arrow">→</span> 14px</div>
-            <div class="cs-audit-sub">Raised above industry minimum across all body copy</div>
-          </div>
-          <div class="cs-audit-card">
-            <div class="cs-audit-label">Font Weight</div>
-            <div class="cs-audit-value">Regular <span class="cs-audit-arrow">→</span> Medium</div>
-            <div class="cs-audit-sub">Secondary text adjusted for low-res screens</div>
-          </div>
-          <div class="cs-audit-card">
-            <div class="cs-audit-label">Colour Contrast</div>
-            <div class="cs-audit-value">AA <span class="cs-audit-arrow">→</span> AAA</div>
-            <div class="cs-audit-sub">Contrast ratios reviewed and corrected throughout</div>
-          </div>
-        </div>
-        <div class="cs-outcome">
-          <div class="cs-outcome-dot">✓</div>
-          <p class="cs-outcome-text">Shipped at near-zero engineering cost · Full product audit completed</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── Finding 02 — Market average benchmark ── -->
-    <div class="cs-finding-header">
-      <div class="cs-finding-num">Finding 02 —</div>
-      <h3 class="cs-finding-hl">Market average benchmark</h3>
-    </div>
-    <div class="cs-finding-body">
-      <div></div>
-      <div class="cs-finding-content">
-        <p class="cs-track-p">The Summary page showed recycling data through multiple donut charts. But data alone doesn't drive behaviour — users had no reference point to judge whether their numbers were good or bad.</p>
-        <img src="images/market average line highlighted.png" alt="Market average line highlighted" style="width:100%;height:auto;display:block;">
-        <p class="cs-track-p"><strong style="color:var(--white);font-weight:600;">One line.</strong> <em>It gave every user an immediate answer to the question they were actually asking: <span style="color:var(--dim);">am I ahead or behind?</span></em></p>
-        <div class="cs-outcome">
-          <div class="cs-outcome-dot">✓</div>
-          <p class="cs-outcome-text">Shipped · Context transforms data into behaviour-driving insight</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── Finding 03 — Ranking motivation ── -->
-    <div class="cs-finding-header">
-      <div class="cs-finding-num">Finding 03 —</div>
-      <h3 class="cs-finding-hl">Ranking motivation</h3>
-    </div>
-    <div class="cs-finding-body">
-      <div></div>
-      <div class="cs-finding-content">
-        <div>
-          <blockquote class="cs-quote">"It's not about being number one — it's about not being the worst."</blockquote>
-          <p class="cs-track-p" style="margin-top:10px;font-size:14px;color:var(--dim);">— Restaurant manager, user testing session</p>
-        </div>
-        <p class="cs-track-p">The current design listed all restaurants across 23 pages of results. A manager ranked 47th had no way to jump directly to their position — meaning the people who most needed that feedback were least likely to see it.</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-          <div>
-            <div class="cs-ba-panel-label" style="margin-bottom:10px;">Before</div>
-            <img src="images/RankBefore.png" alt="Ranking before" style="width:100%;height:auto;display:block;">
-          </div>
-          <div>
-            <div class="cs-ba-panel-label" style="margin-bottom:10px;">Proposed</div>
-            <img src="images/RankAfter.png" alt="Ranking after" style="width:100%;height:auto;display:block;">
-          </div>
-        </div>
-        <p class="cs-track-p">The feature didn't get built due to Salesforce constraints, but the proposal directly influenced the product roadmap discussion.</p>
-        <div class="cs-outcome">
-          <div class="cs-outcome-dot warn">!</div>
-          <p class="cs-outcome-text warn">Not built · Salesforce constraints · Influenced product roadmap</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- IMPACT 3 -->
-  <section class="cs-section reveal" id="impact-3">
-    <div class="cs-section-label">&lt;!-- Impact 3 --&gt;</div>
-    <h2 class="cs-h cs-h-lg">Responsive design as<span class="dim"><br>a strategic decision.</span></h2>
-
-    <!-- Core judgment -->
-    <p class="cs-p">After the web version shipped, the next phase was Mobile and Tablet. The easiest path was to directly replicate the web design at a smaller size.</p>
-    <blockquote class="cs-quote" style="margin-top:32px;max-width:680px;">Responsive design isn't about shrinking the web version — it's about rethinking what data matters most, and how to present it, for each context of use.</blockquote>
-    <p class="cs-p" style="margin-top:20px;">A restaurant manager checking data on their phone while standing in a kitchen has completely different needs from someone reviewing reports on a desktop.</p>
-
-    <!-- Decision 01 -->
-    <div class="cs-finding-header" style="margin-top:60px;grid-template-columns:120px 1fr;">
-      <div class="cs-finding-num">Decision 01 —</div>
-      <h3 class="cs-finding-hl">Rethink the visual language</h3>
-    </div>
-    <div class="cs-finding-body" style="grid-template-columns:120px 1fr;">
-      <div></div>
-      <div class="cs-finding-content">
-        <p class="cs-track-p">Donut charts became Bar charts on Mobile. Bar charts became tables where space required it. Every change was driven by what would communicate most clearly at that size — not by what was easiest to replicate.</p>
-        <div>
-          <img src="images/responsive design01.png" alt="Responsive design comparison 1" style="width:100%;height:auto;display:block;">
-          <img src="images/responsive design02.png" alt="Responsive design comparison 2" style="width:100%;height:auto;display:block;margin-top:16px;">
-        </div>
-      </div>
-    </div>
-
-    <!-- Decision 02 -->
-    <div class="cs-finding-header" style="grid-template-columns:120px 1fr;">
-      <div class="cs-finding-num">Decision 02 —</div>
-      <h3 class="cs-finding-hl">Push back on feature removal</h3>
-    </div>
-    <div class="cs-finding-body" style="grid-template-columns:120px 1fr;">
-      <div></div>
-      <div class="cs-finding-content">
-        <p class="cs-track-p">When the PM proposed simply removing two complex feature tabs from Mobile, I pushed back. Instead of removing them, I proposed keeping the navigation structure with an empty state message and a direct link to the web version.</p>
-        <p class="cs-track-p">Every tap on that link would generate usage data — real evidence of how often users tried to access these features in the field, which is exactly the kind of data that changes investment decisions.</p>
-      </div>
-    </div>
-
-    <!-- Result -->
-    <div style="margin-top:40px;">
-      <div class="cs-track-label">Result</div>
-      <p class="cs-track-p">Mobile and Tablet designs fully delivered and ready for the next development phase.</p>
-    </div>
-  </section>
-
-
-  <!-- ENDING -->
-  <section class="cs-section reveal" id="ending">
-    <h2 class="cs-h cs-h-lg">Shipped on time.<span class="dim"><br>With judgment.</span></h2>
-    <p class="cs-p">Circularity shipped on time. But more importantly, it shipped as a product that had been interrogated — features removed, assumptions challenged, and real user behaviour accounted for.</p>
-    <p class="cs-p">As a contractor joining mid-project, my job wasn't just to design. It was to bring enough structure and judgment to move things forward — without the runway of a full-time role.</p>
-    <figure style="margin:60px 0 0 0;">
-      <img src="images/town hall.png" alt="Global SCIS Town Hall December 2025 — Circularity dashboards & pages featured as a top initiative" style="width:100%;max-width:680px;height:auto;display:block;border-radius:8px;border:1px solid rgba(255,255,255,0.1);">
-      <figcaption style="margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.06em;max-width:680px;">Circularity dashboards &amp; pages recognised as a top initiative at the Global SCIS Town Hall, December 2025</figcaption>
-    </figure>
-  </section>
 
   <!-- SEE MORE PROJECTS -->
   <div class="more-section reveal">
     <h2 class="more-h">See more projects</h2>
-      <div class="wgrid">
-        <a class="wcard" href="https://www.figma.com/proto/n9RihhA9PD81XStq6AVJKI/Xiaoran-Sun%E2%80%A8Portfolio-2025?node-id=1198-10730&t=gnggWIJhvsPIAtYr-0&scaling=scale-down-width&content-scaling=fixed&page-id=1198%3A10729" target="_blank" rel="noopener"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">RemarkAI</span><span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.08em;">AI SAFETY ANALYTICS · B2B SAAS</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"><img src="images/SSP-All.png" alt="RemarkAI"></div></a>
-        <a class="wcard" href="ual.html"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">UAL Graduate Showcase</span><span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.08em;">EDUCATION · DESIGN SYSTEM</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"><img src="images/UAL Graduate Showcase.png" alt="UAL Graduate Showcase"></div></a>
-      </div>
+    <div class="wgrid">
+      <a class="wcard" href="remarkai.html"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">RemarkAI</span><span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.08em;">SAFETY TECH · B2B SAAS</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"><img src="images/remarkai-cover.png" alt="RemarkAI"></div></a>
+      <a class="wcard" href="circularity.html"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">Circularity</span><span style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.08em;">WASTE MANAGEMENT · B2B SAAS</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"><img src="images/Circularity.png" alt="Circularity"></div></a>
+    </div>
   </div>
 
 </main>
@@ -753,83 +686,18 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   <p class="idx-title">On this page</p>
   <div class="idx-hr"></div>
   <nav class="idx-links">
-    <a href="#highlights" class="idx-link" data-s="highlights"><span class="idx-bar"></span>Highlights</a>
-    <a href="#overview"   class="idx-link" data-s="overview"><span class="idx-bar"></span>Overview</a>
-    <a href="#impact-0"   class="idx-link" data-s="impact-0"><span class="idx-bar"></span>How I Started</a>
-    <a href="#impact-1"   class="idx-link" data-s="impact-1"><span class="idx-bar"></span>Design for Alignment</a>
-    <a href="#impact-2"   class="idx-link" data-s="impact-2"><span class="idx-bar"></span>Judgment Call</a>
-    <a href="#impact-3"   class="idx-link" data-s="impact-3"><span class="idx-bar"></span>Responsive Design</a>
-    <a href="#ending"     class="idx-link" data-s="ending"><span class="idx-bar"></span>Wrap it up</a>
+    <a href="#overview"  class="idx-link" data-s="overview"><span class="idx-bar"></span>The Context</a>
+    <a href="#not-safe" class="idx-link" data-s="not-safe"><span class="idx-bar"></span>Choosing Not to Play It Safe</a>
+    <a href="#insight" class="idx-link" data-s="insight"><span class="idx-bar"></span>Impact 01 — The Insight</a>
+    <a href="#three-modes" class="idx-link" data-s="three-modes"><span class="idx-bar"></span>Impact 02 — Three Modes</a>
   </nav>
 </aside>
 
 </div>
 
-<div class="statusbar">Circularity — Case Study · 2025</div>
+<div class="statusbar">UAL Graduate Showcase — Case Study · 2022–2023</div>
 
 <script>
-
-/* BEFORE / AFTER SLIDERS */
-(function(){
-  document.querySelectorAll('[data-ba]').forEach(function(wrap){
-    var container = wrap.querySelector('.ba-container');
-    var before    = wrap.querySelector('[data-ba-before]');
-    var beforeImg = wrap.querySelector('[data-ba-before-img]');
-    var divider   = wrap.querySelector('[data-ba-divider]');
-    var hint      = wrap.querySelector('.ba-hint');
-    var dragging  = false;
-    var hintDismissed = false;
-
-    function syncImgWidth(){
-      if(beforeImg) beforeImg.style.width = container.offsetWidth + 'px';
-    }
-    syncImgWidth();
-    window.addEventListener('resize', syncImgWidth);
-
-    function setPos(pct){
-      pct = Math.max(5, Math.min(95, pct));
-      before.style.right = (100 - pct) + '%';
-      divider.style.left = pct + '%';
-    }
-
-    function dismissHint(){
-      if(hint && !hintDismissed){ hintDismissed = true; hint.classList.add('hidden'); }
-    }
-
-    function wiggle(){
-      container.classList.add('ba-smooth');
-      setTimeout(function(){ setPos(35); }, 0);
-      setTimeout(function(){ setPos(65); }, 420);
-      setTimeout(function(){ setPos(50); container.classList.remove('ba-smooth'); }, 860);
-    }
-
-    // Trigger wiggle once when slider enters viewport (only if data-ba-wiggle set)
-    if(wrap.hasAttribute('data-ba-wiggle')){
-      var wiggledOnce = false;
-      var wio = new IntersectionObserver(function(entries){
-        if(entries[0].isIntersecting && !wiggledOnce){
-          wiggledOnce = true;
-          setTimeout(wiggle, 500);
-          wio.disconnect();
-        }
-      }, { threshold: 0.6 });
-      wio.observe(container);
-    }
-
-    function getX(e){ return e.touches ? e.touches[0].clientX : e.clientX; }
-    function move(e){
-      var rect = container.getBoundingClientRect();
-      setPos((getX(e) - rect.left) / rect.width * 100);
-    }
-
-    container.addEventListener('mousedown',  function(e){ e.preventDefault(); dragging=true; move(e); dismissHint(); });
-    container.addEventListener('touchstart', function(e){ dragging=true; move(e); dismissHint(); }, {passive:true});
-    window.addEventListener('mouseup',   function(){ dragging=false; });
-    window.addEventListener('touchend',  function(){ dragging=false; });
-    window.addEventListener('mousemove', function(e){ if(dragging) move(e); });
-    window.addEventListener('touchmove', function(e){ if(dragging) move(e); }, {passive:true});
-  });
-})();
 
 /* HAMBURGER MENU */
 (function(){
@@ -905,111 +773,18 @@ const sio = new IntersectionObserver(entries => {
     if (!e.isIntersecting) return;
     setActiveNav(e.target.id);
   });
-}, { rootMargin: '-36% 0px -58% 0px' });
-document.querySelectorAll('#highlights,#overview,#impact-0,#impact-1,#impact-2,#impact-3,#ending').forEach(s => sio.observe(s));
+}, { rootMargin: '-30% 0px -60% 0px' });
 
-// Set initial highlight on page load
-(function initActiveNav() {
-  const sections = [...document.querySelectorAll('#highlights,#overview,#impact-0,#impact-1,#impact-2,#impact-3,#ending')];
-  const vh = window.innerHeight;
-  let best = null, bestDist = Infinity;
-  sections.forEach(s => {
-    const r = s.getBoundingClientRect();
-    const dist = Math.abs((r.top + r.bottom) / 2 - vh * 0.5);
-    if (dist < bestDist) { bestDist = dist; best = s; }
+document.querySelectorAll('section[id], div[id]').forEach(s => sio.observe(s));
+
+document.querySelectorAll('.idx-link').forEach(link => {
+  link.addEventListener('click', function() {
+    navLock = true;
+    document.querySelectorAll('.idx-link').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+    setTimeout(() => { navLock = false; }, 1000);
   });
-  if (best) setActiveNav(best.id);
-})();
-
-/* SMOOTH SCROLL for in-page anchors */
-document.querySelectorAll('a[href]').forEach(a => {
-  const href = a.getAttribute('href');
-  if (href && href.startsWith('#')) {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      const t = document.querySelector(href);
-      if (t) {
-        if (a.dataset.s) {
-          setActiveNav(a.dataset.s);
-          navLock = true;
-          setTimeout(() => { navLock = false; }, 1000);
-        }
-        if (t.id === 'highlights') {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-          t.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    });
-  }
 });
-
-/* TEXT SCRAMBLE */
-(function() {
-  const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*?';
-  const FRAME_MS = 20;
-  const FRAMES_PER_CHAR = 2;
-
-  class ScrambleText {
-    constructor(el) {
-      this.el = el;
-      this.original = el.textContent;
-      this._timer = null;
-    }
-    play() {
-      clearTimeout(this._timer);
-      const orig = this.original;
-      const len = orig.length;
-      let frame = 0;
-      const total = len * FRAMES_PER_CHAR;
-      const tick = () => {
-        let out = '';
-        for (let i = 0; i < len; i++) {
-          if (orig[i] === ' ') { out += ' '; continue; }
-          out += (frame >= (i + 1) * FRAMES_PER_CHAR)
-            ? orig[i]
-            : CHARS[Math.floor(Math.random() * CHARS.length)];
-        }
-        this.el.textContent = out;
-        if (frame < total) { frame++; this._timer = setTimeout(tick, FRAME_MS); }
-      };
-      tick();
-    }
-    reset() {
-      clearTimeout(this._timer);
-      this.el.textContent = this.original;
-    }
-  }
-
-  function initScramble(triggerEl, textEl) {
-    const s = new ScrambleText(textEl || triggerEl);
-    triggerEl.addEventListener('mouseenter', () => s.play());
-    triggerEl.addEventListener('mouseleave', () => s.reset());
-  }
-
-  document.querySelectorAll('.btn-cv').forEach(el => {
-    const textEl = el.querySelector('.btn-cv-text');
-    if (textEl) initScramble(el, textEl);
-  });
-  document.querySelectorAll('.btn-sched').forEach(el => initScramble(el));
-
-  // .wcard-title: hover on card, scramble title text
-  document.querySelectorAll('.wcard').forEach(card => {
-    const title = card.querySelector('.wcard-title');
-    if (title) initScramble(card, title);
-  });
-
-  // .back-link: hover on whole link, scramble only the text (not the SVG arrow)
-  document.querySelectorAll('.back-link').forEach(el => {
-    const textNode = [...el.childNodes].find(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim());
-    if (textNode) {
-      const span = document.createElement('span');
-      span.textContent = textNode.textContent;
-      el.replaceChild(span, textNode);
-      initScramble(el, span);
-    }
-  });
-})();
 
 </script>
 </body>
