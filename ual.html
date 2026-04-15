@@ -378,7 +378,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   </a>
 
   <!-- PROJECT TITLE -->
-  <h1 class="project-title"><span class="l1" style="color:var(--muted)">UAL Graduate Showcase & Design System</span><span class="l2"><span class="kw">Redefining what a university showcase platform is for.</span></span></h1>
+  <h1 class="project-title"><span class="l2"><span style="color:var(--white)">The brief was to fix bounce rate. </span><span class="kw">We ended up changing what the platform was for.</span></span></h1>
 
   <!-- INTRO TEXT — directly under title -->
   <div style="padding:40px 30px 0;">
@@ -457,23 +457,35 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 
       <div>
         <div class="cs-track-label">Situation</div>
-        <p class="cs-p">When I joined, there was already a direction on the table. An external usability report had flagged high bounce rate and surface-level problems — filters hard to use, difficult to find a specific student's work. A colleague had produced layout-level wireframe revisions in response. The team reviewed it. It worked. Nobody could say it was wrong.</p>
-        <p class="cs-p">But nobody was quite convinced it was right either.</p>
+        <p class="cs-p">When I joined, there was already a direction on the table. An external usability report had flagged a 63% bounce rate and identified friction problems: unclear starting point, weak filtering, hard to find specific students' work. A colleague had produced layout-level wireframe revisions in response.</p>
+        <p class="cs-p">The team reviewed the wireframes. They worked. Nobody could say they were wrong. But nobody was convinced they were right either. We had moved things around, but we hadn't moved anything forward.</p>
+        <p class="cs-p">A critical observation about the external report: The report told us where industry visitors got stuck. It didn't tell us what students needed the platform to do for them. Those are two different questions.</p>
       </div>
 
       <div>
         <div class="cs-track-label">My judgment</div>
-        <p class="cs-p">Layout changes address what users struggle with. They don't address why users leave. The external report gave us symptoms; it didn't give us intent. If we shipped this direction, we'd have a tidier version of the same platform — but we still wouldn't know what students actually needed from it. So we needed to go back to users. Fast.</p>
+        <p class="cs-p">Layout changes address where users struggle. They don't address why users leave. If we shipped this direction, we'd have a tidier version of the same platform — but we still wouldn't know what students actually needed from it.</p>
+        <p class="cs-p">The safer move was to refine the wireframes and ship. Instead, we proposed a round of guerrilla testing before going further.</p>
+      </div>
+
+      <!-- hand-drawn sketch photos (brainstorming) -->
+      <div style="margin-top:8px;">
+        <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Early brainstorming — sketches</div>
+        <div style="display:flex;gap:12px;justify-content:flex-start;">
+          <img src="images/hand-drawn sketch photo01.png" alt="Hand-drawn brainstorming sketch 1" style="width:35%;height:auto;display:block;">
+          <img src="images/hand-drawn sketch photo02.png" alt="Hand-drawn brainstorming sketch 2" style="width:35%;height:auto;display:block;">
+        </div>
       </div>
 
       <div>
         <div class="cs-track-label">Why this was worth the time</div>
-        <p class="cs-p">Our office was directly above one of the UAL colleges. Testing didn't mean recruiting, scheduling, or a research budget. It meant walking downstairs to the canteen. The cost was low. The risk of not doing it — spending the rest of the contract optimising the wrong thing — was much higher.</p>
+        <p class="cs-p">Our office was directly above one of the UAL colleges. Testing didn't mean recruiting or a research budget — it meant walking downstairs to the canteen. The cost was two weeks. The risk of not doing it was spending the rest of the contract optimising the wrong thing.</p>
       </div>
 
-      <div>
-        <div class="cs-track-label">What it immediately changed</div>
-        <p class="cs-p">It shifted the team's shared understanding of what the problem actually was. Before testing, we were solving for usability friction. After testing, we were solving for something more fundamental — which I'll come to next.</p>
+      <!-- wireframe screenshot (Sprint 3 College page) -->
+      <div style="margin-top:8px;">
+        <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Wireframe — layout exploration, Sprint 3 College page</div>
+        <img src="images/Sprint 3 College page.png" alt="Wireframe — Sprint 3 College page" style="width:100%;height:auto;display:block;">
       </div>
 
     </div>
@@ -483,39 +495,52 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
       <div class="cs-audit-card">
         <div class="cs-audit-label">What we had</div>
         <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;">
-          <div class="cs-audit-sub" style="color:var(--white);font-weight:500;font-size:14px;">— External usability report (high bounce rate flagged)</div>
+          <div class="cs-audit-sub" style="color:var(--white);font-weight:500;font-size:14px;">— External report: bounce rate 63%</div>
           <div class="cs-audit-sub" style="color:var(--white);font-weight:500;font-size:14px;">— Layout-level wireframe revisions</div>
           <div class="cs-audit-sub" style="color:var(--white);font-weight:500;font-size:14px;">— A direction that worked, but felt flat</div>
         </div>
       </div>
       <div class="cs-audit-card">
-        <div class="cs-audit-label">What we chose to do first</div>
+        <div class="cs-audit-label">What the report missed</div>
         <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px;">
-          <div class="cs-audit-sub" style="color:var(--white);font-weight:500;font-size:14px;">— Guerrilla testing with real UAL students</div>
-          <div class="cs-audit-sub" style="color:var(--white);font-weight:500;font-size:14px;">— Open questions, not task prompts</div>
-          <div class="cs-audit-sub" style="color:var(--white);font-weight:500;font-size:14px;">— Cost: walking downstairs</div>
+          <div class="cs-audit-sub" style="color:var(--white);font-weight:500;font-size:14px;">— Focused on friction, not intent</div>
+          <div class="cs-audit-sub" style="color:var(--white);font-weight:500;font-size:14px;">— Told us where users got stuck, not why they left</div>
         </div>
       </div>
     </div>
   </section>
 
 
-  <!-- IMPACT 01 — THE INSIGHT THAT REFRAMED EVERYTHING -->
+  <!-- IMPACT 02 — THE INSIGHT THAT REFRAMED EVERYTHING -->
   <section class="cs-section reveal" id="insight">
-    <div class="cs-section-label">&lt;!-- Impact 01 --&gt;</div>
+    <div class="cs-section-label">&lt;!-- Impact 02 --&gt;</div>
     <h2 class="cs-h cs-h-lg"><span style="color:var(--muted)">The Insight That</span><br>Reframed Everything</h2>
 
     <div class="cs-finding-content" style="margin-top:40px;">
 
       <div>
         <div class="cs-track-label">Situation</div>
-        <p class="cs-p">The guerrilla testing surfaced something unexpected. Through open questions — What does this platform mean to you? What do you want it to do for you after graduation? — a pattern emerged immediately: students weren't thinking of this as an annual event. They were thinking of it as their first portfolio. Their first professional presence.</p>
-        <p class="cs-p">For UAL students — whether you're in fashion, UX, photography, or stage design — you need a portfolio to get work. Many don't have one yet when they graduate. The showcase was already doing this job accidentally. Nobody had designed for it intentionally.</p>
+        <p class="cs-p">Guerrilla testing. Open questions, not task prompts.</p>
+        <p class="cs-p" style="padding-left:20px;border-left:2px solid var(--muted);font-style:italic;">"What do you want this platform to do for you after graduation?"<br>"What does being on this showcase mean to you?"</p>
+        <p class="cs-p">A pattern emerged immediately, it wasn't about navigation or filters:</p>
+        <p class="cs-p">Students were thinking of it as their first portfolio. Their first professional presence. For UAL students — whether you're in fashion, ceramics, UX, photography, or stage design — you need a portfolio to get work. Many don't have one yet when they graduate. The showcase was already doing this job accidentally. Nobody had designed for it intentionally.</p>
       </div>
+
+    </div>
+
+    <!-- Painpoints and Opportunities FigJam -->
+    <div style="margin-top:48px;">
+      <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Painpoints &amp; Opportunities — FigJam</div>
+      <img src="images/Painpoints and Opportunities FigJam01.png" alt="Painpoints and Opportunities FigJam" style="width:100%;height:auto;display:block;">
+    </div>
+
+    <div class="cs-finding-content" style="margin-top:48px;">
 
       <div>
         <div class="cs-track-label">My judgment</div>
         <p class="cs-p">This wasn't a UX problem. It was a positioning problem. The platform had been designed as a ceremony. Students were trying to use it as career infrastructure. Those are two completely different design briefs.</p>
+        <p class="cs-p">The external report asked: "What's stopping users from using this site?"<br>We needed to ask: "What do students actually need this platform to do for them?"</p>
+        <p class="cs-p">We proposed a new design mission: "First bridge for global design talent." This wasn't a tagline. It was a decision about what every downstream design choice would be optimised for — and it gave the entire team a shared language to make decisions against.</p>
       </div>
 
     </div>
@@ -526,145 +551,206 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
       <div style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);letter-spacing:.06em;margin-top:20px;">— UAL student, guerrilla usability test, 2022</div>
     </div>
 
+    <!-- BEFORE / AFTER -->
+    <div class="cs-audit-grid" style="grid-template-columns:1fr 1fr;margin-top:48px;">
+      <div class="cs-audit-card">
+        <div class="cs-audit-label">Before</div>
+        <div class="cs-audit-value" style="font-size:15px;margin-bottom:12px;">Showcase as ceremony</div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div class="cs-audit-sub" style="color:var(--white);font-weight:500;font-size:14px;">→ Optimised for annual traffic spike</div>
+          <div class="cs-audit-sub" style="color:var(--dim);font-size:14px;font-style:italic;">"Come see our graduates"</div>
+        </div>
+      </div>
+      <div class="cs-audit-card">
+        <div class="cs-audit-label">After</div>
+        <div class="cs-audit-value" style="font-size:15px;margin-bottom:12px;">Showcase as career infrastructure</div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div class="cs-audit-sub" style="color:var(--white);font-weight:500;font-size:14px;">→ Optimised for discovery, connection, action</div>
+          <div class="cs-audit-sub" style="color:var(--dim);font-size:14px;font-style:italic;">"Find the world's most creative emerging talent"</div>
+        </div>
+      </div>
+    </div>
+
     <!-- DESIGN MISSION -->
     <div style="margin-top:72px;">
       <div style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;">Design mission</div>
       <div style="font-family:var(--sans);font-size:42px;font-weight:700;letter-spacing:-.02em;color:var(--white);line-height:1.1;">"First bridge for global design talent."</div>
     </div>
 
-    <!-- BEFORE / AFTER -->
-    <div class="cs-audit-grid" style="grid-template-columns:1fr 1fr;margin-top:32px;">
-      <div class="cs-audit-card">
-        <div class="cs-audit-label">Before</div>
-        <div class="cs-audit-value" style="font-size:14px;">Showcase as ceremony</div>
-        <div class="cs-audit-sub" style="color:var(--white);font-weight:500;font-size:14px;">Optimised for the annual traffic spike</div>
+  </section>
+
+
+  <!-- IMPACT 03 — FOUR MODES, ONE SHIFT -->
+  <section class="cs-section reveal" id="three-modes">
+    <div class="cs-section-label">&lt;!-- Impact 03 --&gt;</div>
+    <h2 class="cs-h cs-h-lg"><span style="color:var(--muted)">Four Modes,</span><br>One Shift</h2>
+
+    <div class="cs-finding-content" style="margin-top:40px;">
+
+      <div>
+        <div class="cs-track-label">Situation</div>
+        <p class="cs-p">Mission defined. Now: what does that actually mean in the product?</p>
+        <p class="cs-p">We identified four things different visitors needed from this platform — and they were fundamentally different from each other:</p>
+        <img src="images/whoisuser.png" alt="Who is the user — four visitor types" style="width:100%;height:auto;display:block;margin-top:20px;">
       </div>
-      <div class="cs-audit-card">
-        <div class="cs-audit-label">After</div>
-        <div class="cs-audit-value" style="font-size:14px;">Showcase as career infrastructure</div>
-        <div class="cs-audit-sub" style="color:var(--white);font-weight:500;font-size:14px;">Optimised for discovery, connection, and action</div>
+
+      <div>
+        <div class="cs-track-label">My judgment</div>
+        <p class="cs-p">We didn't need to build a marketplace. We needed to redesign the information architecture around user intent — not institutional structure.</p>
+        <p class="cs-p">The old filter logic asked: "Which college or subject are you interested in?"<br>The new filter logic asked: "What do you want to do here?"</p>
+        <p class="cs-p">This shift wasn't just about adding filters. It was about changing what question the entire platform was built to answer.</p>
+      </div>
+
+    </div>
+
+    <div class="cs-finding-content" style="margin-top:72px;">
+
+      <div>
+        <div class="cs-track-label">Why not a full rebuild</div>
+        <p class="cs-p">The deadline was fixed and non-negotiable. UAL had assembled a contractor team — developers and designers — specifically to hit one hard deadline: the graduation ceremony. Missing it wasn't an option. Every decision had to answer: what delivers the most meaningful change within what we can actually ship?</p>
+      </div>
+
+    </div>
+
+    <!-- FOUR DECISIONS -->
+    <div style="margin-top:72px;">
+      <div style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;margin-bottom:32px;">Four decisions worth unpacking</div>
+      <div class="cs-finding-content">
+
+        <div>
+          <div class="cs-track-label">Employ / Collaborate</div>
+          <p class="cs-p">Students could flag themselves as available for hire or open to collaboration. This made passive visibility into active signalling — the platform stopped being a gallery and started being a talent discovery tool.</p>
+        </div>
+
+        <div>
+          <div class="cs-track-label">Buy</div>
+          <p class="cs-p">UAL already had a physical student shop. Historically the in-person showcase functioned like a creative market — people genuinely bought things. That layer had disappeared online. We reconnected it: if a student had a shop listing, 'Buy' linked directly there. If not, it defaulted to their Instagram, DM, or email based on their own preference. No new payment infrastructure needed.</p>
+        </div>
+
+        <div>
+          <div class="cs-track-label">Explore</div>
+          <p class="cs-p">Not every visitor comes with a clear intent. Forcing one would have excluded the audience the showcase had always served best — people who simply wanted to discover creative work. The fourth entry point was a deliberate choice to keep the platform open.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- New Sitemap placeholder -->
+    <div style="margin-top:72px;">
+      <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">New sitemap — four intent-based entry points</div>
+      <div class="img-placeholder" style="width:100%;height:300px;">[ placeholder — new sitemap ]</div>
+    </div>
+
+    <!-- Wireframe Sprint 4/5/6 Option 19 placeholder -->
+    <div style="margin-top:24px;">
+      <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Wireframe — Sprint 4/5/6 Option 19 (four-entry homepage)</div>
+      <div class="img-placeholder" style="width:100%;height:360px;">[ placeholder — wireframe Sprint 4/5/6 Option 19 ]</div>
+    </div>
+
+    <!-- HERO SECTION SHIFT -->
+    <div class="cs-finding-content" style="margin-top:72px;">
+      <div>
+        <div class="cs-track-label">The hero section shift</div>
+        <p class="cs-p">The landing page moved from "Graduate Showcase 2021 — Discover the next generation of creatives" with random student work and a college/subject filter — to a platform that led with intent: "Employ or Collaborate with the creators &amp; innovators of tomorrow, Explore the work &amp; Buy original pieces." Four words, four hyperlinks, each triggering a different filtered view. Navigation became a single sentence.</p>
+        <p class="cs-p">UAL graduates around 3,000 students a year. At peak, accounting for graduates' immediate networks of family, peers, and industry contacts, the showcase conservatively reaches an estimated 15,000 users in a concentrated window around graduation. The platform now had a reason to keep them there.</p>
+      </div>
+    </div>
+
+    <!-- HOMEPAGE BEFORE / AFTER drag-to-compare -->
+    <div style="margin-top:48px;" data-ba>
+      <div class="ba-label-row">
+        <span class="ba-label">2021 Homepage — Before</span>
+        <span class="ba-label">2022 Homepage — After</span>
+      </div>
+      <div class="ba-container">
+        <img src="images/2022-homepage.png" alt="2022 Homepage — After" class="ba-img-after" draggable="false">
+        <div class="ba-img-before" data-ba-before>
+          <img src="images/2021-homepage.png" alt="2021 Homepage — Before" data-ba-before-img draggable="false">
+        </div>
+        <div class="ba-divider" data-ba-divider>
+          <div class="ba-handle"></div>
+        </div>
+        <div class="ba-hint">← Drag to compare →</div>
       </div>
     </div>
 
   </section>
 
 
-  <!-- IMPACT 02 — THREE MODES, ONE SHIFT -->
-  <section class="cs-section reveal" id="three-modes">
-    <div class="cs-section-label">&lt;!-- Impact 02 --&gt;</div>
-    <h2 class="cs-h cs-h-lg"><span style="color:var(--muted)">Three Modes,</span><br>One Shift</h2>
+  <!-- IMPACT 04 — VALIDATING THE DIRECTION -->
+  <section class="cs-section reveal" id="validation">
+    <div class="cs-section-label">&lt;!-- Impact 04 --&gt;</div>
+    <h2 class="cs-h cs-h-lg"><span style="color:var(--muted)">Validating</span><br>the Direction</h2>
 
     <div class="cs-finding-content" style="margin-top:40px;">
 
       <div>
         <div class="cs-track-label">Situation</div>
-        <p class="cs-p">Mission defined. Now: what does that actually mean in the product? We identified three things students wanted from this platform beyond showing work: sell their physical work, connect with employers, find collaborators.</p>
+        <p class="cs-p">Final design ready. One question remained: does this actually work?</p>
+        <p class="cs-p">We ran a second round of guerrilla testing — this time testing the new design, not the old one. Same approach: downstairs, in context. But this time we went further. UAL's student shop was directly below our office — a physical space where students sold their work. We tested with buyers there. For employers, the team reached out through external networking.</p>
+        <p class="cs-p">Nobody asked us to do this. The PM hadn't requested it. Marketing hadn't requested it. We proposed it ourselves, because we knew that shipping without validation — on a platform serving 15,000 peak users — was a risk we didn't need to take.</p>
       </div>
 
       <div>
-        <div class="cs-track-label">My judgment</div>
-        <p class="cs-p">We didn't need to build a marketplace. We needed three flags at upload — Sell / Hire me / Collaborate — and a redesigned filter logic and hero section built around these three modes.</p>
+        <div class="cs-track-label">What we produced</div>
+        <p class="cs-p">Four Customer Journey Maps across Graduate Students, Explorers, Collaborators, and Employers — with painpoints and opportunities mapped for each. These weren't just validation artefacts. They were a handover asset for the team that would follow.</p>
+        <p class="cs-p">We also facilitated a ways of working session to define sprint ceremonies and handover standards. The designs were delivered. We made sure the next team had something to build on — not just files, but a way of working.</p>
       </div>
+
+    </div>
+
+    <!-- Customer Journey Maps — two side by side -->
+    <div style="margin-top:56px;">
+      <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Customer Journey Maps</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="img-placeholder" style="height:280px;">[ placeholder — Customer Journey Map 1 ]</div>
+        <div class="img-placeholder" style="height:280px;">[ placeholder — Customer Journey Map 2 ]</div>
+      </div>
+    </div>
+
+    <!-- Painpoints and Opportunities — five user types -->
+    <div style="margin-top:24px;">
+      <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Painpoints &amp; Opportunities — five user types</div>
+      <div class="img-placeholder" style="width:100%;height:300px;">[ placeholder — Painpoints and Opportunities, five columns ]</div>
+    </div>
+
+    <!-- Ways of working session -->
+    <div style="margin-top:24px;">
+      <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Ways of working session</div>
+      <div class="img-placeholder" style="width:100%;height:280px;">[ placeholder — ways of working session screenshot ]</div>
+    </div>
+
+  </section>
+
+
+  <!-- CLOSE -->
+  <section class="cs-section reveal" id="close">
+    <div class="cs-section-label">&lt;!-- Close --&gt;</div>
+    <h2 class="cs-h cs-h-lg"><span style="color:var(--muted)">Close</span></h2>
+
+    <div class="cs-finding-content" style="margin-top:40px;">
 
       <div>
-        <div class="cs-track-label">Why this over a full rebuild</div>
-        <p class="cs-p">The timeline was fixed and non-negotiable. UAL had assembled a contractor team — developers and designers — specifically to hit one hard deadline: the graduation ceremony. Missing it wasn't an option. So every decision had to answer: what delivers the most meaningful change within what we can actually ship?</p>
+        <p class="cs-p">The brief was to reduce bounce rate. We ended up redefining what the platform was for.</p>
+        <p class="cs-p">Not because the original brief was wrong — bounce rate was a real problem. But bounce rate is a symptom. The cause was that the platform had been designed for one audience (visitors to an annual event) while being used by another (students building their first professional presence).</p>
+        <p class="cs-p">Once we understood that, every decision became clearer. The filter logic, the hero copy, the four entry points, the buy flow — none of these were arbitrary design choices. They were answers to a question the previous version hadn't asked.</p>
       </div>
 
     </div>
 
-    <!-- HERO BEFORE / AFTER PLACEHOLDER -->
+    <!-- Closing quote -->
+    <div style="margin-top:72px;padding:60px 40px;background:#f5f5f5;text-align:center;">
+      <div style="font-family:var(--mono);font-size:24px;font-weight:500;font-style:italic;color:var(--white);line-height:1.55;max-width:680px;margin:0 auto;">"Identify the right problem before touching the design."</div>
+    </div>
+
+    <!-- Team photo placeholder -->
     <div style="margin-top:72px;">
-      <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Hero section — Before / After</div>
-      <div class="img-placeholder" style="width:100%;height:360px;">[ image placeholder ]</div>
+      <div class="img-placeholder" style="width:100%;height:360px;">[ placeholder — team photo ]</div>
     </div>
 
-    <!-- THREE DECISIONS -->
-    <div style="margin-top:72px;">
-      <div style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;margin-bottom:32px;">Three decisions worth unpacking</div>
-      <div class="cs-finding-content">
-
-        <div>
-          <div class="cs-track-label">Sell</div>
-          <p class="cs-p">Historically, the in-person showcase functioned like a creative market; people genuinely bought things. That layer had disappeared online. We reconnected it: if a student had a shop listing, 'Buy' linked directly there. If not, it defaulted to their Instagram, DM, or email based on their preference. No new payment infrastructure. Minimal engineering lift.</p>
-        </div>
-
-        <div>
-          <div class="cs-track-label">Employ</div>
-          <p class="cs-p">Students wanted to be actively findable to employers — not just passively visible. Framing this as an intentional signal rather than passive presence was the design shift.</p>
-        </div>
-
-        <div>
-          <div class="cs-track-label">Collaborate</div>
-          <p class="cs-p">This addressed a pattern we hadn't expected — fashion students need photographers, stage designers need people. Cross-discipline collaboration was already happening; we just needed to make it findable.</p>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- UPLOAD FLOW PLACEHOLDER -->
-    <div style="margin-top:60px;">
-      <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Upload flow — three flag options</div>
-      <div class="img-placeholder" style="width:100%;height:280px;">[ image placeholder ]</div>
-    </div>
-
-    <!-- BUY FLOW DIAGRAM -->
-    <div style="margin-top:60px;">
-      <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:24px;">Buy flow</div>
-      <div style="display:flex;flex-direction:column;align-items:flex-start;gap:0;max-width:560px;">
-
-        <!-- Step 1 -->
-        <div style="background:#f5f5f5;border:1px solid var(--sep);padding:16px 24px;width:100%;">
-          <div style="font-family:var(--mono);font-size:13px;font-weight:600;color:var(--white);">User clicks "Buy creative artwork"</div>
-        </div>
-
-        <!-- Arrow down -->
-        <div style="display:flex;flex-direction:column;align-items:center;width:100%;padding:6px 0;">
-          <div style="width:1px;height:16px;background:var(--sep);"></div>
-          <svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M5 7L0 0h10L5 7z" fill="#999"/></svg>
-        </div>
-
-        <!-- Decision -->
-        <div style="background:#171717;border:1px solid #171717;padding:16px 24px;width:100%;">
-          <div style="font-family:var(--mono);font-size:13px;font-weight:600;color:#ffffff;">Has any shop listing?</div>
-        </div>
-
-        <!-- Two branches -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;width:100%;margin-top:0;">
-
-          <!-- YES branch -->
-          <div style="display:flex;flex-direction:column;align-items:center;">
-            <div style="display:flex;flex-direction:column;align-items:center;padding:6px 0;">
-              <div style="width:1px;height:16px;background:var(--sep);"></div>
-              <svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M5 7L0 0h10L5 7z" fill="#999"/></svg>
-            </div>
-            <div style="font-family:var(--mono);font-size:11px;font-weight:600;color:#22c55e;letter-spacing:.08em;margin-bottom:8px;">YES</div>
-            <div style="background:#f5f5f5;border:1px solid var(--sep);padding:14px 20px;width:90%;text-align:center;">
-              <div style="font-family:var(--mono);font-size:13px;font-weight:500;color:var(--white);">Link to UAL shop</div>
-            </div>
-          </div>
-
-          <!-- NO branch -->
-          <div style="display:flex;flex-direction:column;align-items:center;">
-            <div style="display:flex;flex-direction:column;align-items:center;padding:6px 0;">
-              <div style="width:1px;height:16px;background:var(--sep);"></div>
-              <svg width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M5 7L0 0h10L5 7z" fill="#999"/></svg>
-            </div>
-            <div style="font-family:var(--mono);font-size:11px;font-weight:600;color:var(--dim);letter-spacing:.08em;margin-bottom:8px;">NO</div>
-            <div style="background:#f5f5f5;border:1px solid var(--sep);padding:14px 20px;width:90%;text-align:center;">
-              <div style="font-family:var(--mono);font-size:13px;font-weight:500;color:var(--white);">Student's preferred contact</div>
-              <div style="font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:6px;">Instagram · DM · Email</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <!-- RESULT -->
-    <div style="margin-top:72px;">
-      <div class="cs-track-label">Result</div>
-      <p class="cs-p">The landing page shifted from "come see our works" to "find the world's most creative emerging talent", with three clear entry points. UAL graduates around 3,000 students a year. At peak, accounting for graduates' immediate networks, the showcase conservatively reaches an estimated 15,000 users in a concentrated window around graduation. The platform now had a reason to keep them there.</p>
+    <!-- Closing line -->
+    <div style="margin-top:32px;font-family:var(--mono);font-size:13px;color:var(--dim);text-align:center;letter-spacing:.04em;">
+      UAL Graduate Showcase &amp; Design System · 2022–2023
     </div>
 
   </section>
@@ -688,8 +774,10 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   <nav class="idx-links">
     <a href="#overview"  class="idx-link" data-s="overview"><span class="idx-bar"></span>The Context</a>
     <a href="#not-safe" class="idx-link" data-s="not-safe"><span class="idx-bar"></span>Choosing Not to Play It Safe</a>
-    <a href="#insight" class="idx-link" data-s="insight"><span class="idx-bar"></span>Impact 01 — The Insight</a>
-    <a href="#three-modes" class="idx-link" data-s="three-modes"><span class="idx-bar"></span>Impact 02 — Three Modes</a>
+    <a href="#insight" class="idx-link" data-s="insight"><span class="idx-bar"></span>The Insight That Reframed Everything</a>
+    <a href="#three-modes" class="idx-link" data-s="three-modes"><span class="idx-bar"></span>Four Modes, One Shift</a>
+    <a href="#validation" class="idx-link" data-s="validation"><span class="idx-bar"></span>Validating the Direction</a>
+    <a href="#close" class="idx-link" data-s="close"><span class="idx-bar"></span>Close</a>
   </nav>
 </aside>
 
