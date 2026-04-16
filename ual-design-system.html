@@ -126,6 +126,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 /* ── FINDING BLOCKS ── */
 .cs-finding-content{display:flex;flex-direction:column;gap:28px;}
 .img-placeholder{background:#f5f5f5;border:1px dashed #cccccc;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);letter-spacing:.03em;}
+.cs-quote{border-left:2px solid #22c55e;padding:14px 20px;margin:0;font-family:var(--mono);font-size:18px;font-weight:500;font-style:italic;color:var(--white);line-height:1.65;}
 
 /* ── AUDIT CARDS ── */
 .cs-audit-grid{display:grid;gap:2px;margin-top:0;}
@@ -293,7 +294,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   </a>
 
   <!-- PROJECT TITLE -->
-  <h1 class="project-title"><span class="l2">[ placeholder — project title ]</span></h1>
+  <h1 class="project-title"><span class="l2">UAL Design System</span></h1>
 
   <!-- COVER IMAGE -->
   <div class="cover-img">
@@ -317,109 +318,187 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
       <div class="cs-overview-meta">
         <div class="cs-meta-item">
           <div class="cs-meta-label">Company</div>
-          <div class="cs-meta-value">[ placeholder ]</div>
+          <div class="cs-meta-value">University of the Arts London</div>
         </div>
         <div class="cs-meta-item">
           <div class="cs-meta-label">Role</div>
-          <div class="cs-meta-value">[ placeholder ]</div>
+          <div class="cs-meta-value">UIUX Designer · Contract</div>
         </div>
         <div class="cs-meta-item">
           <div class="cs-meta-label">Duration</div>
-          <div class="cs-meta-value">[ placeholder ]</div>
-        </div>
-        <div class="cs-meta-item">
-          <div class="cs-meta-label">Platform</div>
-          <div class="cs-meta-value">[ placeholder ]</div>
+          <div class="cs-meta-value">Apr–Jul 2022</div>
         </div>
       </div>
       <div class="cs-overview-body">
-        <div class="cs-meta-label" style="margin-bottom:10px;">Background</div>
-        <p class="cs-p">[ placeholder — project background ]</p>
-        <p class="cs-p">[ placeholder — context and challenge ]</p>
+        <p class="cs-p" style="font-style:italic;color:var(--white);margin-bottom:24px;">"The audit confirmed the components were largely fine. The real problem was that nobody could find them."</p>
+        <div class="cs-meta-label" style="margin-bottom:10px;">Context</div>
+        <p class="cs-p">After the Graduate Showcase project wrapped, I moved onto UAL's Design System team for the remaining two and a half months of my contract.</p>
+        <p class="cs-p">UAL's design system covered eight colleges and multiple digital products, the main website, the Graduate Showcase, Arts Temps. It was fully integrated with the codebase and broadly followed across products. By most standards, it was in good shape.</p>
+        <p class="cs-p">The brief was straightforward: audit the existing system, identify gaps, recommend updates.</p>
+        <p class="cs-p">A small team of three: a Design Lead and two contractors, myself included.</p>
+      </div>
+    </div>
+
+    <!-- Kickoff image -->
+    <div style="margin-top:48px;">
+      <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Why do we need a design system? — Kickoff</div>
+      <div class="img-placeholder" style="width:100%;height:360px;">[ placeholder — kickoff "Why do we need a design system?" image ]</div>
+    </div>
+  </section>
+
+
+  <!-- SECTION 1 — THE AUDIT -->
+  <section class="cs-section reveal" id="audit">
+    <div class="cs-section-label">&lt;!-- Impact 01 --&gt;</div>
+    <h2 class="cs-h cs-h-lg">The Audit</h2>
+
+    <div class="cs-finding-content" style="margin-top:40px;">
+      <div>
+        <div class="cs-track-label">What we did</div>
+        <p class="cs-p">We started by building a complete picture of the existing system. The work was systematic: we screenshotted every page across UAL's product suite — homepage, college pages, course pages, subject pages, event listings — and compared each one against the existing design system.</p>
+        <p class="cs-p">For every element we found, we asked two questions: does this follow the system, or has it drifted? And if it's new, should it be added?</p>
+        <p class="cs-p">I was responsible for specific components — Promote Card, Notification, Footer — as well as a cross-product H1 sizing audit, checking typography consistency across every page type at 1440px.</p>
+      </div>
+      <div>
+        <div class="cs-track-label">What we found</div>
+        <p class="cs-p">The system itself was largely sound. Most pages followed the spec. Deviations were either minor frontend inconsistencies or intentional additions that hadn't yet been documented.</p>
+        <p class="cs-p">Two components needed to be added as genuine new additions: a new Promote Card size introduced in the Graduate Showcase, and the updated Filter structure — both outputs of the website project I'd just completed. The work I'd done on the Showcase fed directly back into the system.</p>
+      </div>
+    </div>
+
+    <!-- Images -->
+    <div style="margin-top:56px;display:flex;flex-direction:column;gap:12px;">
+      <div>
+        <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">H1 Sizing Audit — cross-product, 1440px</div>
+        <div class="img-placeholder" style="width:100%;height:360px;">[ placeholder — H1 sizing audit screenshot ]</div>
+      </div>
+      <div>
+        <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Courses Landing Page Audit</div>
+        <div class="img-placeholder" style="width:100%;height:360px;">[ placeholder — Courses landing page audit screenshot ]</div>
+      </div>
+    </div>
+
+    <!-- Finding summary card -->
+    <div style="margin-top:48px;background:#f5f5f5;padding:32px;">
+      <div style="font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:20px;">Finding Summary</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="font-family:var(--mono);font-size:14px;font-weight:500;color:var(--muted);">Pages audited: <span style="color:var(--white);">across 8 product types</span></div>
+        <div style="font-family:var(--mono);font-size:14px;font-weight:500;color:var(--muted);">Deviations found: <span style="color:var(--white);">minor — mostly frontend drift</span></div>
+        <div style="font-family:var(--mono);font-size:14px;font-weight:500;color:var(--muted);">Genuine gaps: <span style="color:var(--white);">targeted, not structural</span></div>
+        <div style="margin-top:8px;padding-top:20px;border-top:1px solid var(--sep);font-family:var(--mono);font-size:14px;font-weight:500;color:var(--muted);">Finding: <span style="color:var(--white);">the system was sound.<br>The documentation was not.</span></div>
       </div>
     </div>
   </section>
 
 
-  <!-- SECTION 1 -->
-  <section class="cs-section reveal" id="section-1">
-    <div class="cs-section-label">&lt;!-- Section 01 --&gt;</div>
-    <h2 class="cs-h cs-h-lg">[ placeholder — section title ]</h2>
+  <!-- SECTION 2 — FINDING THE REAL PROBLEM -->
+  <section class="cs-section reveal" id="real-problem">
+    <div class="cs-section-label">&lt;!-- Impact 02 --&gt;</div>
+    <h2 class="cs-h cs-h-lg">Finding the Real Problem</h2>
 
     <div class="cs-finding-content" style="margin-top:40px;">
       <div>
-        <div class="cs-track-label">[ placeholder label ]</div>
-        <p class="cs-p">[ placeholder — content ]</p>
+        <p class="cs-p">The audit confirmed the components were fine. So I moved on to the next part of the brief: organising and documenting what we'd found.</p>
+        <p class="cs-p">I started with Promote Card — my responsibility. I laid out the component, its variants, its states. It looked complete. But working through it, something felt off.</p>
+        <p class="cs-p">What I'd produced was a display. Here's the component. Here's what it looks like. But there was nothing to tell a designer when to use it, how to use it correctly, or what accessibility considerations applied. If someone new joined the team tomorrow and opened this file, they'd see the component — but they wouldn't know what to do with it.</p>
       </div>
       <div>
-        <div class="cs-track-label">[ placeholder label ]</div>
-        <p class="cs-p">[ placeholder — content ]</p>
+        <div class="cs-track-label">My judgment</div>
+        <p class="cs-p">This wasn't a problem with my component. It was a structural problem across the entire system. The documentation had been built to show what existed. It hadn't been built to help people use it.</p>
+        <p class="cs-p">I looked at how mature design systems document themselves — Jira, and a few others. The pattern that works consistently: every component has three layers — Overview, Usage, Accessibility. Not just "here it is" but "here's what it's for, here's how to use it, here's what to watch out for."</p>
+        <p class="cs-p">I wrote a detailed proposal for restructuring the entire documentation using this framework and presented it to Stephanie. She approved it in the same meeting.</p>
+      </div>
+      <div>
+        <div class="cs-track-label">Why this matters</div>
+        <p class="cs-p">Nobody asked me to look at the documentation structure. The brief was to audit components. But the real friction for anyone using this system wasn't missing components — it was that the system had become hard to use as a reference. A component library that designers can't navigate efficiently is a component library that doesn't get used.</p>
+        <p class="cs-p">Identifying that was a judgment call, not a task completion.</p>
       </div>
     </div>
 
-    <div style="margin-top:56px;">
-      <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">[ placeholder — image label ]</div>
-      <div class="img-placeholder" style="width:100%;height:360px;">[ placeholder — image ]</div>
+    <!-- Images -->
+    <div style="margin-top:56px;display:flex;flex-direction:column;gap:12px;">
+      <div>
+        <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Existing issues in the system — Kickoff</div>
+        <div class="img-placeholder" style="width:100%;height:360px;">[ placeholder — "Existing issues" kickoff screenshot ]</div>
+      </div>
+      <div>
+        <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Questions for UI Designers — FigJam</div>
+        <div class="img-placeholder" style="width:100%;height:360px;">[ placeholder — Questions for UI Designers FigJam ]</div>
+      </div>
+    </div>
+
+    <!-- Before / After doc structure -->
+    <div style="margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:2px;">
+      <div style="background:#f5f5f5;padding:28px 28px 32px;">
+        <div style="font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:20px;">Before</div>
+        <div style="font-family:var(--mono);font-size:14px;font-weight:500;color:var(--white);line-height:1.8;">Component name<br><span style="color:var(--dim);">└── [variants displayed, no explanation]</span></div>
+      </div>
+      <div style="background:#f5f5f5;padding:28px 28px 32px;">
+        <div style="font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:20px;">After</div>
+        <div style="font-family:var(--mono);font-size:14px;font-weight:500;color:var(--white);line-height:1.8;">Component name<br><span style="color:var(--dim);">├── Overview — what this component is for<br>├── Usage — how and when to use it<br>└── Accessibility — what to watch out for</span></div>
+      </div>
+    </div>
+
+    <!-- Design System structure map -->
+    <div style="margin-top:12px;">
+      <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Design System Structure Map</div>
+      <div class="img-placeholder" style="width:100%;height:400px;">[ placeholder — Design System structure map ]</div>
     </div>
   </section>
 
 
-  <!-- SECTION 2 -->
-  <section class="cs-section reveal" id="section-2">
-    <div class="cs-section-label">&lt;!-- Section 02 --&gt;</div>
-    <h2 class="cs-h cs-h-lg">[ placeholder — section title ]</h2>
+  <!-- SECTION 3 — WHAT GOT BUILT -->
+  <section class="cs-section reveal" id="built">
+    <div class="cs-section-label">&lt;!-- Impact 03 --&gt;</div>
+    <h2 class="cs-h cs-h-lg">What Got Built</h2>
 
     <div class="cs-finding-content" style="margin-top:40px;">
       <div>
-        <div class="cs-track-label">[ placeholder label ]</div>
-        <p class="cs-p">[ placeholder — content ]</p>
+        <p class="cs-p">My contract ended before the full restructure was complete. But the team's Figma workspace remained accessible — UAL's design environment was open.</p>
+        <p class="cs-p">When I checked back later, the structure had been implemented in full — exactly as proposed.</p>
       </div>
       <div>
-        <div class="cs-track-label">[ placeholder label ]</div>
-        <p class="cs-p">[ placeholder — content ]</p>
+        <div class="cs-track-label">What the system looked like after</div>
+        <p class="cs-p">The restructured system covered: UI Toolkit Layout, Design Foundations (Grids, Spacing, Colours, Typography), Molecules (Accordions, Alerts, Buttons, Cards), Organisms (Navigation, Header), and Templates (Homepage, College pages, Course pages).</p>
+        <p class="cs-p">Each component documented with the three-layer framework. A process flowchart defined how new components would be added going forward — flagged by UI designers, authorised by the Design System Manager, reviewed before merge. The system now had a governance model, not just a component library.</p>
       </div>
-    </div>
-
-    <div style="margin-top:56px;">
-      <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">[ placeholder — image label ]</div>
-      <div class="img-placeholder" style="width:100%;height:360px;">[ placeholder — image ]</div>
-    </div>
-  </section>
-
-
-  <!-- SECTION 3 -->
-  <section class="cs-section reveal" id="section-3">
-    <div class="cs-section-label">&lt;!-- Section 03 --&gt;</div>
-    <h2 class="cs-h cs-h-lg">[ placeholder — section title ]</h2>
-
-    <div class="cs-finding-content" style="margin-top:40px;">
       <div>
-        <div class="cs-track-label">[ placeholder label ]</div>
-        <p class="cs-p">[ placeholder — content ]</p>
+        <div class="cs-track-label">The connection back to the Showcase</div>
+        <p class="cs-p">The two new components added during this project — the Promote Card size and the Filter structure — both came directly from the Graduate Showcase work. Design decisions made in one project fed back into the shared system that served all of UAL's digital products. That's what a design system is supposed to do.</p>
       </div>
     </div>
 
-    <div style="margin-top:56px;">
-      <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">[ placeholder — image label ]</div>
-      <div class="img-placeholder" style="width:100%;height:360px;">[ placeholder — image ]</div>
+    <!-- Images -->
+    <div style="margin-top:56px;display:flex;flex-direction:column;gap:12px;">
+      <div>
+        <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Process Flowchart — new component additions</div>
+        <div class="img-placeholder" style="width:100%;height:360px;">[ placeholder — process flowchart ]</div>
+      </div>
+      <div>
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:10px;">
+          <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);">Design System Structure — implemented</div>
+          <a href="https://www.figma.com/design/X8I6AXOU4byccpthVz9jXg/UAL-Digital-design-system-link-to-web?node-id=1-13732&t=KLjgDTjs3AtWaIoJ-1" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);display:inline-flex;align-items:center;gap:4px;transition:color .15s;" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--dim)'">View design system <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+        </div>
+        <div class="img-placeholder" style="width:100%;height:400px;">[ placeholder — Design System structure map ]</div>
+        <div style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);margin-top:10px;font-style:italic;">Implemented in full after contract ended — confirmed via Figma workspace access.</div>
+      </div>
     </div>
   </section>
 
 
   <!-- CLOSE -->
   <section class="cs-section reveal" id="close">
-    <div class="cs-section-label">&lt;!-- Close --&gt;</div>
-    <h2 class="cs-h cs-h-lg">[ placeholder — closing title ]</h2>
 
-    <div class="cs-finding-content" style="margin-top:40px;">
+    <div class="cs-finding-content" style="margin-top:0;">
       <div>
-        <p class="cs-p">[ placeholder — closing reflection ]</p>
-        <p class="cs-p">[ placeholder — closing reflection ]</p>
+        <p class="cs-p">Two and a half months. One brief: audit the system.</p>
+        <p class="cs-p">What I delivered: the audit, two new components, and a documentation framework that the team implemented after I left.</p>
+        <p class="cs-p">The components were expected. The framework wasn't asked for — but it was the part that made the system usable for the next person who opened it.</p>
       </div>
     </div>
 
-    <div style="margin-top:72px;padding:60px 40px;background:#f5f5f5;text-align:center;">
-      <div style="font-family:var(--mono);font-size:24px;font-weight:500;font-style:italic;color:var(--white);line-height:1.55;max-width:680px;margin:0 auto;">[ placeholder — closing quote ]</div>
+    <div style="margin-top:48px;">
+      <blockquote class="cs-quote">"A component library that nobody can navigate is a component library that doesn't get used."</blockquote>
     </div>
   </section>
 
@@ -440,11 +519,11 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   <p class="idx-title">On this page</p>
   <div class="idx-hr"></div>
   <nav class="idx-links">
-    <a href="#overview"   class="idx-link" data-s="overview"><span class="idx-bar"></span>Overview</a>
-    <a href="#section-1"  class="idx-link" data-s="section-1"><span class="idx-bar"></span>Section 01</a>
-    <a href="#section-2"  class="idx-link" data-s="section-2"><span class="idx-bar"></span>Section 02</a>
-    <a href="#section-3"  class="idx-link" data-s="section-3"><span class="idx-bar"></span>Section 03</a>
-    <a href="#close"      class="idx-link" data-s="close"><span class="idx-bar"></span>Close</a>
+    <a href="#overview"      class="idx-link" data-s="overview"><span class="idx-bar"></span>Overview</a>
+    <a href="#audit"         class="idx-link" data-s="audit"><span class="idx-bar"></span>The Audit</a>
+    <a href="#real-problem"  class="idx-link" data-s="real-problem"><span class="idx-bar"></span>Finding the Real Problem</a>
+    <a href="#built"         class="idx-link" data-s="built"><span class="idx-bar"></span>What Got Built</a>
+    <a href="#close"         class="idx-link" data-s="close"><span class="idx-bar"></span>Close</a>
   </nav>
 </aside>
 
