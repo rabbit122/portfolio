@@ -122,9 +122,18 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 
 /* ── TRACK ── */
 .cs-track-label{font-family:var(--mono);font-size:14px;font-weight:500;color:#22c55e;letter-spacing:.05em;margin-bottom:16px;}
+.cs-track-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:60px;}
+.cs-track-col{padding:24px 24px 0 0;}
+.cs-track-col:last-child{padding-right:0;}
+.cs-track-col:not(:first-child){padding-left:24px;}
+.cs-track-h{font-family:var(--sans);font-size:18px;font-weight:700;letter-spacing:-.01em;color:var(--white);line-height:1.2;margin-bottom:14px;}
+.cs-track-p{font-family:var(--mono);font-size:16px;font-weight:500;color:var(--muted);line-height:1.75;margin-bottom:12px;}
 
 /* ── FINDING BLOCKS ── */
 .cs-finding-content{display:flex;flex-direction:column;gap:28px;}
+.cs-finding-header{display:grid;grid-template-columns:100px 1fr;gap:24px;align-items:start;}
+.cs-finding-num{font-family:var(--mono);font-size:14px;font-weight:500;color:#22c55e;letter-spacing:.05em;padding-top:7px;}
+.cs-finding-hl{font-family:var(--sans);font-size:28px;font-weight:700;letter-spacing:-.02em;color:var(--white);line-height:1.2;}
 .img-placeholder{background:#f5f5f5;border:1px dashed #cccccc;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);letter-spacing:.03em;}
 .cs-quote{border-left:2px solid #22c55e;padding:14px 20px;margin:0;font-family:var(--mono);font-size:18px;font-weight:500;font-style:italic;color:var(--white);line-height:1.65;}
 
@@ -296,17 +305,18 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
   <!-- PROJECT TITLE -->
   <h1 class="project-title"><span class="l2">UAL Design System</span></h1>
 
+  <!-- FIGMA LINK -->
+  <div style="padding:20px 30px 0;">
+    <a href="https://www.figma.com/design/X8I6AXOU4byccpthVz9jXg/UAL-Digital-design-system-link-to-web?node-id=1-13732&t=KLjgDTjs3AtWaIoJ-1" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:14px;font-weight:600;color:var(--white);border:1px solid var(--sep);padding:10px 16px;transition:border-color .15s,color .15s;" onmouseover="this.style.borderColor='#22c55e';this.style.color='#22c55e'" onmouseout="this.style.borderColor='var(--sep)';this.style.color='var(--white)'">View on Figma <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+  </div>
+
   <!-- COVER IMAGE -->
   <div class="cover-img">
     <img src="images/Design system cover.png" alt="UAL Design System cover">
   </div>
 
-  <!-- DESIGN SYSTEM FIGMA LINK + IMAGE -->
+  <!-- DESIGN SYSTEM IMAGE -->
   <div style="margin:40px 30px 0;">
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:10px;">
-      <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);">Digital Design System</div>
-      <a href="https://www.figma.com/design/X8I6AXOU4byccpthVz9jXg/UAL-Digital-design-system-link-to-web?node-id=1-13732&t=KLjgDTjs3AtWaIoJ-1" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);display:inline-flex;align-items:center;gap:4px;transition:color .15s;" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--dim)'">View on Figma <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
-    </div>
     <img src="images/UALDesignsystemcover.png" alt="UAL Digital Design System" style="width:100%;height:auto;display:block;">
   </div>
 
@@ -322,28 +332,42 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
         </div>
         <div class="cs-meta-item">
           <div class="cs-meta-label">Role</div>
-          <div class="cs-meta-value">UIUX Designer · Contract</div>
+          <div class="cs-meta-value">UX/UI Designer · Contract</div>
         </div>
         <div class="cs-meta-item">
           <div class="cs-meta-label">Duration</div>
-          <div class="cs-meta-value">Apr–Jul 2022</div>
+          <div class="cs-meta-value">Feb–Jul 2022</div>
         </div>
       </div>
       <div class="cs-overview-body">
-        <p class="cs-p" style="font-style:italic;color:var(--white);margin-bottom:24px;">"The audit confirmed the components were largely fine. The real problem was that nobody could find them."</p>
+        <!-- TIMELINE BAR -->
+        <div style="margin-bottom:32px;">
+          <div style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;">6 months</div>
+          <div style="display:flex;height:6px;width:100%;overflow:hidden;">
+            <div style="width:66.67%;background:#171717;"></div>
+            <div style="width:1px;background:var(--bg);flex-shrink:0;"></div>
+            <div style="flex:1;background:#FFB400;"></div>
+          </div>
+          <div style="display:flex;margin-top:10px;">
+            <div style="width:66.67%;">
+              <div style="font-family:var(--mono);font-size:12px;font-weight:600;color:var(--white);">Showcase Website</div>
+              <div style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);margin-top:2px;">4 months</div>
+            </div>
+            <div style="flex:1;padding-left:12px;">
+              <div style="font-family:var(--mono);font-size:12px;font-weight:600;color:#FFB400;">Design System</div>
+              <div style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);margin-top:2px;">2 months</div>
+            </div>
+          </div>
+        </div>
+
         <div class="cs-meta-label" style="margin-bottom:10px;">Context</div>
-        <p class="cs-p">After the Graduate Showcase project wrapped, I moved onto UAL's Design System team for the remaining two and a half months of my contract.</p>
-        <p class="cs-p">UAL's design system covered eight colleges and multiple digital products, the main website, the Graduate Showcase, Arts Temps. It was fully integrated with the codebase and broadly followed across products. By most standards, it was in good shape.</p>
+        <p class="cs-p">After the Graduate Showcase project wrapped, I moved onto UAL's Design System team for the remaining two months of my contract.</p>
+        <p class="cs-p">UAL's design system covered eight colleges and multiple digital products, main website, Graduate Showcase, Arts Temps. It was integrated with the playbook and broadly followed across products. By most standards, it was in good shape.</p>
         <p class="cs-p">The brief was straightforward: audit the existing system, identify gaps, recommend updates.</p>
         <p class="cs-p">A small team of three: a Design Lead and two contractors, myself included.</p>
       </div>
     </div>
 
-    <!-- Kickoff image -->
-    <div style="margin-top:48px;">
-      <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Why do we need a design system? — Kickoff</div>
-      <div class="img-placeholder" style="width:100%;height:360px;">[ placeholder — kickoff "Why do we need a design system?" image ]</div>
-    </div>
   </section>
 
 
@@ -355,37 +379,45 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
     <div class="cs-finding-content" style="margin-top:40px;">
       <div>
         <div class="cs-track-label">What we did</div>
-        <p class="cs-p">We started by building a complete picture of the existing system. The work was systematic: we screenshotted every page across UAL's product suite — homepage, college pages, course pages, subject pages, event listings — and compared each one against the existing design system.</p>
+        <p class="cs-p">We screenshotted every page across UAL's product suite — homepage, college pages, course pages and more. Comparing each against the existing system.</p>
         <p class="cs-p">For every element we found, we asked two questions: does this follow the system, or has it drifted? And if it's new, should it be added?</p>
-        <p class="cs-p">I was responsible for specific components — Promote Card, Notification, Footer — as well as a cross-product H1 sizing audit, checking typography consistency across every page type at 1440px.</p>
+        <p class="cs-p">I was responsible for auditing specific components across all page types and breakpoints — including Promote Card, Notification, Footer, and Header. Checking for inconsistencies in sizing, spacing, and layout behaviour throughout the product suite.</p>
       </div>
       <div>
         <div class="cs-track-label">What we found</div>
         <p class="cs-p">The system itself was largely sound. Most pages followed the spec. Deviations were either minor frontend inconsistencies or intentional additions that hadn't yet been documented.</p>
-        <p class="cs-p">Two components needed to be added as genuine new additions: a new Promote Card size introduced in the Graduate Showcase, and the updated Filter structure — both outputs of the website project I'd just completed. The work I'd done on the Showcase fed directly back into the system.</p>
+        <p class="cs-p">Two components needed to be added as genuine new additions: a new Promote Card size introduced in the <a href="ual.html" style="color:#22c55e;text-decoration:underline;text-underline-offset:3px;">Graduate Showcase</a>, and the updated Filter structure — both outputs of the website project I'd just completed. The work I'd done on the Showcase fed directly back into the system.</p>
       </div>
     </div>
 
     <!-- Images -->
     <div style="margin-top:56px;display:flex;flex-direction:column;gap:12px;">
       <div>
-        <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">H1 Sizing Audit — cross-product, 1440px</div>
-        <div class="img-placeholder" style="width:100%;height:360px;">[ placeholder — H1 sizing audit screenshot ]</div>
-      </div>
-      <div>
-        <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Courses Landing Page Audit</div>
-        <div class="img-placeholder" style="width:100%;height:360px;">[ placeholder — Courses landing page audit screenshot ]</div>
+        <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Audit</div>
+        <img src="images/Audit.png" alt="H1 Sizing Audit" style="width:100%;height:auto;display:block;">
       </div>
     </div>
 
-    <!-- Finding summary card -->
-    <div style="margin-top:48px;background:#f5f5f5;padding:32px;">
-      <div style="font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:20px;">Finding Summary</div>
-      <div style="display:flex;flex-direction:column;gap:10px;">
-        <div style="font-family:var(--mono);font-size:14px;font-weight:500;color:var(--muted);">Pages audited: <span style="color:var(--white);">across 8 product types</span></div>
-        <div style="font-family:var(--mono);font-size:14px;font-weight:500;color:var(--muted);">Deviations found: <span style="color:var(--white);">minor — mostly frontend drift</span></div>
-        <div style="font-family:var(--mono);font-size:14px;font-weight:500;color:var(--muted);">Genuine gaps: <span style="color:var(--white);">targeted, not structural</span></div>
-        <div style="margin-top:8px;padding-top:20px;border-top:1px solid var(--sep);font-family:var(--mono);font-size:14px;font-weight:500;color:var(--muted);">Finding: <span style="color:var(--white);">the system was sound.<br>The documentation was not.</span></div>
+    <!-- Finding summary -->
+    <div style="margin-top:48px;">
+      <div class="cs-track-label">Finding Summary</div>
+      <div class="cs-track-grid" style="margin-top:0;">
+        <div class="cs-track-col">
+          <div class="cs-track-h">Pages audited</div>
+          <p class="cs-track-p">across all UAL product types</p>
+        </div>
+        <div class="cs-track-col">
+          <div class="cs-track-h">Deviations found</div>
+          <p class="cs-track-p">minor — mostly frontend drift</p>
+        </div>
+        <div class="cs-track-col">
+          <div class="cs-track-h">Genuine gaps</div>
+          <p class="cs-track-p">targeted, not structural</p>
+        </div>
+      </div>
+      <div style="margin-top:32px;">
+        <div class="cs-finding-num">Judgment</div>
+        <h3 class="cs-finding-hl" style="margin-top:12px;">The system was sound. The documentation was not.</h3>
       </div>
     </div>
   </section>
@@ -398,109 +430,63 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 
     <div class="cs-finding-content" style="margin-top:40px;">
       <div>
-        <p class="cs-p">The audit confirmed the components were fine. So I moved on to the next part of the brief: organising and documenting what we'd found.</p>
-        <p class="cs-p">I started with Promote Card — my responsibility. I laid out the component, its variants, its states. It looked complete. But working through it, something felt off.</p>
-        <p class="cs-p">What I'd produced was a display. Here's the component. Here's what it looks like. But there was nothing to tell a designer when to use it, how to use it correctly, or what accessibility considerations applied. If someone new joined the team tomorrow and opened this file, they'd see the component — but they wouldn't know what to do with it.</p>
+        <p class="cs-p">I moved on to the next part of the brief: organising, adding to, and documenting what we'd found.</p>
+        <p class="cs-p">I started with Promote Card. I laid out the component, variants, states. It looked complete. But working through it, something felt off.</p>
+        <p class="cs-p">What I'd produced was a display. Here's the component. Here's what it looks like. But there was nothing to tell a designer when to use it, how to use it correctly, or what accessibility considerations applied. If someone new joined the team tomorrow and opened this file, they'd see the component, but they wouldn't know what to do with it.</p>
       </div>
       <div>
         <div class="cs-track-label">My judgment</div>
-        <p class="cs-p">This wasn't a problem with my component. It was a structural problem across the entire system. The documentation had been built to show what existed. It hadn't been built to help people use it.</p>
-        <p class="cs-p">I looked at how mature design systems document themselves — Jira, and a few others. The pattern that works consistently: every component has three layers — Overview, Usage, Accessibility. Not just "here it is" but "here's what it's for, here's how to use it, here's what to watch out for."</p>
-        <p class="cs-p">I wrote a detailed proposal for restructuring the entire documentation using this framework and presented it to Stephanie. She approved it in the same meeting.</p>
+        <p class="cs-p">The current documentation had been built to show what existed. It hadn't been built to help people use it.</p>
+        <p class="cs-p">I looked at how mature design systems document themselves. Atlassian, Microsoft and a few others. The pattern that works consistently: Every component has at least four layers. Overview, Usage, Accessibility, and Development status, linking the design directly to its implementation in Storybook. Not just 'here it is', but what it's for, how to use it, what to watch out for, and where it stands in the codebase.</p>
+        <p class="cs-p">I wrote a detailed proposal for updated the entire documentation using this framework and presented it to team. Everyone agrees with this approach.</p>
       </div>
       <div>
         <div class="cs-track-label">Why this matters</div>
-        <p class="cs-p">Nobody asked me to look at the documentation structure. The brief was to audit components. But the real friction for anyone using this system wasn't missing components — it was that the system had become hard to use as a reference. A component library that designers can't navigate efficiently is a component library that doesn't get used.</p>
-        <p class="cs-p">Identifying that was a judgment call, not a task completion.</p>
+        <p class="cs-p">When work through it, I kept thinking about how I'd actually use this system day-to-day. That's when I noticed the system itself was hard to reference. A component library that's slow and clunky to navigate just doesn't get used as much as it should.</p>
       </div>
     </div>
 
-    <!-- Images -->
-    <div style="margin-top:56px;display:flex;flex-direction:column;gap:12px;">
-      <div>
-        <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Existing issues in the system — Kickoff</div>
-        <div class="img-placeholder" style="width:100%;height:360px;">[ placeholder — "Existing issues" kickoff screenshot ]</div>
-      </div>
-      <div>
-        <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Questions for UI Designers — FigJam</div>
-        <div class="img-placeholder" style="width:100%;height:360px;">[ placeholder — Questions for UI Designers FigJam ]</div>
-      </div>
+
+    <!-- Design System structure map -->
+    <div style="margin-top:48px;">
+      <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">New documentation Structure</div>
+      <img src="images/Design System structure.png" alt="New documentation Structure" style="width:100%;height:auto;display:block;">
     </div>
 
     <!-- Before / After doc structure -->
-    <div style="margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:2px;">
+    <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:2px;">
       <div style="background:#f5f5f5;padding:28px 28px 32px;">
         <div style="font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:20px;">Before</div>
         <div style="font-family:var(--mono);font-size:14px;font-weight:500;color:var(--white);line-height:1.8;">Component name<br><span style="color:var(--dim);">└── [variants displayed, no explanation]</span></div>
       </div>
       <div style="background:#f5f5f5;padding:28px 28px 32px;">
         <div style="font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:20px;">After</div>
-        <div style="font-family:var(--mono);font-size:14px;font-weight:500;color:var(--white);line-height:1.8;">Component name<br><span style="color:var(--dim);">├── Overview — what this component is for<br>├── Usage — how and when to use it<br>└── Accessibility — what to watch out for</span></div>
+        <div style="font-family:var(--mono);font-size:14px;font-weight:500;color:var(--white);line-height:1.8;">Component name<br><span style="color:var(--dim);">├── Overview — what this component is for<br>├── Usage — how and when to use it<br>├── Accessibility — what to watch out for<br>└── Development status — implementation state in Storybook</span></div>
       </div>
-    </div>
-
-    <!-- Design System structure map -->
-    <div style="margin-top:12px;">
-      <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Design System Structure Map</div>
-      <div class="img-placeholder" style="width:100%;height:400px;">[ placeholder — Design System structure map ]</div>
     </div>
   </section>
 
 
   <!-- SECTION 3 — WHAT GOT BUILT -->
   <section class="cs-section reveal" id="built">
-    <div class="cs-section-label">&lt;!-- Impact 03 --&gt;</div>
     <h2 class="cs-h cs-h-lg">What Got Built</h2>
 
     <div class="cs-finding-content" style="margin-top:40px;">
       <div>
-        <p class="cs-p">My contract ended before the full restructure was complete. But the team's Figma workspace remained accessible — UAL's design environment was open.</p>
-        <p class="cs-p">When I checked back later, the structure had been implemented in full — exactly as proposed.</p>
-      </div>
-      <div>
-        <div class="cs-track-label">What the system looked like after</div>
-        <p class="cs-p">The restructured system covered: UI Toolkit Layout, Design Foundations (Grids, Spacing, Colours, Typography), Molecules (Accordions, Alerts, Buttons, Cards), Organisms (Navigation, Header), and Templates (Homepage, College pages, Course pages).</p>
-        <p class="cs-p">Each component documented with the three-layer framework. A process flowchart defined how new components would be added going forward — flagged by UI designers, authorised by the Design System Manager, reviewed before merge. The system now had a governance model, not just a component library.</p>
+        <p class="cs-p">My contract ended before the restructure was complete, but I followed up later to see how it landed. The structure had been implemented in full, exactly as proposed.</p>
+        <p class="cs-p">What I delivered: the audit, two new components, and a documentation framework that the team implemented after I left.</p>
+        <p class="cs-p">The components were expected. The framework wasn't asked for. But it was the part that made the system usable for the next person who opened it.</p>
       </div>
       <div>
         <div class="cs-track-label">The connection back to the Showcase</div>
-        <p class="cs-p">The two new components added during this project — the Promote Card size and the Filter structure — both came directly from the Graduate Showcase work. Design decisions made in one project fed back into the shared system that served all of UAL's digital products. That's what a design system is supposed to do.</p>
+        <p class="cs-p">The two new components added during this project, the Promote Card size and the Filter structure. Both came directly from the Graduate Showcase work. Design decisions made in one project fed back into the shared system that served all of UAL's digital products. That's what a design system is supposed to do.</p>
       </div>
     </div>
 
-    <!-- Images -->
-    <div style="margin-top:56px;display:flex;flex-direction:column;gap:12px;">
-      <div>
-        <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;">Process Flowchart — new component additions</div>
-        <div class="img-placeholder" style="width:100%;height:360px;">[ placeholder — process flowchart ]</div>
-      </div>
-      <div>
-        <div style="display:flex;align-items:center;gap:16px;margin-bottom:10px;">
-          <div style="font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);">Design System Structure — implemented</div>
-          <a href="https://www.figma.com/design/X8I6AXOU4byccpthVz9jXg/UAL-Digital-design-system-link-to-web?node-id=1-13732&t=KLjgDTjs3AtWaIoJ-1" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);display:inline-flex;align-items:center;gap:4px;transition:color .15s;" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color='var(--dim)'">View design system <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
-        </div>
-        <div class="img-placeholder" style="width:100%;height:400px;">[ placeholder — Design System structure map ]</div>
-        <div style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);margin-top:10px;font-style:italic;">Implemented in full after contract ended — confirmed via Figma workspace access.</div>
-      </div>
-    </div>
   </section>
 
 
   <!-- CLOSE -->
-  <section class="cs-section reveal" id="close">
-
-    <div class="cs-finding-content" style="margin-top:0;">
-      <div>
-        <p class="cs-p">Two and a half months. One brief: audit the system.</p>
-        <p class="cs-p">What I delivered: the audit, two new components, and a documentation framework that the team implemented after I left.</p>
-        <p class="cs-p">The components were expected. The framework wasn't asked for — but it was the part that made the system usable for the next person who opened it.</p>
-      </div>
-    </div>
-
-    <div style="margin-top:48px;">
-      <blockquote class="cs-quote">"A component library that nobody can navigate is a component library that doesn't get used."</blockquote>
-    </div>
-  </section>
 
 
   <!-- SEE MORE PROJECTS -->

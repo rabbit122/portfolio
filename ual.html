@@ -414,18 +414,18 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
       <div class="cs-overview-body">
         <div style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;">6 months</div>
         <div style="display:flex;height:6px;width:100%;overflow:hidden;">
-          <div style="width:58.33%;background:#FFB400;"></div>
+          <div style="width:66.67%;background:#FFB400;"></div>
           <div style="width:1px;background:var(--bg);flex-shrink:0;"></div>
           <div style="flex:1;background:#171717;"></div>
         </div>
         <div style="display:flex;margin-top:10px;">
-          <div style="width:58.33%;">
+          <div style="width:66.67%;">
             <div style="font-family:var(--mono);font-size:12px;font-weight:600;color:#FFB400;">Showcase Website</div>
-            <div style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);margin-top:2px;">3.5 months</div>
+            <div style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);margin-top:2px;">4 months</div>
           </div>
           <div style="flex:1;padding-left:12px;">
             <div style="font-family:var(--mono);font-size:12px;font-weight:600;color:var(--white);">Design System</div>
-            <div style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);margin-top:2px;">2.5 months</div>
+            <div style="font-family:var(--mono);font-size:12px;font-weight:500;color:var(--dim);margin-top:2px;">2 months</div>
           </div>
         </div>
       </div>
@@ -854,6 +854,56 @@ document.querySelectorAll('.idx-link').forEach(link => {
       var img = before.querySelector('img');
       if(img) img.style.width = container.offsetWidth + 'px';
     });
+  });
+})();
+
+/* TEXT SCRAMBLE */
+(function() {
+  const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*?';
+  const FRAME_MS = 20;
+  const FRAMES_PER_CHAR = 2;
+  class ScrambleText {
+    constructor(el) { this.el = el; this.original = el.textContent; this._timer = null; }
+    play() {
+      clearTimeout(this._timer);
+      const orig = this.original, len = orig.length;
+      let frame = 0;
+      const total = len * FRAMES_PER_CHAR;
+      const tick = () => {
+        let out = '';
+        for (let i = 0; i < len; i++) {
+          if (orig[i] === ' ') { out += ' '; continue; }
+          out += (frame >= (i + 1) * FRAMES_PER_CHAR) ? orig[i] : CHARS[Math.floor(Math.random() * CHARS.length)];
+        }
+        this.el.textContent = out;
+        if (frame < total) { frame++; this._timer = setTimeout(tick, FRAME_MS); }
+      };
+      tick();
+    }
+    reset() { clearTimeout(this._timer); this.el.textContent = this.original; }
+  }
+  function initScramble(triggerEl, textEl) {
+    const s = new ScrambleText(textEl || triggerEl);
+    triggerEl.addEventListener('mouseenter', () => s.play());
+    triggerEl.addEventListener('mouseleave', () => s.reset());
+  }
+  document.querySelectorAll('.btn-cv').forEach(el => {
+    const textEl = el.querySelector('.btn-cv-text');
+    if (textEl) initScramble(el, textEl);
+  });
+  document.querySelectorAll('.btn-sched').forEach(el => initScramble(el));
+  document.querySelectorAll('.wcard').forEach(card => {
+    const title = card.querySelector('.wcard-title');
+    if (title) initScramble(card, title);
+  });
+  document.querySelectorAll('.back-link').forEach(el => {
+    const textNode = [...el.childNodes].find(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim());
+    if (textNode) {
+      const span = document.createElement('span');
+      span.textContent = textNode.textContent;
+      el.replaceChild(span, textNode);
+      initScramble(el, span);
+    }
   });
 })();
 </script>
