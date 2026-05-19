@@ -354,6 +354,28 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 ::-webkit-scrollbar-track{background:transparent;}
 ::-webkit-scrollbar-thumb{background:#cccccc;}
 
+/* ── PASSWORD MODAL ── */
+.pw-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:1000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(3px);}
+.pw-overlay.open{display:flex;}
+.pw-modal{background:var(--panel);border:1px solid var(--sep);width:380px;max-width:calc(100vw - 40px);font-family:var(--mono);}
+.pw-modal-hdr{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--sep);}
+.pw-modal-title{font-size:14px;font-weight:600;color:var(--white);display:flex;align-items:center;gap:8px;}
+.pw-modal-close{font-size:22px;color:var(--dim);cursor:pointer;background:none;border:none;line-height:1;padding:0 2px;transition:color .15s;}
+.pw-modal-close:hover{color:var(--white);}
+.pw-modal-body{padding:22px 20px 14px;}
+.pw-modal-label{font-size:11px;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:8px;}
+.pw-modal-input{width:100%;background:#fff;border:1px solid var(--sep);padding:10px 13px;font-family:var(--mono);font-size:14px;color:#171717;outline:none;transition:border-color .15s;}
+.pw-modal-input:focus{border-color:#555;}
+.pw-modal-input.pw-error{border-color:#e53e3e;animation:pwShake .3s ease;}
+.pw-modal-err{font-size:12px;color:#e53e3e;margin-top:7px;min-height:18px;}
+.pw-modal-foot{padding:14px 20px 20px;display:flex;gap:10px;}
+.pw-modal-submit{flex:1;height:40px;background:#171717;color:#fff;font-family:var(--mono);font-size:14px;font-weight:600;border:none;cursor:pointer;transition:opacity .15s;}
+.pw-modal-submit:hover{opacity:.85;}
+.pw-modal-cancel{height:40px;padding:0 16px;border:1px solid var(--sep);background:transparent;font-family:var(--mono);font-size:14px;color:var(--muted);cursor:pointer;transition:color .15s,border-color .15s;}
+.pw-modal-cancel:hover{color:var(--white);border-color:#555;}
+@keyframes pwShake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}
+.wcard-lock-badge{position:absolute;top:10px;right:10px;display:flex;align-items:center;gap:5px;background:rgba(23,23,23,0.78);color:#fff;font-family:var(--mono);font-size:10px;font-weight:500;padding:4px 9px;letter-spacing:.07em;text-transform:uppercase;pointer-events:none;}
+
 /* ════════════ MOBILE TOPBAR ELEMENTS (hidden on desktop) ════════════ */
 .tb-mob-logo{display:none;width:44px;min-width:44px;height:44px;border-right:1px solid var(--sep);overflow:hidden;flex-shrink:0;}
 .tb-mob-logo img{width:100%;height:100%;object-fit:cover;object-position:center center;}
@@ -600,7 +622,7 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
     <div class="content">
       <p class="comment">&lt;!-- Featured work --&gt;</p>
       <div class="wgrid">
-        <a class="wcard" href="circularity.html"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">Circularity</span><span style="font-family:var(--mono);font-size:14px;font-weight:500;color:var(--dim);letter-spacing:.08em;">DATA VISUALIZATION · B2B · SAAS</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"><img src="images/Circularity.png" alt="Circularity"></div></a>
+        <a class="wcard" id="circularity-card" href="circularity.html"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">Circularity</span><span style="font-family:var(--mono);font-size:14px;font-weight:500;color:var(--dim);letter-spacing:.08em;">DATA VISUALIZATION · B2B · SAAS</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"><img src="images/Circularity.png" alt="Circularity"><div class="wcard-lock-badge"><svg width="9" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>NDA</div></div></a>
         <a class="wcard" href="remarkai.html"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">RemarkAI</span><span style="font-family:var(--mono);font-size:14px;font-weight:500;color:var(--dim);letter-spacing:.08em;">AI STARTUP · B2B · SAAS</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"><img src="images/SSP-All.png" alt="RemarkAI"></div></a>
         <a class="wcard" href="ual.html"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">UAL Graduate Showcase</span><span style="font-family:var(--mono);font-size:14px;font-weight:500;color:var(--dim);letter-spacing:.08em;">EDUCATION · USER CENTERED DESIGN</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"><img src="images/UAL Graduate Showcase.png" alt="UAL Graduate Showcase"></div></a>
         <a class="wcard" href="ual-design-system.html"><div class="wcard-hdr"><div style="display:flex;flex-direction:column;gap:8px;flex:1;"><span class="wcard-title">UAL Design System</span><span style="font-family:var(--mono);font-size:14px;font-weight:500;color:var(--dim);letter-spacing:.08em;">EDUCATION · DESIGN SYSTEM</span></div><div class="wcard-arr"><svg viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg"><path d="M13 1L22 10M22 10L13 19M22 10H1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="wcard-img"><img src="images/Design system cover.png" alt="UAL Design System"></div></a>
@@ -899,6 +921,28 @@ body{background:var(--bg);color:var(--white);font-family:var(--mono);font-size:1
 
 </div>
 
+<!-- PASSWORD MODAL -->
+<div class="pw-overlay" id="pw-overlay" role="dialog" aria-modal="true" aria-labelledby="pw-modal-title">
+  <div class="pw-modal">
+    <div class="pw-modal-hdr">
+      <span class="pw-modal-title" id="pw-modal-title">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+        Password Protected
+      </span>
+      <button class="pw-modal-close" id="pw-close" aria-label="Close">×</button>
+    </div>
+    <div class="pw-modal-body">
+      <label class="pw-modal-label" for="pw-input">Enter password to view this case study</label>
+      <input class="pw-modal-input" id="pw-input" type="password" placeholder="Password..." autocomplete="off">
+      <p class="pw-modal-err" id="pw-err" role="alert"></p>
+    </div>
+    <div class="pw-modal-foot">
+      <button class="pw-modal-submit" id="pw-submit">View case study →</button>
+      <button class="pw-modal-cancel" id="pw-cancel">Cancel</button>
+    </div>
+  </div>
+</div>
+
 <div class="statusbar">Xiaoran Sun Portfolio · Open to new work</div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
@@ -1089,6 +1133,54 @@ document.querySelectorAll('a[href]').forEach(a=>{
       el.replaceChild(span, textNode);
       initScramble(el, span);
     }
+  });
+})();
+
+/* ── PASSWORD PROTECTION ── */
+(function(){
+  var card    = document.getElementById('circularity-card');
+  var overlay = document.getElementById('pw-overlay');
+  var input   = document.getElementById('pw-input');
+  var errEl   = document.getElementById('pw-err');
+  var submitBtn = document.getElementById('pw-submit');
+  var closeBtn  = document.getElementById('pw-close');
+  var cancelBtn = document.getElementById('pw-cancel');
+  if (!card || !overlay) return;
+
+  function openModal(e) {
+    e.preventDefault();
+    overlay.classList.add('open');
+    input.value = '';
+    errEl.textContent = '';
+    input.classList.remove('pw-error');
+    setTimeout(function(){ input.focus(); }, 80);
+  }
+  function closeModal() {
+    overlay.classList.remove('open');
+    input.value = '';
+    errEl.textContent = '';
+    input.classList.remove('pw-error');
+  }
+  function verify() {
+    if (btoa(input.value) === 'eGlhb3Jhbg==') {
+      window.location.href = 'circularity.html';
+    } else {
+      errEl.textContent = 'Incorrect password. Please try again.';
+      input.classList.remove('pw-error');
+      void input.offsetWidth;
+      input.classList.add('pw-error');
+      input.select();
+    }
+  }
+
+  card.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  cancelBtn.addEventListener('click', closeModal);
+  submitBtn.addEventListener('click', verify);
+  input.addEventListener('keydown', function(e){ if (e.key === 'Enter') verify(); });
+  overlay.addEventListener('click', function(e){ if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
   });
 })();
 
